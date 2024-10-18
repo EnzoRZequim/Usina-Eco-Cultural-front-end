@@ -14,7 +14,7 @@ body {
   display: flex; /* Utiliza flexbox para alinhar os itens na mesma linha */
   align-items: center; /* Alinha verticalmente os itens no centro */
   justify-content: space-between; /* Distribui o espaço entre os itens */
-  padding: 10px 20px; /* Ajuste o espaçamento conforme necessário */
+  padding: 42px 100px; /* Ajuste o espaçamento conforme necessário */
 }
 
 .navbar {
@@ -33,16 +33,18 @@ body {
 
 .navbar a.active {
   font-size: 18px;
+  font-weight: bold;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 100px;
   color: white;
-  line-height: 20px;
+  line-height: 15px;
   margin: 0 5px;
 }
 
 .navbar a {
   color: white;
-  font-weight: bold;
+  line-height: 15px;
+  font-weight: regular;
   text-decoration: none;
   padding: 10px 5%;
   margin: 0 5px;
@@ -51,6 +53,7 @@ body {
 
 .navbar a:hover {
   background-color: rgba(0, 0, 0, 0.8);
+  line-height: 15px;
   border-radius: 100px; /* Reduz um pouco o border-radius */
   color: white;
 }
