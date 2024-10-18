@@ -7,8 +7,8 @@ class Navbar {
     render() {
         this.element.innerHTML = `
             <div class="navbar">
-                <a href="pages/home.html">Home</a>
-                <a href="pages/contato.html">Contato</a>
+                <a href="/home">Home</a> <!-- Usando caminho absoluto -->
+                <a href="/contato">Contato</a> <!-- Usando caminho absoluto -->
             </div>
         `;
     }
