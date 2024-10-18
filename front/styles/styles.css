@@ -1,21 +1,82 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box; 
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* --------------------------- NAVBAR ------------------------- */
+
+.navheader {
+  display: flex; /* Utiliza flexbox para alinhar os itens na mesma linha */
+  align-items: center; /* Alinha verticalmente os itens no centro */
+  justify-content: space-between; /* Distribui o espaço entre os itens */
+  padding: 10px 20px; /* Ajuste o espaçamento conforme necessário */
 }
 
 .navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px;
+  width: 550px;
+  background-color: rgba(0, 0, 0, 0.2);
+  max-width: 100%; /* Permite que a navbar use até 100% da largura disponível */
+  color: white;
+  backdrop-filter: blur(10px);
+  padding: 10px 100px;
+  display: flex; /* Ativa o layout flex */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Alinha verticalmente os itens */
+  border-radius: 100px;
+  margin: 0 auto; /* Centraliza a navbar na página */
+}
+
+.navbar a.active {
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 100px; 
+  color: white;
+  line-height: 20px;
+  margin: 0 5px;
 }
 
 .navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 5%; 
+  margin: 0 5px;
+  text-align: center;
 }
 
 .navbar a:hover {
-    background-color: #575757;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 100px; /* Reduz um pouco o border-radius */
+  color: white;
+}
+
+/* --------------------------- LOGIN BUTTON ------------------------- */
+.login-link {
+  display: inline-block; /* Permite definir margens */
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px 15px;
+  background-color: orange;
+  text-decoration: none; 
+  transition: background-color 0.3s ease;
+}
+
+.login-link:hover {
+  background-color: #ff9900;
+}
+
+/* --------------------------- LOGO ------------------------- */
+.logo {
+  height: 40px; /* Ajuste a altura conforme necessário */
+  margin: 10px; /* Espaço em volta da logo */
+  display: block; /* Exibe a logo como um bloco */
+
 }

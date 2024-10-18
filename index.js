@@ -22,6 +22,11 @@ app.get('/contato', (req, res) => {
     res.sendFile(path.join(__dirname, 'front/pages/contato.html'));
 });
 
+// Rota para a página de login
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'front/pages/login.html')); // Altere o caminho conforme necessário
+});
+
 // Inicie o servidor
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
