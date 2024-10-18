@@ -11,20 +11,20 @@ class Navbar {
         <div class="navheader">
             <img src="svg/logo-usina.svg" alt="Logo" class="logo" />
             <div class="navbar">
-                <a href="/home" class="${
-                  currentPath.includes("/home") ? "active" : ""
+                <a href="./home.html" class="${
+                  currentPath.includes("./pages/home") ? "active" : ""
                 }">Início</a>
-                <a href="/eventos" class="${
-                  currentPath.includes("/eventos") ? "active" : ""
+                <a href="./eventos.html" class="${
+                  currentPath.includes("./pages/eventos") ? "active" : ""
                 }">Eventos</a>
-                <a href="/noticias" class="${
-                  currentPath.includes("/noticias") ? "active" : ""
+                <a href="./noticias.html" class="${
+                  currentPath.includes("./pages/noticias") ? "active" : ""
                 }">Notícias</a>
-                <a href="/loja" class="${
-                  currentPath.includes("/loja") ? "active" : ""
+                <a href="./loja.html" class="${
+                  currentPath.includes("./pages/loja") ? "active" : ""
                 }">Loja</a>
-                <a href="/contato" class="${
-                  currentPath.includes("/contato") ? "active" : ""
+                <a href="./contato.html" class="${
+                  currentPath.includes("./pages/contato") ? "active" : ""
                 }">Contato</a>
             </div>
             <a href="/login" class="login-link">Fazer Login</a>
