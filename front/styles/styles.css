@@ -90,7 +90,7 @@ body {
 /* --------------------------- HOME PAGE ------------------------- */
 
 .home-fundo {
-  background-image: url("../img/home-img.png"); /* Ajuste o caminho se necessário */
+  background-image: url("../img/home-img.png"); 
   background-size: cover; /* Faz a imagem cobrir todo o fundo */
   background-position: center; /* Centraliza a imagem */
   background-repeat: no-repeat; /* Não repete a imagem */

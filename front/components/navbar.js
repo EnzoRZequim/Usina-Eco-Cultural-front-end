@@ -9,22 +9,22 @@ class Navbar {
 
     this.element.innerHTML = `
         <div class="navheader">
-            <img src="svg/logo-usina.svg" alt="Logo" class="logo" />
+            <img src="../svg/logo-usina.svg" alt="Logo" class="logo" />
             <div class="navbar">
-                <a href="/home" class="${
-                  currentPath.includes("/home") ? "active" : ""
+                <a href="/pages/home.html" class="${
+                  currentPath.endsWith("/pages/home.html") ? "active" : ""
                 }">Início</a>
                 <a href="/eventos" class="${
-                  currentPath.includes("/eventos") ? "active" : ""
+                  currentPath.startsWith("/eventos") ? "active" : ""
                 }">Eventos</a>
                 <a href="/noticias" class="${
-                  currentPath.includes("/noticias") ? "active" : ""
+                  currentPath.startsWith("/noticias") ? "active" : ""
                 }">Notícias</a>
                 <a href="/loja" class="${
-                  currentPath.includes("/loja") ? "active" : ""
+                  currentPath.startsWith("/loja") ? "active" : ""
                 }">Loja</a>
-                <a href="/contato" class="${
-                  currentPath.includes("/contato") ? "active" : ""
+                <a href="/pages/contato.html" class="${
+                  currentPath.endsWith("/pages/contato.html") ? "active" : ""
                 }">Contato</a>
             </div>
             <a href="/login" class="login-link">Fazer Login</a>
