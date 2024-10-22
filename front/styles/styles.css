@@ -96,3 +96,56 @@ body {
   background-repeat: no-repeat; /* Não repete a imagem */
   min-height: 1200px; /* Ajuste esse valor conforme necessário */
 }
+
+
+/* --------------------------- SIGN UP PAGE ------------------------- */
+
+.signup-container {
+  background-color: white;
+  padding: 10px; /* Reduzido o padding para trazer o conteúdo para cima */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signup-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.signup-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.toggle-password {
+  position: relative;
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+  margin-top: -47px;
+  z-index: 2;
+}
+
+.signup-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.signup-container button:hover {
+  background-color: #45a049;
+}
