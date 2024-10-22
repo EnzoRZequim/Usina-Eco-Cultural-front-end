@@ -15,13 +15,13 @@ class Navbar {
                   currentPath.endsWith("/pages/home.html") ? "active" : ""
                 }">Início</a>
                 <a href="../pages/eventos.html" class="${
-                  currentPath.endsWith("/eventos") ? "active" : ""
+                  currentPath.endsWith("/pages/eventos.html") ? "active" : ""
                 }">Eventos</a>
                 <a href="../pages/noticias.html" class="${
-                  currentPath.endsWith("/noticias") ? "active" : ""
+                  currentPath.endsWith("/pages/noticias.html") ? "active" : ""
                 }">Notícias</a>
                 <a href="../pages/loja.html" class="${
-                  currentPath.endsWith("/loja") ? "active" : ""
+                  currentPath.endsWith("/pages/loja.html") ? "active" : ""
                 }">Loja</a>
                 <a href="../pages/contato.html" class="${
                   currentPath.endsWith("/pages/contato.html") ? "active" : ""
