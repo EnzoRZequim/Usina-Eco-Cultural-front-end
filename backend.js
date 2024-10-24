@@ -34,8 +34,8 @@ app.listen(3000, () => {  //fala que o banco vai estar na porta 3000 e ficar mon
 //validador Usuario
 const usuarioSchema = mongoose.Schema({
     login:{type: String, required: true},
-    apelido: {type: String, required: true, unique: true},
-    email: {type: String, required: true, unique: true},
+    apelido: {type: String, required: true},
+    email: {type: String, required: true, unique: true, match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'E-mail inválido.']}, //validador de email
     password: {type: String, required: true}
 })
 usuarioSchema.plugin(uniqueValidator)
@@ -71,7 +71,7 @@ app.post('/signup', async (req, res) => {
         res.status(201).end()        
     }catch(erro){
         //console.log(console.erro)
-        console.log("Erro no Cadastro", erro)
+        console.log("Erro no Cadastro", erro.message)
         res.status(409).end()
     }
 })
@@ -81,10 +81,10 @@ app.post('/signup', async (req, res) => {
 app.post('/login', async (req, res) =>{
     try{
 
-        const login = req.body.login
+        const email = req.body.email
         const password = req.body.password
         
-        const u = await Usuario.findOne({login: req.body.login})
+        const u = await Usuario.findOne({email: req.body.email})
         if(!u){ 
             return res.status(401).json({menssagem: "Login Invalido"})
         }
