@@ -9,7 +9,6 @@ class Navbar {
 
     this.element.innerHTML = `
         <div class="navheader">
-            <img src="../svg/logo-usina.svg" alt="Usina Eco Cultural" class="logo" />
             <div class="navbar">
                 <a href="../pages/home.html" class="${
                   currentPath.endsWith("/pages/home.html") ? "active" : ""
@@ -27,7 +26,6 @@ class Navbar {
                   currentPath.endsWith("/pages/contato.html") ? "active" : ""
                 }">Contato</a>
             </div>
-            <a href="/login" class="login-link">Fazer Login</a>
         </div>
       `;
   }

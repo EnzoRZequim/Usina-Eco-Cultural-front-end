@@ -89,6 +89,17 @@ body {
 
 /* --------------------------- HOME PAGE ------------------------- */
 
+.homeheader {
+  display: flex; /* Utiliza flexbox para alinhar os itens na mesma linha */
+  align-items: center; /* Alinha verticalmente os itens no centro */
+  justify-content: space-between; /* Distribui o espaço entre os itens */
+  padding: 42px 100px; /* Ajuste o espaçamento conforme necessário */
+  top: 0; /* Coloca a navbar no topo da página */
+  left: 0; /* Garante que a navbar fique alinhada à esquerda */
+  right: 0; /* Garante que a navbar fique alinhada à direita */
+  z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+}
+
 .home-fundo {
   background-image: url("../img/home-img.png"); 
   background-size: cover; /* Faz a imagem cobrir todo o fundo */
