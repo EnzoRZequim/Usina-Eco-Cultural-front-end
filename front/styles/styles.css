@@ -6,7 +6,7 @@ body {
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
+} 
 
 /* --------------------------- NAVBAR ------------------------- */
 
@@ -113,7 +113,7 @@ body {
 
 /* --------------------------- SIGN UP PAGE ------------------------- */
 
-.signup-container {
+.cadastro-container {
   background-color: white;
   padding: 10px; /* Reduzido o padding para trazer o conteúdo para cima */
   border-radius: 10px;
@@ -121,17 +121,17 @@ body {
   width: 300px;
 }
 
-.signup-container h2 {
+.cadastro-container h2 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.signup-container label {
+.cadastro-container label {
   display: block;
   margin-bottom: 5px;
 }
 
-.signup-container input {
+.cadastro-container input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -149,7 +149,7 @@ body {
   z-index: 2;
 }
 
-.signup-container button {
+.cadastro-container button {
   width: 100%;
   padding: 10px;
   background-color: orange;
@@ -159,6 +159,6 @@ body {
   cursor: pointer;
 }
 
-.signup-container button:hover {
+.cadastro-container button:hover {
   background-color: #45a049;
 }

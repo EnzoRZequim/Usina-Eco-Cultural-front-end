@@ -7,7 +7,7 @@ app.use(express.json())
 const cors = require('cors')
 app.use(cors())
 
-//provavelmente tem que acertar os nomes das variaves/objetos com o index.js
+//provavelmente tem que acertar os nomes das variaves/objetos com o frontend.js
 
 // cria uma função para fazer a conexão com o MongoDB
 async function conectarAoMongoDB(){
@@ -47,8 +47,8 @@ const Usuario = mongoose.model("Usuario", usuarioSchema)
 
 
 // Rota de cadastro
-//  http://localhost:3000/signup  poderia usar outra coisa no lugar de /signup
-app.post('/signup', async (req, res) => {
+//  http://localhost:3000/cadastro  poderia usar outra coisa no lugar de /cadastro
+app.post('/cadastro', async (req, res) => {
     try{
         console.log("Tentando criar usuario ....")
 
