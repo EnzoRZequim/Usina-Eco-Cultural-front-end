@@ -11,30 +11,32 @@ body {
 /* --------------------------- NAVBAR ------------------------- */
 
 .navheader {
+  max-width: 1200px; /* Defina uma largura máxima para a navbar ARRUMEI!!  */
+  width: 100%; /* Para ocupar toda a largura possível, até o máximo ARRUMEI!!  */
   display: flex; /* Utiliza flexbox para alinhar os itens na mesma linha */
   align-items: center; /* Alinha verticalmente os itens no centro */
   justify-content: space-between; /* Distribui o espaço entre os itens */
-  padding: 42px 100px; /* Ajuste o espaçamento conforme necessário */
+  padding: 20px 50px; /* Ajuste o espaçamento conforme necessário ARRUMEI!!  */
   position: fixed; /* Mantém a navbar fixa no topo */
   top: 0; /* Coloca a navbar no topo da página */
-  left: 0; /* Garante que a navbar fique alinhada à esquerda */
-  right: 0; /* Garante que a navbar fique alinhada à direita */
+  left: 50%; /* Alinha a navbar no meio da página  ARRUMEI!!  */
+  transform: translateX(-50%); /* Centraliza a navbar no meio da página  ARRUMEI!! */
   z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
 }
 
 .navbar {
-  width: 550px;
   background-color: rgba(0, 0, 0, 0.2);
-  max-width: 100%; /* Permite que a navbar use até 100% da largura disponível */
   color: white;
   backdrop-filter: blur(10px);
-  padding: 10px 100px;
+  padding: 10px 120px; /* Ajuste para espaçar os itens verticalmente ARRUMEI!! */
   display: flex; /* Ativa o layout flex */
   justify-content: center; /* Centraliza os itens horizontalmente */
   align-items: center; /* Alinha verticalmente os itens */
-  border-radius: 100px;
-  margin: 0 auto; /* Centraliza a navbar na página */
+  border-radius: 100px; /* Arredonda os cantos da navbar ARRUMEI!!  */
+  margin: 0 auto; /* Centraliza a navbar na página  ARRUMEI!!  */
+  max-width: 100%; /* Permite que a navbar use até 100% da largura disponível ARRUMEI!!  */
 }
+
 
 .navbar a.active {
   font-size: 18px;
