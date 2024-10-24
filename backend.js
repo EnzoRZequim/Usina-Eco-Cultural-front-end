@@ -1,40 +1,101 @@
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
+const express = require ('express')
+const bcrypt = require('bcrypt') 
+const app = express()
+app.use(express.json())
 const cors = require('cors')
+app.use(cors())
 
 //provavelmente tem que acertar os nomes das variaves/objetos com o index.js
 
-//Criar tabelas:
+// cria uma função para fazer a conexão com o MongoDB
+async function conectarAoMongoDB(){
+    try{
+        await mongoose.connect("mongodb+srv://EnzoZequim:123@cluster0.nf2kb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+        console.log("Conectado ao MongoDB")
+    }catch(erro){
+        console.log("Erro ao conectar ao MongoDB", erro)
+    }
+}
+
+app.listen(3000, () => {  //fala que o banco vai estar na porta 3000 e ficar monitorando
+    try{
+        conectarAoMongoDB()
+        console.log("up and running")
+    }catch(e){  //controle de exeção (erro que não dependo do codigo em si "erro de uma entidade externa")
+        console.log("Erro", e)
+    }
+})
+
+
+//Criar "tabelas" (schema ):
 
 //validador Usuario
 const usuarioSchema = mongoose.Schema({
-    nome:{type: String, required: true},
+    login:{type: String, required: true},
     apelido: {type: String, required: true, unique: true},
     email: {type: String, required: true, unique: true},
-    senha: {type: String, required: true}, //tem que criptografar depois
+    password: {type: String, required: true}
 })
 usuarioSchema.plugin(uniqueValidator)
 //Modelo Usuario
 const Usuario = mongoose.model("Usuario", usuarioSchema)
 
-//End Points "Faz as coisa irem para as tabelas"-------------------------------------------
 
+//End Points 
+
+
+// Rota de cadastro
+//  http://localhost:3000/signup  poderia usar outra coisa no lugar de /signup
 app.post('/signup', async (req, res) => {
-    const nome = req.body.nome
-    const apelido = req.body.apelido
-    const email = req.body.email
-    const senha = req.body.senha
-    const usuario = new Usuario({nome: nome, senha: senha})
-    const respMongo = await usuario.save()
-    console.log(respMongo)
-    res.end()
-}) 
-//Mostrar no Console
-app.listen (3000, () => {
-    try {
-        conectarAoMongo() //Tem que Criar
-        console.log("server up and running")
-    } catch (e) {
-        console.log("Erro de conexão", e)
+    try{
+        console.log("Tentando criar usuario ....")
+
+        const login = req.body.login //nome
+        const apelido = req.body.apelido //sobrenome
+        const password = req.body.password
+        const criptografada = await bcrypt.hash(password, 10)
+        const email = req.body.email
+
+        const usuario = new Usuario({
+            login: login,
+            apelido: apelido,
+            password: criptografada,
+            email: email
+        })
+
+        const respMongo = await usuario.save()
+        console.log(respMongo)
+        console.log("Usuário criado com sucesso:", respMongo);
+        res.status(201).end()        
+    }catch(erro){
+        //console.log(console.erro)
+        console.log("Erro no Cadastro", erro)
+        res.status(409).end()
     }
-}) 
+})
+
+// Rota login
+//  http://localhost:3000/login
+app.post('/login', async (req, res) =>{
+    try{
+
+        const login = req.body.login
+        const password = req.body.password
+        
+        const u = await Usuario.findOne({login: req.body.login})
+        if(!u){ 
+            return res.status(401).json({menssagem: "Login Invalido"})
+        }
+        
+        const senhaValida = await bcrypt.compare(password, u.password)
+        if(!senhaValida){
+            return res.status(401).json({menssagem: "Senha Invalida"})
+        }
+        res.status(200).json({ mensagem: "Login bem-sucedido" });
+    }catch (erro) {
+        console.log("Erro no login:", erro);
+        res.status(500).end();
+    }
+});
