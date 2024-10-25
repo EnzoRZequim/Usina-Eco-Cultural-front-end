@@ -8,6 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <script src="../scripts/navbar.js" defer></script> <!-- Importa o componente da navbar -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/cadastro.js"></script>
 </head>
 
 <body
@@ -18,65 +20,37 @@
       <img src="../svg/logo-usina-preta.svg" alt="Usina Eco Cultural" class="logo"
         style="height: 80px; margin: 0; display: block; margin-left: auto; margin-right: auto; margin-bottom: 70px;" />
     </div>
+    <form id="cadastroForm">
+      <!-- Nome Completo -->
+      <label for="nome">Nome Completo</label>
+      <input type="text" id="nome" placeholder="Digite seu nome completo" />
 
-    <!-- Nome Completo -->
-    <label for="nome">Nome Completo</label>
-    <input type="text" id="nome" placeholder="Digite seu nome completo" />
+      <!-- Apelido (Nickname) -->
+      <label for="apelido">Apelido</label>
+      <input type="text" id="apelido" placeholder="Escolha um apelido" />
 
-    <!-- Apelido (Nickname) -->
-    <label for="apelido">Apelido</label>
-    <input type="text" id="apelido" placeholder="Escolha um apelido" />
+      <!-- Email -->
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Digite seu email" onkeydown="checkEmail()"/>
 
-    <!-- Email -->
-    <label for="email">Email</label>
-    <input type="email" id="email" placeholder="Digite seu email" />
+      <!-- Senha -->
+      <label for="senha">Senha</label>
+      <div class="icon-container">
+        <input type="password" id="senha" placeholder="Digite sua senha" />
+        <span class="material-symbols-outlined toggle-password" onclick="togglePassword()">visibility_off</span>
+      </div>
 
-    <!-- Senha -->
-    <label for="senha">Senha</label>
-    <div class="icon-container">
-      <input type="password" id="senha" placeholder="Digite sua senha" />
-      <span class="material-symbols-outlined toggle-password" onclick="togglePassword()">visibility_off</span>
+      <div class="termos-de-uso">
+        <input type="checkbox" id="termos" onclick="checkboxTermos()"></input> 
+        <label for="Termos">Termos de Uso</label>
+      </div>
+
+      <!-- Botão de Cadastro -->
+      <button type="submit" onclick="Cadastrar()">Cadastrar</button>
     </div>
-
-    <div class="termos-de-uso">
-      <input type="checkbox" id="termos" onclick="checkboxTermos()"></input> 
-      <label for="Termos">Termos de Uso</label>
-    </div>
-
-    <!-- Botão de Cadastro -->
-    <button type="submit">Cadastrar</button>
-  </div>
+  </form>
   
   <script src="../components/navbar.js"></script>
-  <script>
-    function togglePassword() {
-      const passwordField = document.getElementById("senha");
-      const toggleIcon = document.querySelector(".toggle-password");
-      const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
-      passwordField.setAttribute("type", type);
-
-      // Troca o ícone baseado no tipo de senha
-      toggleIcon.textContent = type === "password" ? "visibility_off" : "visibility";
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const navbarElement = document.getElementById("navbar");
-      new Navbar(navbarElement); // Instancia a Navbar no carregamento da página
-    });
-
-    //Ajustar comentario no log
-    function checkboxTermos() { 
-      let check = document.getElementById('termos');
-
-      if(check.checked === true) {
-        console.log('USUARIO ACEITOU OS TERMOS DE USO');
-      }
-      else {
-        console.log('USUARIO NÃO ACEITOU OS TERMOS DE USO');
-      }
-    }
-    
-  </script>
 </body>
 
 </html>

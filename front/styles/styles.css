@@ -173,3 +173,17 @@ body {
 .termos-de-uso input {
   width: auto;
 }
+
+.invalid {
+  background-color: ivory;
+  border: none;
+  outline: 2px solid red;
+  border-radius: 5px;
+}
+
+.valid {
+  background-color: white;
+  border: none;
+  outline: 2px solid green;
+  border-radius: 5px;
+}
