@@ -45,9 +45,20 @@
     </div>
 
     <script>
-        // Troca o ícone
-        toggleIcon.textContent =
-            type === "password" ? "visibility_off" : "visibility";
+        function togglePassword() {
+            const passwordField = document.getElementById("senha");
+            const toggleIcon = document.querySelector(".toggle-password");
+            const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+            passwordField.setAttribute("type", type);
+
+            // Troca o ícone baseado no tipo de senha
+            toggleIcon.textContent = type === "password" ? "visibility_off" : "visibility";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const navbarElement = document.getElementById("navbar");
+            new Navbar(navbarElement); // Instancia a Navbar no carregamento da página
+        });
     </script>
 </body>
 
