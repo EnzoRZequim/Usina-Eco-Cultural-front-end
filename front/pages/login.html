@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/styles.css" />
+    <!-- Inclusão do CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 
 <body style="
@@ -44,7 +44,12 @@
         <button type="submit">Fazer Login</button>
     </div>
 
+    <script src="../components/navbar.js"></script>
     <script>
+
+        const navbarElement = document.getElementById("navbar");
+        new Navbar(navbarElement);
+
         function togglePassword() {
             const passwordField = document.getElementById("senha");
             const toggleIcon = document.querySelector(".toggle-password");
@@ -61,5 +66,3 @@
         });
     </script>
 </body>
-
-</html>
