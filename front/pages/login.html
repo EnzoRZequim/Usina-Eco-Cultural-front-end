@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body style="
+      padding-top: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    ">
+    <div class="cadastro-container">
+        <div id="navbar"></div>
+        <div class="sign-img">
+            <img src="../svg/logo-usina-preta.svg" alt="Usina Eco Cultural" class="logo" style="
+            height: 80px;
+            margin: 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 70px;
+          " />
+        </div>
+        <!-- Email -->
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Digite seu email" />
+
+        <!-- Senha -->
+        <label for="senha">Senha</label>
+        <div class="icon-container">
+            <input type="password" id="senha" placeholder="Digite sua senha" />
+            <span class="material-symbols-outlined toggle-password" onclick="togglePassword()">visibility_off</span>
+        </div>
+
+        <!-- Botão de Cadastro -->
+        <button type="submit">Fazer Login</button>
+    </div>
+
+    <script>
+        // Troca o ícone
+        toggleIcon.textContent =
+            type === "password" ? "visibility_off" : "visibility";
+    </script>
+</body>
+
+</html>
