@@ -162,3 +162,14 @@ body {
 .cadastro-container button:hover {
   background-color: #45a049;
 }
+
+.termos-de-uso {
+  display: flex;
+  justify-content: left;
+  align-content: center;
+  margin: auto;
+}
+
+.termos-de-uso input {
+  width: auto;
+}
