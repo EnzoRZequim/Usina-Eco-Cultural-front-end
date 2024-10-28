@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Navbar(navbarElement); // Instancia a Navbar no carregamento da página
   });
 
+  //Alterar Visibilidade Senha
   function togglePassword() {
     const passwordField = document.getElementById("senha");
     const toggleIcon = document.querySelector(".toggle-password");
@@ -81,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(erro.status === 409) {
           let emailForm = document.getElementById('email');
           emailForm.classList.add('invalid');
+          console.log("Email já cadatrado")
 
           alert("Erro ao cadastrar usuário. E-mail já cadastrado.");  
         }

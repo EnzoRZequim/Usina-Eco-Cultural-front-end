@@ -80,11 +80,10 @@ app.post('/cadastro', async (req, res) => {
 //  http://localhost:3000/login
 app.post('/login', async (req, res) =>{
     try{
-
         const email = req.body.email
         const password = req.body.password
         
-        const u = await Usuario.findOne({email: req.body.email})
+        const u = await Usuario.findOne({ email })   //({email: req.body.email})
         if(!u){ 
             return res.status(401).json({menssagem: "Login Invalido"})
         }

@@ -8,6 +8,8 @@
     <!-- Inclusão do CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/login.js"></script>
 </head>
 
 <body style="
@@ -30,24 +32,28 @@
             margin-bottom: 70px;
           " />
         </div>
-        <!-- Email -->
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Digite seu email" />
 
-        <!-- Senha -->
-        <label for="senha">Senha</label>
-        <div class="icon-container">
-            <input type="password" id="senha" placeholder="Digite sua senha" />
-            <span class="material-symbols-outlined toggle-password" onclick="togglePassword()">visibility_off</span>
-        </div>
+        <form id="loginForm">
 
-        <div>            
-            <!-- Botão de login -->
-            <button type="submit">Fazer Login</button>
+            <!-- Email -->
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Digite seu email" required />
             
-            <!-- Link  papgina de cadastro-->
-            <a href="./cadastro.html">Cadastrar</a>
-        </div>
+            <!-- Senha -->
+            <label for="senha">Senha</label>
+            <div class="icon-container">
+                <input type="password" id="senha" placeholder="Digite sua senha" required/>
+                <span class="material-symbols-outlined toggle-password" onclick="togglePassword()">visibility_off</span>
+            </div>
+            
+            <div>            
+                <!-- Botão de login -->
+                <button type="submit">Fazer Login</button>
+                
+                <!-- Link para a página de cadastro-->
+                <a href="./cadastro.html">Cadastrar</a>
+            </div>
+        </form>
     </div>
 
     <script src="../components/navbar.js"></script>
@@ -71,4 +77,5 @@
             new Navbar(navbarElement); // Instancia a Navbar no carregamento da página
         });
     </script>
+</body>
 </body>
