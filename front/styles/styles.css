@@ -107,7 +107,7 @@ body {
   background-size: cover; /* Faz a imagem cobrir todo o fundo */
   background-position: center; /* Centraliza a imagem */
   background-repeat: no-repeat; /* Não repete a imagem */
-  min-height: 1200px; /* Ajuste esse valor conforme necessário */
+  min-height: 900px; /* Ajuste esse valor conforme necessário */
 }
 
 
