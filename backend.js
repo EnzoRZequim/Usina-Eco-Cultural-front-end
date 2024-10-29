@@ -1,11 +1,18 @@
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 const express = require ('express')
+const session = require('express-session');
 const bcrypt = require('bcrypt') 
 const app = express()
 app.use(express.json())
 const cors = require('cors')
 app.use(cors())
+app.use(session({
+        secret: "aasassasasasass",
+        cookie: {maxAge: 30000},
+        saveUninitialized: false,
+    })
+);
 
 //provavelmente tem que acertar os nomes das variaves/objetos com o frontend.js
 
@@ -76,6 +83,18 @@ app.post('/cadastro', async (req, res) => {
     }
 })
 
+app.get('/listarAutorizado', async(req, res) => {
+    if(req.session.authenticated) {
+        console.log('autenticado');
+        //res.send('autenticado');
+    }
+    else {
+        console.log('negado');
+    }
+    
+    //res.send('negado');
+});
+
 // Rota login
 //  http://localhost:3000/login
 app.post('/login', async (req, res) =>{
@@ -92,7 +111,15 @@ app.post('/login', async (req, res) =>{
         if(!senhaValida){
             return res.status(401).json({menssagem: "Senha Invalida"})
         }
-        res.status(200).json({ mensagem: "Login bem-sucedido" });
+
+        req.session.authenticated = true;
+        req.session.mensagem = "Login bem-sucedido";
+        req.session.user = {u};
+        res.json(req.session);
+
+        console.log(req.session);
+
+        //res.status(200).json(req.session);
     }catch (erro) {
         console.log("Erro no login:", erro);
         res.status(500).end();

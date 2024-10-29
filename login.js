@@ -14,6 +14,8 @@ function FazerLogin() {
             });
 
             alert(`Login realizado com sucesso!\nBem-vindo(a) de volta!`);
+
+            
             
             // Redireciona para a página home.html
             window.location.href = 'home.html';
