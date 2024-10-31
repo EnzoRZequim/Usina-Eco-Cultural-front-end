@@ -10,31 +10,27 @@ body {
 
 /* --------------------------- NAVBAR ------------------------- */
 
-.navheader {
-  max-width: 1200px; /* Defina uma largura máxima para a navbar ARRUMEI!!  */
-  width: 100%; /* Para ocupar toda a largura possível, até o máximo ARRUMEI!!  */
-  display: flex; /* Utiliza flexbox para alinhar os itens na mesma linha */
-  align-items: center; /* Alinha verticalmente os itens no centro */
-  justify-content: space-between; /* Distribui o espaço entre os itens */
-  padding: 20px 50px; /* Ajuste o espaçamento conforme necessário ARRUMEI!!  */
-  position: fixed; /* Mantém a navbar fixa no topo */
-  top: 0; /* Coloca a navbar no topo da página */
-  left: 50%; /* Alinha a navbar no meio da página  ARRUMEI!!  */
-  transform: translateX(-50%); /* Centraliza a navbar no meio da página  ARRUMEI!! */
-  z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+.offcanvas-body a {
+  color: #4d4949; /* Change to your preferred color */
 }
 
+.offcanvas-body a:hover {
+  color: #000000; /* Change to a darker shade for hover effect */
+}
+
+a.active {
+  color: black; /* Cor do texto */
+  font-size: x-large;
+}
+
+
 .navbar {
+  margin: auto;
+  width: 700px;
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
   backdrop-filter: blur(10px);
-  padding: 10px 120px; /* Ajuste para espaçar os itens verticalmente ARRUMEI!! */
-  display: flex; /* Ativa o layout flex */
-  justify-content: center; /* Centraliza os itens horizontalmente */
-  align-items: center; /* Alinha verticalmente os itens */
   border-radius: 100px; /* Arredonda os cantos da navbar ARRUMEI!!  */
-  margin: 0 auto; /* Centraliza a navbar na página  ARRUMEI!!  */
-  max-width: 100%; /* Permite que a navbar use até 100% da largura disponível ARRUMEI!!  */
 }
 
 
@@ -84,10 +80,15 @@ body {
 
 /* --------------------------- LOGO ------------------------- */
 .logo {
+  display: flex; /* Define o contêiner como flexível */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center;
   height: 40px; /* Ajuste a altura conforme necessário */
-  margin: 10px; /* Espaço em volta da logo */
-  display: block; /* Exibe a logo como um bloco */
+  margin: 10px auto; /* Espaço em volta da logo e centraliza horizontalmente */
+
+  /* Remover align-items, pois não é aplicável ao elemento logo */
 }
+
 
 /* --------------------------- HOME PAGE ------------------------- */
 
@@ -119,7 +120,8 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 300px;
-}
+} 
+
 
 .cadastro-container h2 {
   text-align: center;
@@ -186,4 +188,4 @@ body {
   border: none;
   outline: 2px solid green;
   border-radius: 5px;
-}
+ } 
