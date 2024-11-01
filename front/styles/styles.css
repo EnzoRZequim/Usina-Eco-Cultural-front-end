@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   padding: 0;
@@ -8,6 +10,38 @@ body {
   font-family: "Poppins", sans-serif;
 } 
 
+/* --------------------------- BOTOES ------------------------- */
+
+
+.btn-vermelho {
+  background-color:#C52B30;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  line-height: 40px;
+}
+
+.btn-verde-ativo {
+  background-color: #43b341;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  line-height: 40px;
+  width: 100%; /* Ajuste para 100% */
+}
+
+.btn-verde {
+  background-color:#43b341;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  line-height: 40px;
+  width: 130%;
+}
+
 /* --------------------------- NAVBAR ------------------------- */
 
 .offcanvas-body a {
@@ -16,11 +50,6 @@ body {
 
 .offcanvas-body a:hover {
   color: #000000; /* Change to a darker shade for hover effect */
-}
-
-a.active {
-  color: black; /* Cor do texto */
-  font-size: x-large;
 }
 
 

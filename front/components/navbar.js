@@ -8,6 +8,12 @@ class Navbar {
     const currentPath = window.location.pathname;
 
     this.element.innerHTML = `
+    <style>
+      a.active {
+        color: black; /* Cor do texto */
+        font-size: x-large;
+      }
+    </style>
     <div>
       <button class="btn btn-lg d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <i class="fi fi-br-menu-burger" style="color: black; font-size: xx-large;"></i>
@@ -22,16 +28,12 @@ class Navbar {
           <button type="button" class="btn text-reset text-black fw-bolder" style="font-size: x-large; background: none; border: none; padding: 0;" data-bs-dismiss="offcanvas" aria-label="Close">
             <i class="fi fi-br-cross"></i>
           </button>
-          
         </div>
-        
+
         <div class="offcanvas-body align-content-between">
           <ul class="list-unstyled p-10 fw-bolder" style="font-size: larger;">
             <li class="mb-3">
               <a class="text-decoration-none ${currentPath.endsWith('/pages/home.html') ? 'active' : ''}" href="../pages/home.html">Início</a>
-            </li>
-            <li class="mb-3">
-              <a class="text-decoration-none ${currentPath.endsWith('/pages/contato.html') ? 'active' : ''}" href="../pages/contato.html">Contato</a>
             </li>
             <li class="mb-3">
               <a class="text-decoration-none ${currentPath.endsWith('/pages/eventos.html') ? 'active' : ''}" href="../pages/eventos.html">Eventos</a>
@@ -42,6 +44,9 @@ class Navbar {
             <li class="mb-3">
               <a class="text-decoration-none ${currentPath.endsWith('/pages/loja.html') ? 'active' : ''}" href="../pages/loja.html">Loja</a>
             </li>
+            <li class="mb-3">
+              <a class="text-decoration-none ${currentPath.endsWith('/pages/contato.html') ? 'active' : ''}" href="../pages/contato.html">Contato</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -49,7 +54,7 @@ class Navbar {
       
       
 
-    <div class="container align-content-center d-none d-lg-block">
+    <div class="container d-none d-lg-block position-fixed top-0 start-50 translate-middle-x" style="margin-top: 20px;">
       <div class="navbar"> <!-- Hides on small screens, shows on large -->
         <a href="../pages/home.html" class="${
           currentPath.endsWith("/pages/home.html") ? "active" : ""
