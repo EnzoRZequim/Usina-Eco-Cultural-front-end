@@ -11,7 +11,11 @@ body {
 } 
 
 /* --------------------------- BOTOES ------------------------- */
-
+@media (max-width: 576px) {
+  .btn-vermelho {
+    line-height: 10px;
+  }
+}
 
 .btn-vermelho {
   background-color:#C52B30;

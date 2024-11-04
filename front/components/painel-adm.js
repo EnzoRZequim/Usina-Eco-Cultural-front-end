@@ -21,6 +21,8 @@ function painelAdm(section) {
     activeLink.classList.add('active', 'btn-verde-ativo');
 }
 
+// TELA DE INICIO ADM
+
 function admInicio() {
     return `<h1>Início</h1><p>Conteúdo da página inicial.</p>`;
 }
