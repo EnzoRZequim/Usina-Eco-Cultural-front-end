@@ -11,10 +11,21 @@ body {
 } 
 
 /* --------------------------- BOTOES! ------------------------- */
+
+
 @media (max-width: 576px) {
   .btn-vermelho {
     line-height: 10px;
   }
+}
+
+.btn-preto {
+  background-color:black;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 17px;
 }
 
 .btn-vermelho {
@@ -23,7 +34,7 @@ body {
   color: white;
   border: none;
   border-radius: 10px;
-  line-height: 40px;
+  line-height: 45px;
 }
 
 .btn-verde-ativo {
@@ -32,7 +43,7 @@ body {
   color: white;
   border: none;
   border-radius: 10px;
-  line-height: 40px;
+  line-height: 45px;
   width: 100%; /* Ajuste para 100% */
 }
 
@@ -42,7 +53,7 @@ body {
   color: white;
   border: none;
   border-radius: 10px;
-  line-height: 40px;
+  line-height: 45px;
   width: 130%;
 }
 

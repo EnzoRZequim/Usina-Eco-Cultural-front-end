@@ -24,45 +24,7 @@ function painelAdm(section) {
 // --------------- TELA DE INICIO ADM ------------------
 
 function admInicio() {
-    return `
-    <!-- Seção onde os colaboradores são exibidos -->
-<div id="colaboradoresContainer" class="d-flex overflow-auto p-2 gap-3">
-    <!-- Os colaboradores serão adicionados dinamicamente aqui -->
-</div>
-
-<!-- Botão para abrir o modal de novo colaborador -->
-<button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#addColaboradorModal">
-    Adicionar Colaborador
-</button>
-
-<!-- Modal para adicionar colaborador -->
-<div class="modal fade" id="addColaboradorModal" tabindex="-1" aria-labelledby="addColaboradorModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addColaboradorModalLabel">Adicionar Colaborador</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="colaboradorForm">
-                    <div class="mb-3">
-                        <label for="colaboradorNome" class="form-label">Nome do Colaborador</label>
-                        <input type="text" class="form-control" id="colaboradorNome" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="colaboradorFoto" class="form-label">Foto do Colaborador</label>
-                        <input type="file" class="form-control" id="colaboradorFoto" accept="image/*" required>
-                    </div>
-                    <button type="button" class="btn btn-primary" onclick="addColaborador()">Adicionar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="../../add-colaborador.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-`;
+    return `<h1>Inicio</h1><p>Conteúdo da página de inicio.</p>`;
 }
 
 function admEventos() {
@@ -70,7 +32,30 @@ function admEventos() {
 }
 
 function admNoticias() {
-    return `<h1>Notícias</h1><p>Conteúdo da página de notícias.</p>`;
+    return `
+    
+            <div class="p-4">
+                
+                <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4" href="#">Criador de notícias</p></div>
+
+                <div>
+                    <label for="titulo-noticia" class="fw-bold fs-4 d-block mb-2">Título</label>
+                    <input type="text" id="titulo-noticia" class="border rounded-4 form-control " style="line-height: 45px;" placeholder="Digite o título">
+                </div>
+                
+                <div class="pt-3">
+                    <p class="fw-bold fs-4 mt-3">Carregue uma imagem</p>
+                    <button class="btn-preto"><i class="fi fi-br-upload m-2"></i> Carregar</button>
+                    
+                    <p class="pt-4 fw-bold fs-4">Mensagem</p>
+                    <textarea rows="7" id="info-noticia" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre a notícia" maxlength="1150" oninput="updateCounter()"></textarea>
+                    <p id="charCount" class="text-end">0/1150</p>
+                    
+                    <button class="btn-verde w-auto pe-5 ps-5">PUBLICAR</button>
+                </div>
+                
+            </div>
+    `;
 }
 
 function admLoja() {
@@ -83,4 +68,13 @@ function admContato() {
 
 function admEstatisticas() {
     return `<h1>Estatísticas</h1><p>Conteúdo da página de estatísticas.</p>`;
+}
+
+
+// contador de caracteres na info noticias
+
+function updateCounter() {
+    const textarea = document.getElementById('info-noticia');
+    const charCount = document.getElementById('charCount');
+    charCount.textContent = `${textarea.value.length}/1150`;
 }

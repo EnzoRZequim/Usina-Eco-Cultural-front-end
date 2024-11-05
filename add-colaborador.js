@@ -25,7 +25,7 @@ function renderColaboradores() {
         // Botão para remover o colaborador
         const removeButton = document.createElement('button');
         removeButton.className = 'remove-btn';
-        removeButton.innerHTML = '×';
+        removeButton.innerHTML = 'X';
         removeButton.onclick = () => removeColaborador(index);
         div.appendChild(removeButton);
 
