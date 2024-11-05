@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador de Acessos</title>
-    <link rel="stylesheet" href="styles/styles.css"> 
+    <title>Total de Acessos</title>
 </head>
 <body>
-    <h1>Contador de Acessos</h1>
-    <div id="counter"></div>
+    <h1>Total de Acessos</h1>
+    <div id="contador"></div>
 
     <script>
-        async function fetchAccessCount() {
+        async function obterContadorAcessos() {
             try {
                 const response = await fetch('http://localhost:3000/acessos');
                 const data = await response.json();
-                document.getElementById('counter').innerText = `Total de acessos: ${data.totalAccesses}`;
+                document.getElementById('contador').innerText = `Total de acessos: ${data.totalAccesses}`;
             } catch (error) {
-                console.error("Erro ao buscar o contador de acessos:", error);
+                console.error('Erro ao obter contador de acessos:', error);
+                document.getElementById('contador').innerText = 'Erro ao obter contador de acessos';
             }
         }
 
-        // Chama a função para buscar o contador de acessos
-        fetchAccessCount();
+        // Chama a função para obter os acessos quando a página é carregada
+        window.onload = obterContadorAcessos;
     </script>
 </body>
 </html>
