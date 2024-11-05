@@ -98,3 +98,43 @@ app.post('/login', async (req, res) =>{
         res.status(500).end();
     }
 });
+
+// Esquema para o contador de acessos
+const accessCounterSchema = mongoose.Schema({
+    count: { type: Number, default: 0 }
+});
+const AccessCounter = mongoose.model("AccessCounter", accessCounterSchema); // Corrigido aqui
+
+// Função para incrementar o contador de acessos
+async function incrementAccessCounter() {
+    try {
+        let counter = await AccessCounter.findOne();
+        if (!counter) {
+            // Se o contador não existe, cria um com count = 0
+            counter = new AccessCounter({ count: 0 });
+        }
+        counter.count += 1;
+        await counter.save();
+        console.log("Acesso registrado. Total de acessos:", counter.count);
+    } catch (erro) {
+        console.log("Erro ao incrementar contador de acessos:", erro);
+    }
+}
+
+// Middleware para incrementar o contador em todas as requisições
+app.use(async (req, res, next) => {
+    await incrementAccessCounter();
+    next();
+});
+
+// Rota para visualizar o número de acessos
+app.get('/acessos', async (req, res) => {
+    try {
+        const counter = await AccessCounter.findOne();
+        const accessCount = counter ? counter.count : 0;
+        res.status(200).json({ totalAccesses: accessCount });
+    } catch (erro) {
+        console.log("Erro ao obter contador de acessos:", erro);
+        res.status(500).json({ error: "Erro ao obter contador de acessos" });
+    }
+});
