@@ -1,29 +1,178 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total de Acessos</title>
+    <title>Contador de Acessos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>Total de Acessos</h1>
-    <div id="contador"></div>
+    <div class="container">
+        <h1 class="mt-5">Contador de Acessos</h1>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>Total de Acessos</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Total de Acessos:</strong> <span id="total-acessos">Carregando...</span></p>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>Gráficos de Acessos</h4>
+            </div>
+            <div class="card-body">
+                <h5>Dados Semanais (Acessos por Dia da Semana)</h5>
+                <canvas id="grafico-semana"></canvas>
+
+                <h5 class="mt-4">Dados Mensais (Acessos por Dia do Mês)</h5>
+                <canvas id="grafico-mensal"></canvas>
+
+                <h5 class="mt-4">Dados Anuais (Acessos por Mês)</h5>
+                <canvas id="grafico-anual"></canvas>
+            </div>
+        </div>
+    </div>
 
     <script>
-        async function obterContadorAcessos() {
-            try {
-                const response = await fetch('http://localhost:3000/acessos');
-                const data = await response.json();
-                document.getElementById('contador').innerText = `Total de acessos: ${data.totalAccesses}`;
-            } catch (error) {
-                console.error('Erro ao obter contador de acessos:', error);
-                document.getElementById('contador').innerText = 'Erro ao obter contador de acessos';
-            }
+        // Função para carregar e exibir dados
+        function carregarDados() {
+            // Total de Acessos
+            axios.get('http://localhost:3000/acessos')
+                .then(function (response) {
+                    document.getElementById('total-acessos').innerText = response.data.totalAccesses;
+                })
+                .catch(function (error) {
+                    console.error('Erro ao carregar total de acessos', error);
+                });
+
+            // Acessos Semanais (por dia da semana)
+            axios.get('http://localhost:3000/acessos/semanais')
+                .then(function (response) {
+                    let dadosSemanais = response.data;
+                    let diasDaSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+                    let acessosPorDia = Array(7).fill(0);
+
+                    // Preencher dados com acessos por dia da semana
+                    dadosSemanais.forEach(dado => {
+                        let diaDaSemana = new Date(dado._id).getDay();
+                        acessosPorDia[diaDaSemana] += dado.total; // Incrementa o número de acessos naquele dia
+                    });
+
+                    // Gerar gráfico de acessos semanais
+                    new Chart(document.getElementById('grafico-semana'), {
+                        type: 'bar',
+                        data: {
+                            labels: diasDaSemana,
+                            datasets: [{
+                                label: 'Acessos por Dia da Semana',
+                                data: acessosPorDia,
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    stepSize: 10
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(function (error) {
+                    console.error('Erro ao carregar dados semanais', error);
+                });
+
+            // Acessos Mensais (por dia do mês)
+            axios.get('http://localhost:3000/acessos/mensais/dia')
+                .then(function (response) {
+                    let dadosMensaisDia = response.data;
+                    let diasDoMes = Array.from({ length: 31 }, (_, i) => i + 1); // 31 dias do mês
+                    let acessosPorDiaDoMes = Array(31).fill(0);
+
+                    // Preencher dados com acessos por dia do mês
+                    dadosMensaisDia.forEach(dado => {
+                        let diaDoMes = new Date(dado._id).getDate();
+                        acessosPorDiaDoMes[diaDoMes - 1] += dado.total; // Incrementa o número de acessos naquele dia do mês
+                    });
+
+                    // Gerar gráfico de acessos mensais (por dia do mês)
+                    new Chart(document.getElementById('grafico-mensal'), {
+                        type: 'bar', // Modificado para usar gráfico de barras como os outros
+                        data: {
+                            labels: diasDoMes,
+                            datasets: [{
+                                label: 'Acessos por Dia do Mês',
+                                data: acessosPorDiaDoMes,
+                                backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                                borderColor: 'rgba(153, 102, 255, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    stepSize: 10
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(function (error) {
+                    console.error('Erro ao carregar dados mensais (por dia do mês)', error);
+                });
+
+            // Acessos Anuais (por mês)
+            axios.get('http://localhost:3000/acessos/mensais')
+                .then(function (response) {
+                    let dadosMensais = response.data;
+                    let meses = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                    let acessosPorMes = Array(12).fill(0);
+
+                    // Preencher dados com acessos por mês
+                    dadosMensais.forEach(dado => {
+                        let mes = new Date(dado._id).getMonth();
+                        acessosPorMes[mes] += dado.total; // Incrementa o número de acessos naquele mês
+                    });
+
+                    // Gerar gráfico de acessos anuais
+                    new Chart(document.getElementById('grafico-anual'), {
+                        type: 'bar',
+                        data: {
+                            labels: meses,
+                            datasets: [{
+                                label: 'Acessos por Mês',
+                                data: acessosPorMes,
+                                backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                                borderColor: 'rgba(153, 102, 255, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    stepSize: 10
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(function (error) {
+                    console.error('Erro ao carregar dados anuais', error);
+                });
         }
 
-        // Chama a função para obter os acessos quando a página é carregada
-        window.onload = obterContadorAcessos;
+        // Carregar os dados quando a página for carregada
+        window.onload = carregarDados;
     </script>
 </body>
 </html>
-    
