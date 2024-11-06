@@ -29,7 +29,7 @@ function admInicio() {
 
 function admEventos() {
     return `            <div class="p-4">
-                <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4">Criador de notícias</p></div>
+                <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4">Criador de eventos</p></div>
             
                 <div>
                     <label for="titulo-evento" class="fw-bold fs-4 d-block mb-2">Título</label>
