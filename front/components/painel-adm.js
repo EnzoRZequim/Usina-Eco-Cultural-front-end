@@ -28,37 +28,49 @@ function admInicio() {
 }
 
 function admEventos() {
-    return `            <div class="p-4">
-                <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4">Criador de eventos</p></div>
+    return `          
+    
+<div class="p-4">
+    <div class="pt-4">
+        <p class="text-black text-decoration-underline fw-bold fs-4 pb-4">Criador de eventos</p>
+    </div>
+
+    <div>
+        <label for="titulo-evento" class="fw-bold fs-4 d-block mb-2">Título</label>
+        <input type="text" id="titulo-evento" class="border rounded-4 form-control" style="line-height: 45px;" placeholder="Digite o título">
+    </div>
+
+    <!-- Campo para a Data do Evento -->
+    <div class="pt-3">
+        <label for="data-evento" class="fw-bold fs-4 d-block mb-2">Data do Evento</label>
+        <input type="date" id="data-evento" class="border rounded-4 form-control">
+    </div>
+
+    <!-- Campo para o Horário do Evento -->
+    <div class="pt-3">
+        <label for="hora-evento" class="fw-bold fs-4 d-block mb-2">Horário do Evento</label>
+        <input type="time" id="hora-evento" class="border rounded-4 form-control">
+    </div>
+
+    <!-- Campo para o Local do Evento -->
+    <div class="pt-3">
+        <label for="local-evento" class="fw-bold fs-4 d-block mb-2">Local do Evento</label>
+        <input type="text" id="local-evento" class="border rounded-4 form-control" placeholder="Digite o local do evento">
+    </div>
+
+    <div class="pt-3">
+        <p class="fw-bold fs-4 mt-3">Carregue uma imagem</p>
+        <button class="btn-preto"><i class="fi fi-br-upload m-2"></i> Carregar</button>
+
+        <p class="pt-4 fw-bold fs-4">Mensagem</p>
+        <textarea rows="7" id="info-evento" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre o evento" maxlength="1150" oninput="updateCounter()"></textarea>
+        <p id="charCount" class="text-end">0/1150</p>
+
+        <button class="btn-verde mt-3 w-auto pe-5 ps-5">PUBLICAR</button>
+    </div>
+</div>
             
-                <div>
-                    <label for="titulo-evento" class="fw-bold fs-4 d-block mb-2">Título</label>
-                    <input type="text" id="titulo-evento" class="border rounded-4 form-control" style="line-height: 45px;" placeholder="Digite o título">
-                </div>
-            
-                <!-- Campo para a Data do Evento -->
-                <div class="pt-3">
-                    <label for="data-evento" class="fw-bold fs-4 d-block mb-2">Data do Evento</label>
-                    <input type="date" id="data-evento" class="border rounded-4 form-control">
-                </div>
-            
-                <!-- Campo para o Horário do Evento -->
-                <div class="pt-3">
-                    <label for="hora-evento" class="fw-bold fs-4 d-block mb-2">Horário do Evento</label>
-                    <input type="time" id="hora-evento" class="border rounded-4 form-control">
-                </div>
-            
-                <div class="pt-3">
-                    <p class="fw-bold fs-4 mt-3">Carregue uma imagem</p>
-                    <button class="btn-preto"><i class="fi fi-br-upload m-2"></i> Carregar</button>
-            
-                    <p class="pt-4 fw-bold fs-4">Mensagem</p>
-                    <textarea rows="7" id="info-evento" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre o evento" maxlength="1150" oninput="updateCounter()"></textarea>
-                    <p id="charCount" class="text-end">0/1150</p>
-            
-                    <button class="btn-verde mt-3 w-auto pe-5 ps-5">PUBLICAR</button>
-                </div>
-            </div>`;
+            `;
 }
 
 function admNoticias() {
