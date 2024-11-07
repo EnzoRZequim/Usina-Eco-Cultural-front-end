@@ -15,19 +15,18 @@
 <body
   style="padding-top: 100px; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
   <div class="cadastro-container">
-    <div id="navbar"></div>
     <div class="sign-img">
       <img src="../svg/logo-usina-preta.svg" alt="Usina Eco Cultural" class="logo"
         style="height: 80px; margin: 0; display: block; margin-left: auto; margin-right: auto; margin-bottom: 70px;" />
     </div>
     <form id="cadastroForm">
       <!-- Nome Completo -->
-      <label for="nome">Nome Completo</label>
-      <input type="text" id="nome" placeholder="Digite seu nome completo" />
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" placeholder="Digite seu nome" />
 
       <!-- Apelido (Nickname) -->
-      <label for="apelido">Apelido</label>
-      <input type="text" id="apelido" placeholder="Escolha um apelido" />
+      <label for="apelido">Sobrenome</label>
+      <input type="text" id="apelido" placeholder="Digite seu sobrenome" />
 
       <!-- Email -->
       <label for="email">Email</label>
@@ -42,7 +41,7 @@
 
       <div class="termos-de-uso">
         <input type="checkbox" id="termos" onclick="checkboxTermos()"></input> 
-        <label for="Termos">Termos de Uso</label>
+        <label for="Termos">Aceito os <a href="#">termos de Uso</a></label>
       </div>
 
       <!-- Botão de Cadastro -->
