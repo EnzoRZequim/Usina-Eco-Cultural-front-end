@@ -271,4 +271,23 @@ body {
   border: none;
   outline: 2px solid green;
   border-radius: 5px;
- } 
+ }
+
+ .caixa-evento {
+  border: 1px solid #4d494960;
+  border-radius: 20px;
+  width: 700px;
+  height: 180px;
+ }
+
+ .caixa-evento-titulo h3 {
+   margin-left: 17px;
+   margin-right: 17px;
+   margin-top: 17px;
+   font-size: 20px;
+   font-weight: bolder;
+  }
+
+  .body-caixas {
+    margin: 45px
+  }

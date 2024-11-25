@@ -28,49 +28,49 @@ function admInicio() {
 }
 
 function admEventos() {
-    return `          
-    
-<div class="p-4">
-    <div class="pt-4">
-        <p class="text-black text-decoration-underline fw-bold fs-4 pb-4">Criador de eventos</p>
-    </div>
+    return `
+        <form id="eventoForm">         
+            <div class="p-4">
+                <div class="pt-4">
+                    <p class="text-black text-decoration-underline fw-bold fs-4 pb-4">Criador de eventos</p>
+                </div>
 
-    <div>
-        <label for="titulo-evento" class="fw-bold fs-4 d-block mb-2">Título</label>
-        <input type="text" id="titulo-evento" class="border rounded-4 form-control" style="line-height: 45px;" placeholder="Digite o título">
-    </div>
+                <div>
+                    <label for="titulo-evento" class="fw-bold fs-4 d-block mb-2">Título</label>
+                    <input type="text" id="titulo-evento" class="border rounded-4 form-control" style="line-height: 45px;" placeholder="Digite o título">
+                </div>
 
-    <!-- Campo para a Data do Evento -->
-    <div class="pt-3">
-        <label for="data-evento" class="fw-bold fs-4 d-block mb-2">Data do Evento</label>
-        <input type="date" id="data-evento" class="border rounded-4 form-control">
-    </div>
+                <!-- Campo para a Data do Evento -->
+                <div class="pt-3">
+                    <label for="data-evento" class="fw-bold fs-4 d-block mb-2">Data do Evento</label>
+                    <input type="date" id="data-evento" class="border rounded-4 form-control">
+                </div>
 
-    <!-- Campo para o Horário do Evento -->
-    <div class="pt-3">
-        <label for="hora-evento" class="fw-bold fs-4 d-block mb-2">Horário do Evento</label>
-        <input type="time" id="hora-evento" class="border rounded-4 form-control">
-    </div>
+                <!-- Campo para o Horário do Evento -->
+                <div class="pt-3">
+                    <label for="hora-evento" class="fw-bold fs-4 d-block mb-2">Horário do Evento</label>
+                    <input type="time" id="hora-evento" class="border rounded-4 form-control">
+                </div>
 
-    <!-- Campo para o Local do Evento -->
-    <div class="pt-3">
-        <label for="local-evento" class="fw-bold fs-4 d-block mb-2">Local do Evento</label>
-        <input type="text" id="local-evento" class="border rounded-4 form-control" placeholder="Digite o local do evento">
-    </div>
+                <!-- Campo para o Local do Evento -->
+                <div class="pt-3">
+                    <label for="local-evento" class="fw-bold fs-4 d-block mb-2">Local do Evento</label>
+                    <input type="text" id="local-evento" class="border rounded-4 form-control" placeholder="Digite o local do evento">
+                </div>
 
-    <div class="pt-3">
-        <p class="fw-bold fs-4 mt-3">Carregue uma imagem</p>
-        <button class="btn-preto"><i class="fi fi-br-upload m-2"></i> Carregar</button>
+                <div class="pt-3">
+                    <p class="fw-bold fs-4 mt-3">Carregue uma imagem</p>
+                    <button class="btn-preto"><i class="fi fi-br-upload m-2"></i> Carregar</button>
 
-        <p class="pt-4 fw-bold fs-4">Mensagem</p>
-        <textarea rows="7" id="info-evento" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre o evento" maxlength="1150" oninput="updateCounter()"></textarea>
-        <p id="charCount" class="text-end">0/1150</p>
+                    <p class="pt-4 fw-bold fs-4">Mensagem</p>
+                    <textarea rows="7" id="info-evento" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre o evento" maxlength="1150" oninput="updateCounter()"></textarea>
+                    <p id="charCount" class="text-end">0/1150</p>
 
-        <button class="btn-verde mt-3 w-auto pe-5 ps-5">PUBLICAR</button>
-    </div>
-</div>
-            
-            `;
+                    <button class="btn-verde mt-3 w-auto pe-5 ps-5" type="submit" onclick="CadastrarEvento()">PUBLICAR</button>
+                </div>
+            </div>
+        </form>
+    `;
 }
 
 function admNoticias() {
@@ -120,3 +120,39 @@ function updateCounter() {
     const charCount = document.getElementById('charCount');
     charCount.textContent = `${textarea.value.length}/1150`;
 }
+
+function CadastrarEvento() {
+    document
+      .getElementById("eventoForm")
+      .addEventListener("submit", async function (event) {
+        event.preventDefault();
+  
+        const titulo_evento = document.getElementById("titulo-evento").value;
+        const data_evento = document.getElementById("data-evento").value;
+        const hora_evento = document.getElementById("hora-evento").value;
+        const local_evento = document.getElementById("local-evento").value;
+        const info_evento = document.getElementById("info-evento").value;
+  
+        try {
+            const resposta = await axios.post("http://localhost:3000/evento/cadastro", {
+            titulo: titulo_evento,
+            data: data_evento,
+            hora: hora_evento,
+            local: local_evento,
+            info: info_evento
+          });
+  
+          alert(
+            `Evento ${titulo_evento} cadastrado com sucesso!`
+          );
+  
+          window.location.href = "eventos.html";
+        } catch (erro) {
+          if (erro.status === 409) {
+            alert("Erro ao cadastrar evento", erro.message);
+          }
+          console.error("Erro ao cadastrar:", erro.message);
+          //alert("Erro ao cadastrar usuário. Tente novamente.");
+        }
+      });
+  }
