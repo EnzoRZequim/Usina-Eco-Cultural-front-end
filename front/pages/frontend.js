@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, "front")));
 
 // Rota para a página inicial
-app.get("/", (req, res) => {
-  res.redirect("/home"); // Redireciona para a página inicial
-});
+// app.get("/", (req, res) => {
+//   res.redirect("/home"); // Redireciona para a página inicial
+// });
 
 // Rota para a página inicial
 app.get("/home", (req, res) => {
