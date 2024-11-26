@@ -105,7 +105,7 @@ function admLoja() {
     
             <div class="p-4">
                 
-                <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4" href="#">Criador de notícias</p></div>
+                <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4" href="#">Criador de Produtos</p></div>
 
                 <div>
                     <label for="titulo-noticia" class="fw-bold fs-4 d-block mb-2">Nome do produto</label>
