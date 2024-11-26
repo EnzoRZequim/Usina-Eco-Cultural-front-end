@@ -1,10 +1,10 @@
 {
   "name": "usina-eco-cultural-front-end",
   "version": "1.0.0",
-  "main": "frontend.js",
+  "main": "/front/pages/frontend.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon backend.js"
+    "start": "nodemon /backend/backend.js"
   },
   "keywords": [],
   "author": "",
