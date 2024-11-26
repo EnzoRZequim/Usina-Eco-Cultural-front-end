@@ -166,8 +166,8 @@ body {
   display: flex; /* Define o contêiner como flexível */
   justify-content: center; /* Centraliza o conteúdo horizontalmente */
   align-items: center;
-  height: 40px; /* Ajuste a altura conforme necessário */
-  margin: 10px auto; /* Espaço em volta da logo e centraliza horizontalmente */
+  height: 100px; /* Ajuste a altura conforme necessário */
+  margin: 100px auto; /* Espaço em volta da logo e centraliza horizontalmente */
 
   /* Remover align-items, pois não é aplicável ao elemento logo */
 }
