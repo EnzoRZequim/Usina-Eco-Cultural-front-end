@@ -1,18 +1,20 @@
+// Dependencias
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 const express = require ('express')
 const bcrypt = require('bcrypt')
+const cors = require('cors')
+
+// Configuração do App
 const app = express()
 app.use(express.json())
-const cors = require('cors')
 app.use(cors())
 
-//provavelmente tem que acertar os nomes das variaves/objetos com o frontend.js
-
+// Funções MongoDB
 // cria uma função para fazer a conexão com o MongoDB
 async function conectarAoMongoDB(){
     try{
-        await mongoose.connect("mongodb+srv://EnzoZequim:123@cluster0.nf2kb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+        await mongoose.connect("mongodb+srv://EnzoZequim:123@cluster0.nf2kb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  // Se for implementar era bom esconder a chave de conexão
         console.log("Conectado ao MongoDB")
     }catch(erro){
         console.log("Erro ao conectar ao MongoDB", erro)
@@ -29,6 +31,7 @@ app.listen(3000, () => {  //fala que o banco vai estar na porta 3000 e ficar mon
 })
 
 
+// -------------------- Evento --------------------\\
 // Schema Evento
 const eventoSchema = mongoose.Schema({
     titulo: {type: String, require: true},
@@ -40,51 +43,6 @@ const eventoSchema = mongoose.Schema({
 
 // model Evento
 const Evento = mongoose.model("Evento", eventoSchema)
-
-//validador Usuario
-const usuarioSchema = mongoose.Schema({
-    login:{type: String, required: true},
-    apelido: {type: String, required: true},
-    email: {type: String, required: true, unique: true, match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'E-mail inválido.']}, //validador de email
-    password: {type: String, required: true}
-})
-usuarioSchema.plugin(uniqueValidator)
-//Modelo Usuario
-const Usuario = mongoose.model("Usuario", usuarioSchema)
-
-
-//End Points 
-
-
-// Rota de cadastro
-//  http://localhost:3000/cadastro  poderia usar outra coisa no lugar de /cadastro
-app.post('/cadastro', async (req, res) => {
-    try{
-        console.log("Tentando criar usuario ....")
-
-        const login = req.body.login //nome
-        const apelido = req.body.apelido //sobrenome
-        const password = req.body.password
-        const criptografada = await bcrypt.hash(password, 10)
-        const email = req.body.email
-
-        const usuario = new Usuario({
-            login: login,
-            apelido: apelido,
-            password: criptografada,
-            email: email
-        })
-
-        const respMongo = await usuario.save()
-        console.log(respMongo)
-        console.log("Usuário criado com sucesso:", respMongo);
-        res.status(201).end()        
-    }catch(erro){
-        //console.log(console.erro)
-        console.log("Erro no Cadastro", erro.message)
-        res.status(409).end()
-    }
-})
 
 // Cadastro de evento (teste)
 // http://localhost:3000/evento/cadastro
@@ -128,6 +86,50 @@ app.get('/eventos', async (req, res) => {
     }
 });
 
+// -------------------- Usuario --------------------\\
+//validador Usuario
+const usuarioSchema = mongoose.Schema({
+    login:{type: String, required: true},
+    apelido: {type: String, required: true},
+    email: {type: String, required: true, unique: true, match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'E-mail inválido.']}, //validador de email
+    password: {type: String, required: true}
+})
+usuarioSchema.plugin(uniqueValidator)
+//Modelo Usuario
+const Usuario = mongoose.model("Usuario", usuarioSchema)
+
+// -------------------- Cadastro -------------------- \\
+// Rota de cadastro
+//  http://localhost:3000/cadastro  poderia usar outra coisa no lugar de /cadastro
+app.post('/cadastro', async (req, res) => {
+    try{
+        console.log("Tentando criar usuario ....")
+
+        const login = req.body.login //nome
+        const apelido = req.body.apelido //sobrenome
+        const password = req.body.password
+        const criptografada = await bcrypt.hash(password, 10)
+        const email = req.body.email
+
+        const usuario = new Usuario({
+            login: login,
+            apelido: apelido,
+            password: criptografada,
+            email: email
+        })
+
+        const respMongo = await usuario.save()
+        console.log(respMongo)
+        console.log("Usuário criado com sucesso:", respMongo);
+        res.status(201).end()        
+    }catch(erro){
+        //console.log(console.erro)
+        console.log("Erro no Cadastro", erro.message)
+        res.status(409).end()
+    }
+})
+
+// -------------------- Login -------------------- \\
 // Rota login
 //  http://localhost:3000/login
 app.post('/login', async (req, res) =>{
@@ -151,6 +153,7 @@ app.post('/login', async (req, res) =>{
     }
 });
 
+// -------------------- Contador Acessos -------------------- \\
 // Esquema para o contador de acessos
 const contadorAcessosSchema = mongoose.Schema({
     count: { type: Number, default: 0 },
@@ -174,7 +177,6 @@ async function incrementContadorAcessos() {
         console.log("Erro ao incrementar contador de acessos:", erro);
     }
 }
-
 // Middleware para incrementar o contador em todas as requisições
 app.use(async (req, res, next) => {
     await incrementContadorAcessos();
