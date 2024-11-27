@@ -274,10 +274,8 @@ body {
  }
 
  .caixa-evento {
-  border: 1px solid #4d494960;
-  border-radius: 20px;
-  width: 700px;
-  height: 180px;
+    border: 1px solid #4d494960;
+    border-radius: 20px;
  }
 
  .caixa-evento-titulo h3 {
@@ -289,5 +287,7 @@ body {
   }
 
   .body-caixas {
-    margin: 45px
+    margin: 45px;
+    /* width: 700px;
+    height: 180px; */
   }

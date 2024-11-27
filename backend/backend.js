@@ -31,10 +31,10 @@ app.listen(3000, () => {  //fala que o banco vai estar na porta 3000 e ficar mon
 
 // Schema Evento
 const eventoSchema = mongoose.Schema({
-    titulo: {type: String},
-    data: {type: Date},
+    titulo: {type: String, require: true},
+    data: {type: Date, require: true},
     hora: {type: String},
-    local: {type: String},
+    local: {type: String, require: true},
     info: {type: String}
 })
 
@@ -88,26 +88,25 @@ app.post('/cadastro', async (req, res) => {
 
 // Cadastro de evento (teste)
 // http://localhost:3000/evento/cadastro
-app.post('/evento/cadastro', async (req, res) => {
+app.post('/evento_cadastro', async (req, res) => {
     try{
         console.log("Tentando criar evento ....")
 
-        const titulo = req.body.titulo_evento //nome
-        const data = req.body.data_evento //sobrenome
-        const hora = req.body.hora_evento
-        const local = req.body.local_evento
-        const info = req.body.info_evento
+        const titulo = req.body.titulo
+        const data = req.body.data
+        const hora = req.body.hora
+        const local = req.body.local
+        const info = req.body.info
 
         const evento = new Evento({
-            titulo_evento: titulo,
-            data_evento: data,
-            hora_evento: hora,
-            local_evento: local,
-            info_evento: info
+            titulo: titulo,
+            data: data,
+            hora: hora,
+            local: local,
+            info: info
         })
 
         const respMongo = await evento.save()
-        console.log(respMongo)
         console.log("Evento criado com sucesso:", respMongo);
         res.status(201).end()        
     }catch(erro){
@@ -117,11 +116,12 @@ app.post('/evento/cadastro', async (req, res) => {
     }
 })  
 
-// Requisição de Eventos (teste)
+// Requisição de Eventos (teste)    
 app.get('/eventos', async (req, res) => {
     try {
-        const eventos = await Evento.FindAll()
-        console.log(req.body)
+        const eventos = await Evento.find()
+        
+        res.status(200).json(eventos)
     } catch (erro) {
         console.log("Erro ao obter eventos:", erro);
         res.status(500).json({ error: "Erro ao obter eventos" });
