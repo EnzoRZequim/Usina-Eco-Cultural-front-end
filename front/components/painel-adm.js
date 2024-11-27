@@ -97,7 +97,7 @@ function admNoticias() {
                     <textarea rows="7" id="info-noticia" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre a notícia" maxlength="1150" oninput="updateCounter()"></textarea>
                     <p id="charCount" class="text-end">0/1150</p>
                     
-                    <button class="btn-verde w-auto pe-5 ps-5">PUBLICAR</button>
+                    <button class="btn-verde w-auto pe-5 ps-5" type="submit" onclick="CadastrarNoticia()">PUBLICAR</button>
                 </div>
                 
             </div>
@@ -186,4 +186,33 @@ function CadastrarEvento() {
         //alert("Erro ao cadastrar usuário. Tente novamente.");
       }
     });
+}
+
+function CadastrarNoticia() {
+  document
+  .getElementById("eventoForm")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const titulo_noticia = document.getElementById("titulo_noticia").value;
+    const info_noticia = document.getElementById("info_noticia").value;
+
+    try {
+      const resposta = await axios.post(
+        "http://localhost:3000/noticia_cadastro",
+        {
+          titulo: titulo_noticia,
+          info: info_noticia,
+        }
+      );
+
+      console.log(`Noticia ${titulo_noticia} cadastrada com sucesso!`);
+      window.location.href = "noticias.html";
+    } catch (error){
+      if (error.status === 409) {
+        alert("Erro ao cadastrar noticia", error.message)
+      }
+      console.error("Erro ao cadastrar:", error.message)
+    }
+  })
 }
