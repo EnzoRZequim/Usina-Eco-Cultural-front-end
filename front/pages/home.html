@@ -12,10 +12,42 @@
 </head>
 
 
-<body class="home-fundo">
+<body>
   <div id="navbar"></div>
 
-  
+  <div class="d-flex justify-content-center align-items-center home-fundo">
+    <div class="text-center">
+      <p class="text-white texto-rvt">UM ESPAÇO PARA REVITALIZAÇÃO DA CIDADE</p>
+      <div class="d-flex align-items-center">
+        <div class="flex-grow-1 border-top border-white border-4" style="height: 4px;"></div>
+        <button class="btn-verde w-25 mx-3">Quero ajudar</button>
+        <div class="flex-grow-1 border-top border-white border-4" style="height: 4px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .texto-rvt {
+      font-size: large;
+
+    }
+
+    @media (min-width: 768px) {
+      .texto-rvt {
+        font-size: xx-large;
+
+      }
+    }
+
+    @media (min-width: 992px) {
+
+      .texto-rvt {
+        font-size: x-large;
+
+      }
+    }
+  </style>
+
   <script src="../components/navbar.js"></script>
   <script>
     const navbarElement = document.getElementById("navbar");
@@ -29,23 +61,3 @@
 </body>
 
 </html>
-<!-- 
-<div class="navheader">
-  <div class="navbar">
-      <a href="../pages/home.html" class="${
-        currentPath.endsWith("/pages/home.html") ? "active" : ""
-      }">Início</a>
-      <a href="../pages/eventos.html" class="${
-        currentPath.endsWith("/pages/eventos.html") ? "active" : ""
-      }">Eventos</a>
-      <a href="../pages/noticias.html" class="${
-        currentPath.endsWith("/pages/noticias.html") ? "active" : ""
-      }">Notícias</a>
-      <a href="../pages/loja.html" class="${
-        currentPath.endsWith("/pages/loja.html") ? "active" : ""
-      }">Loja</a>
-      <a href="../pages/contato.html" class="${
-        currentPath.endsWith("/pages/contato.html") ? "active" : ""
-      }">Contato</a>
-  </div>
-</div> -->
