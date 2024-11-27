@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 const express = require ('express')
-const bcrypt = require('bcrypt') 
+const bcrypt = require('bcrypt')
 const app = express()
 app.use(express.json())
 const cors = require('cors')
@@ -29,7 +29,17 @@ app.listen(3000, () => {  //fala que o banco vai estar na porta 3000 e ficar mon
 })
 
 
+// Schema Evento
+const eventoSchema = mongoose.Schema({
+    titulo: {type: String, require: true},
+    data: {type: Date, require: true},
+    hora: {type: String},
+    local: {type: String, require: true},
+    info: {type: String}
+})
 
+// model Evento
+const Evento = mongoose.model("Evento", eventoSchema)
 
 //validador Usuario
 const usuarioSchema = mongoose.Schema({
@@ -75,6 +85,48 @@ app.post('/cadastro', async (req, res) => {
         res.status(409).end()
     }
 })
+
+// Cadastro de evento (teste)
+// http://localhost:3000/evento/cadastro
+app.post('/evento_cadastro', async (req, res) => {
+    try{
+        console.log("Tentando criar evento ....")
+
+        const titulo = req.body.titulo
+        const data = req.body.data
+        const hora = req.body.hora
+        const local = req.body.local
+        const info = req.body.info
+
+        const evento = new Evento({
+            titulo: titulo,
+            data: data,
+            hora: hora,
+            local: local,
+            info: info
+        })
+
+        const respMongo = await evento.save()
+        console.log("Evento criado com sucesso:", respMongo);
+        res.status(201).end()        
+    }catch(erro){
+        //console.log(console.erro)
+        console.log("Erro no Cadastro", erro.message)
+        res.status(409).end()
+    }
+})  
+
+// Requisição de Eventos (teste)    
+app.get('/eventos', async (req, res) => {
+    try {
+        const eventos = await Evento.find()
+        
+        res.status(200).json(eventos)
+    } catch (erro) {
+        console.log("Erro ao obter eventos:", erro);
+        res.status(500).json({ error: "Erro ao obter eventos" });
+    }
+});
 
 // Rota login
 //  http://localhost:3000/login
@@ -140,3 +192,4 @@ app.get('/acessos', async (req, res) => {
         res.status(500).json({ error: "Erro ao obter contador de acessos" });
     }
 });
+
