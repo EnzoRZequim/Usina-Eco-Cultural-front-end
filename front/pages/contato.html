@@ -44,7 +44,7 @@
 
   <div class="d-flex justify-content-center align-items-center mt-4 mt-md-5 pt-4">
     <div class="d-flex justify-content-center align-items-center">
-      <div class="bg-light shadow d-flex flex-column flex-md-row">
+      <div class="bg-light shadow d-flex flex-column flex-md-row ">
         <!-- Seção de texto com ícone à esquerda e centralizado verticalmente -->
         <div class="m-3 div-lcl d-flex align-items-center">
           <!-- Ícone centralizado verticalmente à esquerda do título -->
@@ -64,11 +64,11 @@
     </div>
   </div>
 
-  <h1 class="fw-bold h1txt text-center mt-5">Envie uma mensagem para nós!</h1>
+  <h1 class="fw-bold h1txt text-center mt-5">Envie uma mensagem <br class="d-block d-md-none">para nós!</h1>
   <div class="d-flex justify-content-center align-items-center">
     <div class="d-flex justify-content-center align-items-center">
       <div class="bg-light shadow">
-        <div class="m-3 div-ctt">
+        <div class="m-3 div-msg">
           <div>
             </p>
             <p class="pt-4 fw-bold fs-4">Assunto</p>
@@ -77,12 +77,16 @@
           </div>
           <p class="pt-4 fw-bold fs-4">Mensagem</p>
           <textarea rows="7" id="mensagem-contato" class="border rounded-4 form-control" style="line-height: 1.5;"
-            placeholder="Informações sobre a notícia" maxlength="1150" oninput="updateCounter()"></textarea>
+            placeholder="Digite sua mensagem" maxlength="1150" oninput="updateCounter()"></textarea>
           <p id="charCount" class="text-end">0/1150</p>
         </div>
       </div>
 
       <style>
+        .div-msg {
+          width: 250px;
+        }
+
         .fi-br-marker {
           font-size: 50px;
         }
@@ -101,6 +105,7 @@
 
         .div-ctt {
           width: 250px;
+          border-radius: 20px;
         }
 
         .fonteTexto {
@@ -127,8 +132,12 @@
             border-bottom-right-radius: 20px;
           }
 
+          .div-msg {
+          width: 753.19px;
+        }
+
           .div-lcl {
-            width: 350px;
+            width: 471.19px;
           }
 
           .div-ctt {
@@ -138,13 +147,6 @@
 
           .h1txt {
             font-size: xx-large;
-          }
-
-
-          .bg-light {
-            max-width: 60rem;
-            border-top-right-radius: 0%;
-            border-bottom-right-radius: 0%;
           }
 
           .fonteTexto {
@@ -163,22 +165,20 @@
             border-bottom-right-radius: 20px
           }
 
+          .div-msg {
+          width: 891.19px;
+        }
+
           .div-ctt {
             width: 500px;
           }
 
           .div-lcl {
-            width: 500px;
+            width: 609.19px;
           }
 
           .h1txt {
             font-size: xx-large;
-          }
-
-          .bg-light {
-            max-width: 75rem;
-            border-top-right-radius: 0%;
-            border-bottom-right-radius: 0%;
           }
 
           .fonteTexto {
@@ -191,19 +191,24 @@
         }
 
         @media (min-width: 1480px) {
+
+          .div-msg {
+          width: 1291.19px;
+        }
+
           .div-ctt {
             width: 900px;
           }
 
-          .div-lcl {
-            width: 900px;
+          .mapa {
+            width: 600px;
+            height: 200px;
           }
 
-          .imagem-usina {
-            height: 293.39px;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px
+          .div-lcl {
+            width: 659.19px;
           }
+
         }
       </style>
 
