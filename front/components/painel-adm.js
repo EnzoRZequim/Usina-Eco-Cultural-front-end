@@ -101,7 +101,33 @@ function admNoticias() {
 }
 
 function admLoja() {
-    return `<h1>Loja</h1><p>Conteúdo da página da loja.</p>`;
+    return `
+    
+            <div class="p-4">
+                
+                <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4" href="#">Criador de Produtos</p></div>
+
+                <div>
+                    <label for="titulo-noticia" class="fw-bold fs-4 d-block mb-2">Nome do produto</label>
+                    <input type="text" id="nome-produto" class="border rounded-4 form-control " style="line-height: 45px;" placeholder="Digite o nome do produto">
+                </div>
+
+                <div class="pt-3">
+                    <label for="preco-produto" class="fw-bold fs-4 d-block mb-2">Preço do produto</label>
+                    <div class="input-group">
+                      <input type="number" id="preco-produto" class="form-control border rounded-4" style="line-height: 45px;" placeholder="Digite o preço">
+                    </div>
+                  </div>
+                
+                <div class="pt-3">
+                    <p class="fw-bold fs-4 mt-3">Carregue a imagem do produto</p>
+                    <button class="btn-preto"><i class="fi fi-br-upload m-2"></i>Carregar</button>
+                    
+                </div>
+                <button class="btn-verde w-auto pe-5 ps-5 mt-5">PUBLICAR</button>
+                
+            </div>
+    `;
 }
 
 function admContato() {
