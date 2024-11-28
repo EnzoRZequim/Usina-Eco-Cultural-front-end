@@ -216,11 +216,8 @@ app.post('/noticia_cadastro', async (req, res) => {
         const titulo = req.body.titulo        
         const info = req.body.info
 
-        const evento = new Evento({
+        const noticia = new Noticia({
             titulo: titulo,
-            data: data,
-            hora: hora,
-            local: local,
             info: info
         })
 
