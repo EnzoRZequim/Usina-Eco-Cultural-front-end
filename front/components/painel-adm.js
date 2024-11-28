@@ -79,28 +79,29 @@ function admEventos() {
 
 function admNoticias() {
   return `
-    
+          <form id="noticiaForm">
             <div class="p-4">
-                
-                <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4" href="#">Criador de notícias</p></div>
-
-                <div>
-                    <label for="titulo-noticia" class="fw-bold fs-4 d-block mb-2">Título</label>
-                    <input type="text" id="titulo-noticia" class="border rounded-4 form-control " style="line-height: 45px;" placeholder="Digite o título">
-                </div>
-                
-                <div class="pt-3">
-                    <p class="fw-bold fs-4 mt-3">Carregue uma imagem</p>
-                    <button class="btn-preto"><i class="fi fi-br-upload m-2"></i> Carregar</button>
-                    
-                    <p class="pt-4 fw-bold fs-4">Mensagem</p>
-                    <textarea rows="7" id="info-noticia" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre a notícia" maxlength="1150" oninput="updateCounter()"></textarea>
-                    <p id="charCount" class="text-end">0/1150</p>
-                    
-                    <button class="btn-verde w-auto pe-5 ps-5">PUBLICAR</button>
-                </div>
-                
-            </div>
+            
+            <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4" href="#">Criador de notícias</p></div>
+            
+            <div>
+                      <label for="titulo-noticia" class="fw-bold fs-4 d-block mb-2">Título</label>
+                      <input type="text" id="titulo-noticia" class="border rounded-4 form-control " style="line-height: 45px;" placeholder="Digite o título">
+                  </div>
+                  
+                  <div class="pt-3">
+                      <p class="fw-bold fs-4 mt-3">Carregue uma imagem</p>
+                      <button class="btn-preto"><i class="fi fi-br-upload m-2"></i> Carregar</button>
+                      
+                      <p class="pt-4 fw-bold fs-4">Mensagem</p>
+                      <textarea rows="7" id="info-noticia" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre a notícia" maxlength="1150" oninput="updateCounter()"></textarea>
+                      <p id="charCount" class="text-end">0/1150</p>
+                      
+                      <button class="btn-verde w-auto pe-5 ps-5" type="submit" onclick="CadastrarNoticia()">PUBLICAR</button>
+                  </div>
+                  
+              </div>
+          </form>
     `;
 }
 
@@ -186,4 +187,33 @@ function CadastrarEvento() {
         //alert("Erro ao cadastrar usuário. Tente novamente.");
       }
     });
+}
+
+function CadastrarNoticia() {
+  document
+  .getElementById("noticiaForm")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const titulo_noticia = document.getElementById("titulo-noticia").value;
+    const info_noticia = document.getElementById("info-noticia").value;
+
+    try {
+      const resposta = await axios.post(
+        "http://localhost:3000/noticia_cadastro",
+        {
+          titulo: titulo_noticia,
+          info: info_noticia,
+        }
+      );
+
+      console.log(`Noticia ${titulo_noticia} cadastrada com sucesso!`);
+      window.location.href = "noticias.html";
+    } catch (error){
+      if (error.status === 409) {
+        alert("Erro ao cadastrar noticia", error.message)
+      }
+      console.error("Erro ao cadastrar:", error.message)
+    }
+  })
 }
