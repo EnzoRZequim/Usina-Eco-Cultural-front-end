@@ -107,7 +107,7 @@ function admNoticias() {
 
 function admLoja() {
     return `
-    
+          <form id="lojaForm">
             <div class="p-4">
                 
                 <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4" href="#">Criador de Produtos</p></div>
@@ -129,9 +129,10 @@ function admLoja() {
                     <button class="btn-preto"><i class="fi fi-br-upload m-2"></i>Carregar</button>
                     
                 </div>
-                <button class="btn-verde w-auto pe-5 ps-5 mt-5">PUBLICAR</button>
+                <button class="btn-verde w-auto pe-5 ps-5 mt-5" type="submit" onclick="CadastrarProduto()">PUBLICAR</button>
                 
             </div>
+          </form>
     `;
 }
 
@@ -214,6 +215,35 @@ function CadastrarNoticia() {
         alert("Erro ao cadastrar noticia", error.message)
       }
       console.error("Erro ao cadastrar:", error.message)
+    }
+  })
+}
+
+function CadastrarProduto() {
+  document
+  .getElementById("lojaForm")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const item_loja = document.getElementById("nome-produto").value
+    const preco_loja = document.getElementById("preco-produto").value
+
+    try {
+
+      const resposta = await axios.post(
+        "http://localhost:3000/loja_cadastro",
+      {
+        nome: item_loja,
+        preco: preco_loja,
+      });
+
+      console.log(`Item ${item_loja} cadastrado com sucesso`)
+      window.location.href = "loja.html"
+    } catch (error) {
+      if (error.status === 409) {
+        alert("Erro ao cadastrar um item", error.message)
+      }
+      console.error("Erro ao Cadastrar", error.message)
     }
   })
 }

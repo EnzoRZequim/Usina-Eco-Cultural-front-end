@@ -242,3 +242,46 @@ app.get('/noticias', async (req, res) => {
         res.status(500).json({ error: "Erro ao obter noticia" });
     }
 });
+
+// -------------------- Loja -------------------- \\
+//Schema Loja
+const lojaSchema = mongoose.Schema({
+    nome: {type: String, require: true},
+    preco: {type: String, require: true}
+})
+//Model Loja
+const Loja = mongoose.model("Loja", lojaSchema)
+
+//Cadastrar item
+// http://localhost:3000/noticia/loja
+app.post('/loja_cadastro', async (req, res) =>{
+    try {
+        console.log("Tentando cadastrar Item ...")
+
+        const nome = req.body.nome
+        const preco = req.body.preco
+
+        const loja = new Loja({
+            nome: nome,
+            preco: preco
+        }) 
+
+        const respMongo = await loja.save()
+        console.log("Item cadastrado com sucesso:", respMongo)
+        res.status(201).end()
+    } catch (erro) {
+        console.log("Erro ao cadasrar item", erro.mensagem)
+        res.status(409).end()
+    }
+})
+
+//Requisição da Loja
+app.get('/loja', async (req, res) => {
+    try {
+        const loja = await Loja.find()
+        res.status(200).json(loja)
+    } catch (error) {
+        console.log("Erro ao obter itens da Loja", error);
+        res.status(500).json({ error: "Erro ao obter itens da loja"});
+    }
+});
