@@ -22,7 +22,7 @@ Se prefifrir não usar o git, você pode baixar o projeto .zip no link do github
 **Instalando Dependências:**  
 Após clonar o repositório, siga estas etapas para instalar as dependências:
 No VS Code, dentro da pasta do projeto abra o terminar execute o seguinte comando para baixar os componentes usados no projeto:  
-`npm install --force`
+`npm install --legacy-peer-deps`
 
 **Iniciando o Servidor**
 Para iniciar o servidor, execute o seguinte comando no terminal:  
