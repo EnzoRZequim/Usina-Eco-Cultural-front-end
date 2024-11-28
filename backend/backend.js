@@ -4,6 +4,7 @@ const uniqueValidator = require('mongoose-unique-validator')
 const express = require ('express')
 const bcrypt = require('bcrypt')
 const cors = require('cors')
+const jwt = require('jsonwebtoken')
 
 // Configuração do App
 const app = express()
@@ -77,6 +78,10 @@ app.post('/cadastro', async (req, res) => {
 })
 
 // -------------------- Login -------------------- \\
+const secretKey = "secretKey";
+const tokenExpiry = "1h"; // Expiração do token (ajuste conforme necessário)
+
+
 // Rota login
 //  http://localhost:3000/login
 app.post('/login', async (req, res) =>{
@@ -84,21 +89,57 @@ app.post('/login', async (req, res) =>{
         const email = req.body.email
         const password = req.body.password
         
+        //Buscar no banco
         const u = await Usuario.findOne({ email })   //({email: req.body.email})
         if(!u){ 
             return res.status(401).json({menssagem: "Login Invalido"})
         }
         
+        //Validar Senha
         const senhaValida = await bcrypt.compare(password, u.password)
         if(!senhaValida){
             return res.status(401).json({menssagem: "Senha Invalida"})
         }
+
+        // Gerar loken JWT
+        const token = jwt.sign(
+            { id: u._id, email: u.email }, // Payload do token
+            secretKey,                     // Chave secreta
+            { expiresIn: tokenExpiry }     // Expiração
+        );
+
+        // Retorna o token junto com a mensagem
+        res.status(200).json({
+            mensagem: "Login bem-sucedido",
+            token, // Adiciona o token na resposta
+        });
         res.status(200).json({ mensagem: "Login bem-sucedido" });
     }catch (erro) {
         console.log("Erro no login:", erro);
         res.status(500).end();
     }
 });
+
+//Middlewaer:
+function autenticarToken(req, res, next) {
+    const authHeader = req.headers.authorization; // Pega o cabeçalho "Authorization"
+
+    if (!authHeader) {
+        return res.status(401).json({ mensagem: "Token não fornecido" }); // Falta o token
+    }
+
+    const token = authHeader.split(" ")[1]; // Remove o prefixo "Bearer"
+
+    jwt.verify(token, secretKey, (err, usuario) => {
+        if (err) {
+            return res.status(403).json({ mensagem: "Token inválido ou expirado" }); // Token incorreto
+        }
+
+        req.usuario = usuario; // Adiciona os dados do token à requisição
+        next(); // Passa para a próxima função ou rota
+    });
+}
+
 
 // -------------------- Contador Acessos -------------------- \\
 // Esquema para o contador de acessos
