@@ -279,8 +279,7 @@ app.post('/noticia_cadastro', async (req, res) => {
 // Requisição de Noticia    
 app.get('/noticias', async (req, res) => {
     try {
-        const noticias = await Noticia.find()
-        
+        const noticias = await Noticia.find()        
         res.status(200).json(noticias)
     } catch (erro) {
         console.log("Erro ao obter noticia:", erro);
