@@ -54,9 +54,6 @@ class Navbar {
         </div>
       </div>
       
-      
-      
-
       <div class="container d-none d-lg-flex position-fixed top-0 start-50 translate-middle-x align-items-center">
         <img src="../img/usina-logo.png" alt="logo usina" class="logo">
         <div class="navbar"> 

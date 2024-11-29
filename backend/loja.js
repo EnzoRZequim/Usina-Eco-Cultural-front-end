@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navbarElement = document.getElementById("navbar");
     new Navbar(navbarElement);
 
-    BuscarEventos()
+    BuscarItem()
 });
 
 function BuscarItem(){
