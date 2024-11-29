@@ -25,7 +25,7 @@ No VS Code, dentro da pasta do projeto abra o terminar execute o seguinte comand
 `npm install --legacy-peer-deps`
 
 **Iniciando o Servidor**
-Para iniciar o servidor, execute o seguinte comando no terminal:  
+Para iniciar o servidor, abra o arquivo 'home.html' e execute o seguinte comando no terminal:  
 `npm start`
 
 **Instale a extensão "Live Server".**
