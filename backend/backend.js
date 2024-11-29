@@ -2,13 +2,16 @@
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 const express = require ('express')
+const path = require("path");
 const bcrypt = require('bcrypt')
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
+require('dotenv').config();
 
 // Configuração do App
 const app = express()
 app.use(express.json())
+app.use(express.static(path.join(process.cwd(), 'front', 'pages')));
 app.use(cors())
 
 // Funções MongoDB
@@ -78,7 +81,6 @@ app.post('/cadastro', async (req, res) => {
 })
 
 // -------------------- Login -------------------- \\
-const secretKey = "secretKey";
 const tokenExpiry = "1h"; // Expiração do token (ajuste conforme necessário)
 
 
@@ -102,6 +104,9 @@ app.post('/login', async (req, res) =>{
         }
 
         // Gerar loken JWT
+        const secretKey = process.env.JWT_SECRET_KEY || "OBFwEXbXjRaMHyFOvfBfCUEyVRjDxwbdKp";
+        const mongoURI = process.env.MONGO_URI || "mongodb+srv://EnzoZequim:123@cluster0.nf2kb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
         const token = jwt.sign(
             { id: u._id, email: u.email }, // Payload do token
             secretKey,                     // Chave secreta
@@ -113,7 +118,6 @@ app.post('/login', async (req, res) =>{
             mensagem: "Login bem-sucedido",
             token, // Adiciona o token na resposta
         });
-        res.status(200).json({ mensagem: "Login bem-sucedido" });
     }catch (erro) {
         console.log("Erro no login:", erro);
         res.status(500).end();

@@ -8,13 +8,15 @@ function FazerLogin() {
 
         try {
             // Realiza a requisição de login
-            const resposta = await axios.post('http://localhost:3000/login', {
+            const res = await axios.post('http://localhost:3000/login', {
                 email: email,
                 password: senha
             });
-
-            alert(`Login realizado com sucesso!\nBem-vindo(a) de volta!`);
+            var resposta = res.data
             
+            alert(resposta.mensagem);
+            localStorage.setItem('token', resposta.token)
+
             // Redireciona para a página home.html
             window.location.href = 'home.html';
         } catch (erro) {

@@ -33,7 +33,7 @@ class Navbar {
         <div class="offcanvas-body align-content-between">
           <ul class="list-unstyled p-10 fw-bolder" style="font-size: larger;">
             <li>
-              <a href="./login.html" class="login-link mb-3">Fazer Login</a>
+              <a href="./login.html" class="login-link mb-3" id="login-button">Fazer Login</a>
             </li>
             <li class="mb-3">
               <a class="text-decoration-none ${currentPath.endsWith('/pages/home.html') ? 'active' : ''}" href="../pages/home.html">Início</a>
