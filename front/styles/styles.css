@@ -296,3 +296,24 @@ footer {
   bottom: 0;
   left: 0;
 }
+
+/*  -------------------- Acessibilidade -------------------- */
+.leitura1{
+position: fixed;
+top: 50%; /* Ajuste a posição vertical conforme necessário */
+right: 10px; /* Ajuste a posição horizontal conforme necessário */
+width: 50px; /* Largura do ícone */
+height: 50px; /* Altura do ícone */
+background-color: #003DA0; /* Cor de fundo para visualização */
+border: 2px solid #002869; /* Borda para visualização */
+border-radius: 16px;
+z-index: 10;
+}
+
+
+.leitura1:hoverf{
+background-color: #0091ff; 
+cursor:pointer;
+border: solid #0091ff;
+}
+

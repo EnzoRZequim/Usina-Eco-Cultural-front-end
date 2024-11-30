@@ -329,3 +329,4 @@ app.get('/loja', async (req, res) => {
         res.status(500).json({ error: "Erro ao obter itens da loja"});
     }
 });
+
