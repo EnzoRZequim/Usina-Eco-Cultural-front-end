@@ -289,10 +289,71 @@ body{
     margin: 45px;
   }
 
-footer {
-  position: fixed;
-  height: 40px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
+  footer {
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #f8f9fa; /* Cor do fundo */
+    color: #212529; /* Cor do texto */
+    text-align: center; /* Centralizar texto */
+    line-height: 40px; /* Alinhamento vertical do texto */
+    z-index: 1000; /* Garantir que fique acima de outros elementos */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+  }
+/* ----------- Carousel infinito dos pareceiros ----------- */
+
+@keyframes slide{
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-100%);
+  }
 }
+
+.logos{
+  overflow: hidden;
+  padding: 20px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos::before, .logos:after{
+  position: absolute;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos::after{
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.logos:hover .logos-slide{
+  animation-play-state: paused
+}
+
+.logos-slide{
+  display: inline-block;
+  animation: 25s slide infinite linear;
+}
+
+.logos-slide img{
+  height: 100px;
+  margin: 0 20px;
+}
+
+.divisao-parceiros{
+  justify-content: center;
+}
+/* ------------------------------------------------------------------- */
