@@ -69,4 +69,4 @@ function removeColaborador(index) {
 }
 
 // Inicializa a renderização
-renderColaboradores();
+//renderColaboradores();
