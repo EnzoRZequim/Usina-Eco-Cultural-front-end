@@ -47,6 +47,15 @@ body{
   width: 100%; /* Ajuste para 100% */
 }
 
+.btn-laranja {
+  background-color: orange;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  line-height: 45px;
+}
+
 .btn-verde {
   background-color:#43b341;
   font-weight: bold;
@@ -196,35 +205,9 @@ body{
 
 /* --------------------------- SIGN UP PAGE ------------------------- */
 
-.cadastro-container {
-  background-color: white;
-  padding: 10px; /* Reduzido o padding para trazer o conteúdo para cima */
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-} 
 
 
-.cadastro-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.cadastro-container label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.cadastro-container input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.toggle-password {
+/* .toggle-password {
   position: relative;
   cursor: pointer;
   float: right;
@@ -287,7 +270,7 @@ body{
 
   .body-caixas {
     margin: 45px;
-  }
+  } */
 
   footer {
     position: fixed;
