@@ -107,7 +107,7 @@ function admNoticias() {
 
 function admLoja() {
     return `
-          <form id="lojaForm">
+          <form id="lojaForm" enctype="multipart/form-data">
             <div class="p-4">
                 
                 <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4" href="#">Criador de Produtos</p></div>
@@ -126,7 +126,14 @@ function admLoja() {
                 
                 <div class="pt-3">
                     <p class="fw-bold fs-4 mt-3">Carregue a imagem do produto</p>
-                    <button class="btn-preto"><i class="fi fi-br-upload m-2"></i>Carregar</button>
+                    <div>
+                      <input type="file" name="Carregar" />
+                    </div>
+                    <div>
+                      <button type="button" class="btn-preto">
+                          <i class="fi fi-br-upload m-2"></i>Carregar
+                      </button>
+                    </div>
                     
                 </div>
                 <button class="btn-verde w-auto pe-5 ps-5 mt-5" type="submit" onclick="CadastrarProduto()">PUBLICAR</button>
