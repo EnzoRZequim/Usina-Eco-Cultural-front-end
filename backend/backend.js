@@ -5,7 +5,10 @@ const express = require ('express')
 const path = require("path");
 const bcrypt = require('bcrypt')
 const cors = require('cors')
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const { type } = require('os');
+const { stringify } = require('querystring');
+const { error } = require('console');
 require('dotenv').config();
 
 // Configuração do App
@@ -43,7 +46,8 @@ const usuarioSchema = mongoose.Schema({
     login:{type: String, required: true},
     apelido: {type: String, required: true},
     email: {type: String, required: true, unique: true, match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'E-mail inválido.']}, //validador de email
-    password: {type: String, required: true}
+    password: {type: String, required: true},
+    adm: {type: Boolean, default: false}
 })
 usuarioSchema.plugin(uniqueValidator)
 //Modelo Usuario
@@ -56,18 +60,10 @@ app.post('/cadastro', async (req, res) => {
     try{
         console.log("Tentando criar usuario ....")
 
-        const login = req.body.login //nome
-        const apelido = req.body.apelido //sobrenome
         const password = req.body.password
-        const criptografada = await bcrypt.hash(password, 10)
-        const email = req.body.email
+        req.body.password = await bcrypt.hash(password, 10)
 
-        const usuario = new Usuario({
-            login: login,
-            apelido: apelido,
-            password: criptografada,
-            email: email
-        })
+        const usuario = new Usuario(req.body)
 
         const respMongo = await usuario.save()
         console.log(respMongo)
@@ -108,10 +104,11 @@ app.post('/login', async (req, res) =>{
         const mongoURI = process.env.MONGO_URI || "mongodb+srv://EnzoZequim:123@cluster0.nf2kb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
         const token = jwt.sign(
-            { id: u._id, email: u.email }, // Payload do token
+            { id: u._id, email: u.email, 'adm': u.adm }, // Payload do token
             secretKey,                     // Chave secreta
             { expiresIn: tokenExpiry }     // Expiração
         );
+        console.log(token)
 
         // Retorna o token junto com a mensagem
         res.status(200).json({
@@ -329,3 +326,24 @@ app.get('/loja', async (req, res) => {
         res.status(500).json({ error: "Erro ao obter itens da loja"});
     }
 });
+
+// -------------------- Validar ADM -------------------- \\
+// function validadorADM (){
+//     try {
+//         const criptedToken = localStorage.getItem('token')
+//         const token = parseJwt(criptedToken)
+
+//         if(!token)
+//             throw new error('token não encontrado')
+
+//         console.log(token)
+
+//     }   
+//     catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// function parseJwt (token) {
+//     return JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
+// }
