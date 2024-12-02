@@ -15,6 +15,43 @@ async function GetTokenFromLogin() {
     // }
 }
 
+// -------------------- Acessibilidade -------------------- \\
+
+function Acessibilidade_Leitura() {
+    // Verifica se já há uma fala em andamento e a cancela
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+    } else {
+      // Seleciona todos os elementos com a classe 'Acess_Leitura'
+      const elementos = document.querySelectorAll('.Acess_Leitura');
+      let textoParaLer = '';
+  
+      // Concatena o texto de todos os elementos encontrados
+      elementos.forEach((elemento) => {
+        textoParaLer += elemento.textContent.trim() + ' ';
+      });
+  
+      // Configura a narração
+      if (textoParaLer.trim() !== '') {
+        const utterance = new SpeechSynthesisUtterance(textoParaLer);
+        utterance.lang = 'pt-BR'; // Configura o idioma
+        utterance.rate = 1; // Velocidade de fala
+        utterance.pitch = 1; // Tom de voz
+        window.speechSynthesis.speak(utterance);
+      } else {
+        console.warn('Nenhum texto disponível para leitura.');
+      }
+    }
+  }
+  
+  // Adiciona o evento ao botão de leitura
+  const btnAcessibilidade = document.getElementById('btn-acessibilidade');
+  if (btnAcessibilidade) {
+    btnAcessibilidade.addEventListener('click', Acessibilidade_Leitura);
+  } else {
+    console.error('Botão de acessibilidade não encontrado.');
+  }
+
 // -------------------- Validar ADM -------------------- \\
 function validadorADM (){
     try {

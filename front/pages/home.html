@@ -28,47 +28,71 @@
     </div>
   </div>
 
+  <div class="d-flex justify-content-between p-5 Acess_Leitura">
+    <!-- Texto -->
+    <div class="text-left quem-somos m-5">
+      <h1 class="fw-bold">Quem somos nós?</h1>
+      <p>
+        O Coletivo Usina Eco-Cultural é uma organização sem fins lucrativos, criada para proteger, revitalizar e
+        reinventar o uso do antigo Incinerador Vergueiro em São Paulo.
+        Fundada no dia 30 de março de 2023, Dia Internacional das Nações Unidas do Resíduo Zero, a nossa associação é
+        composta por moradores, artistas, ambientalistas e membros ativos da sociedade civil.
+        Estamos comprometidos com a promoção da cultura, educação ambiental, arte e paz, sem distinção por política,
+        crença, raça, gênero ou qualquer outra característica.
+      </p>
+      <a href="#" class="btn-verde p-2 pb-2 text-decoration-none max">Quero ajudar</a>
+    </div>
+  
+    <!-- Imagem -->
+    <div class="quem-somos-imagem d-none d-lg-block ms-5">
+      <img src="/front/img/pessoas-na-usina.jpg" alt="equipe da usina" class="w-75 rounded">
+    </div>
+  </div>
 
   <!-- Divisões para parceiros -->
-  <section class="mt-4">
+  <section id="Acess_Leitura" class="mt-4 Acess_Leitura" aria-label="Seção com logotipos dos parceiros. Use o botão de acessibilidade para ouvir o conteúdo.">
     <header>
       <h1 class="text-center fw-bold">Nossos parceiros</h1>
       <p class="text-center">
-        Caso você tenha interesse em ser nosso apoiador, entre na aba <span class="fw-bold">CONTATO</span> e mande um
-        e-mail para nós.
-      </p>
+        Caso você tenha interesse em ser nosso apoiador, entre na aba <span class="fw-bold">CONTATO</span> e mande um e-mail para nós.
+      <button id="btn-acessibilidade" class="btn align-items-center">Ativar Modo Leitura</button>
     </header>
 
-    <div class="logos">
-      <div class="logos-slide border-top border-bottom border-start-0 border-end-0 border-2">
-        <img src="/front/img/logos_parceiros/ABONG.png" alt="">
-        <img src="/front/img/logos_parceiros/APIB.png" alt="">
-        <img src="/front/img/logos_parceiros/ARAPYAU.png" alt="">
-        <img src="/front/img/logos_parceiros/BEM TE VI.png" alt="">
-        <img src="/front/img/logos_parceiros/CAFOD.png" alt="">
-        <img src="/front/img/logos_parceiros/CLIMATE AND LAND.png" alt="">
-        <img src="/front/img/logos_parceiros/CONAQ.png" alt="">
-        <img src="/front/img/logos_parceiros/EMBAIXADA DA NORUEGA.png" alt="">
-        <img src="/front/img/logos_parceiros/ENVIROMENTAL DETENSE FUND.png" alt="">
-        <img src="/front/img/logos_parceiros/FORD FOUNDATION.png" alt="">
-        <img src="/front/img/logos_parceiros/GOOD FOUNDATION.png" alt="">
-        <img src="/front/img/logos_parceiros/GUSMÃO.png" alt="">
-        <img src="/front/img/logos_parceiros/ICS.png" alt="">
-        <img src="/front/img/logos_parceiros/MOORE.png" alt="">
-        <img src="/front/img/logos_parceiros/MOTT FOUNDATION.png" alt="">
-        <img src="/front/img/logos_parceiros/NIA TERO.png" alt="">
-        <img src="/front/img/logos_parceiros/OBSERVATORIO DO CLIMA.png" alt="">
-        <img src="/front/img/logos_parceiros/OBSERVATORIO.png" alt="">
-        <img src="/front/img/logos_parceiros/RAISG.png" alt="">
-        <img src="/front/img/logos_parceiros/RCA.png" alt="">
-        <img src="/front/img/logos_parceiros/REDE DE SEMENTES.png" alt="">
-        <img src="/front/img/logos_parceiros/REDE SEMENTES XINGU.png" alt="">
-        <img src="/front/img/logos_parceiros/REGNSKOGFONDET.png" alt="">
-        <img src="/front/img/logos_parceiros/RIO NEGRO.png" alt="">
-        <img src="/front/img/logos_parceiros/RMA MATA.png" alt="">
-        <img src="/front/img/logos_parceiros/UNIAO EUROPEIA.png" alt="">
-        <img src="/front/img/logos_parceiros/XINGU.png" alt="">
+    <div id="Acess_Leitura" class="logos Acess_Leitura" aria-hidden="false" aria-roledescription="carousel">
+      <div class="logos-slide border-top border-bottom border-start-0 border-end-0 border-2" aria-label="Logotipos dos parceiros">
+        <img src="/front/img/logos_parceiros/ABONG.png" alt="Parceiro: ABONG" aria-label="Parceiro: ABONG">
+        <img src="/front/img/logos_parceiros/APIB.png" alt="Parceiro: APIB" aria-label="Parceiro: APIB">
+        <img src="/front/img/logos_parceiros/ARAPYAU.png" alt="Parceiro: Arapyaú" aria-label="Parceiro: Arapyaú">
+        <img src="/front/img/logos_parceiros/BEM TE VI.png" alt="Parceiro: Bem Te Vi" aria-label="Parceiro: Bem Te Vi">
+        <img src="/front/img/logos_parceiros/CAFOD.png" alt="Parceiro: CAFOD" aria-label="Parceiro: CAFOD">
+        <img src="/front/img/logos_parceiros/CLIMATE AND LAND.png" alt="Parceiro: Climate and Land" aria-label="Parceiro: Climate and Land">
+        <img src="/front/img/logos_parceiros/CONAQ.png" alt="Parceiro: CONAQ" aria-label="Parceiro: CONAQ">
+        <img src="/front/img/logos_parceiros/EMBAIXADA DA NORUEGA.png" alt="Parceiro: Embaixada da Noruega" aria-label="Parceiro: Embaixada da Noruega">
+        <img src="/front/img/logos_parceiros/ENVIROMENTAL DETENSE FUND.png" alt="Parceiro: Environmental Defense Fund" aria-label="Parceiro: Environmental Defense Fund">
+        <img src="/front/img/logos_parceiros/FORD FOUNDATION.png" alt="Parceiro: Ford Foundation" aria-label="Parceiro: Ford Foundation"> 
+        <img src="/front/img/logos_parceiros/GOOD FOUNDATION.png" alt="Parceiro: Good Foundation" aria-label="Parceiro: Good Foundation">
+        <img src="/front/img/logos_parceiros/GUSMÃO.png" alt="Parceiro: Instituto Gusmão" aria-label="Parceiro: Instituto Gusmão">
+        <img src="/front/img/logos_parceiros/ICS.png" alt="Parceiro: Instituto Clima e Sociedade (ICS)" aria-label="Parceiro: Instituto Clima e Sociedade (ICS)">
+        <img src="/front/img/logos_parceiros/MOORE.png" alt="Parceiro: Moore Foundation" aria-label="Parceiro: Moore Foundation">
+        <img src="/front/img/logos_parceiros/MOTT FOUNDATION.png" alt="Parceiro: Mott Foundation" aria-label="Parceiro: Mott Foundation">
+        <img src="/front/img/logos_parceiros/NIA TERO.png" alt="Parceiro: Nia Tero" aria-label="Parceiro: Nia Tero">
+        <img src="/front/img/logos_parceiros/OBSERVATORIO DO CLIMA.png" alt="Parceiro: Observatório do Clima" aria-label="Parceiro: Observatório do Clima">
+        <img src="/front/img/logos_parceiros/OBSERVATORIO.png" alt="Parceiro: Observatório" aria-label="Parceiro: Observatório">
+        <img src="/front/img/logos_parceiros/RAISG.png" alt="Parceiro: RAISG" aria-label="Parceiro: RAISG">
+        <img src="/front/img/logos_parceiros/RCA.png" alt="Parceiro: RCA" aria-label="Parceiro: RCA">
+        <img src="/front/img/logos_parceiros/REDE DE SEMENTES.png" alt="Parceiro: Rede de Sementes" aria-label="Parceiro: Rede de Sementes">
+        <img src="/front/img/logos_parceiros/REDE SEMENTES XINGU.png" alt="Parceiro: Rede de Sementes do Xingu" aria-label="Parceiro: Rede de Sementes do Xingu">
+        <img src="/front/img/logos_parceiros/REGNSKOGFONDET.png" alt="Parceiro: Regnskogfondet (Rainforest Foundation Norway)" aria-label="Parceiro: Regnskogfondet (Rainforest Foundation Norway)">
+        <img src="/front/img/logos_parceiros/RIO NEGRO.png" alt="Parceiro: Rio Negro" aria-label="Parceiro: Rio Negro">
+        <img src="/front/img/logos_parceiros/RMA MATA.png" alt="Parceiro: RMA Mata Atlântica" aria-label="Parceiro: RMA Mata Atlântica">
+        <img src="/front/img/logos_parceiros/UNIAO EUROPEIA.png" alt="Parceiro: União Europeia" aria-label="Parceiro: União Europeia">
+        <img src="/front/img/logos_parceiros/XINGU.png" alt="Parceiro: Xingu" aria-label="Parceiro: Xingu">        
       </div>
+    </div>
+
+    <!-- Parte invisível para leitores de tela -->
+    <div class="sr-only Acess_Leitura" aria-hidden="false">
+      <p>Parceiros: ABONG, APIB, Arapyaú, Bem Te Vi, CAFOD, Climate and Land, CONAQ, Embaixada da Noruega, Environmental Defense Fund, Ford Foundation, Good Foundation, Instituto Gusmão, Instituto Clima e Sociedade, Moore Foundation, Mott Foundation, Nia Tero, Observatório do Clima, Observatório, RAISG, RCA, Rede de Sementes, Rede de Sementes do Xingu, Regnskogfondet, Rio Negro, RMA Mata Atlântica, União Europeia, Xingu.</p>
     </div>
   </section>
 
@@ -79,8 +103,6 @@
         <h1 class="fw-bold">Eventos passados</h1>
       </header>
   </div>
-
-  <!-- Footer -->
 
   <!-- Script para duplicar a div das logos -->
   <script>
