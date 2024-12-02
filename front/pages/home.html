@@ -16,24 +16,47 @@
 <body>
   <div id="navbar"></div>
 
+  <!-- Aba Quem somos nós -->
   <div class="d-flex justify-content-center align-items-center home-fundo">
     <div class="text-center">
       <p class="text-white texto-rvt">UM ESPAÇO PARA REVITALIZAÇÃO DA CIDADE</p>
       <div class="d-flex align-items-center">
         <div class="flex-grow-1 border-top border-white border-4" style="height: 4px;"></div>
-        <button class="btn-verde w-25 mx-3">Quero ajudar</button>
+        <button class="btn-verde w-25 mx-3">Ver mais</button>
         <div class="flex-grow-1 border-top border-white border-4" style="height: 4px;"></div>
         <button type="button" class="d-flex align-content-end text-white font-monospace" onclick="validadorADM()">Painel ADM</button>
       </div>
     </div>
   </div>
 
+  <div class="d-flex justify-content-between p-5">
+    <!-- Texto -->
+    <div class="text-left quem-somos m-5">
+      <h1 class="fw-bold">Quem somos nós?</h1>
+      <p>
+        O Coletivo Usina Eco-Cultural é uma organização sem fins lucrativos, criada para proteger, revitalizar e
+        reinventar o uso do antigo Incinerador Vergueiro em São Paulo.
+        Fundada no dia 30 de março de 2023, Dia Internacional das Nações Unidas do Resíduo Zero, a nossa associação é
+        composta por moradores, artistas, ambientalistas e membros ativos da sociedade civil.
+        Estamos comprometidos com a promoção da cultura, educação ambiental, arte e paz, sem distinção por política,
+        crença, raça, gênero ou qualquer outra característica.
+      </p>
+      <a href="#" class="btn-verde p-2 pb-2 text-decoration-none max">Quero ajudar</a>
+    </div>
+  
+    <!-- Imagem -->
+    <div class="quem-somos-imagem d-none d-lg-block ms-5">
+      <img src="../img/pessoas-na-usina.jpg" alt="pessoas na usina" class="w-75 rounded">
+    </div>
+  </div>
+  
+
 
   <!-- Divisões para parceiros -->
   <section class="mt-4">
     <header>
       <h1 class="text-center fw-bold">Nossos parceiros</h1>
-      <p class="text-center">
+      <p class="text-center p-3">
         Caso você tenha interesse em ser nosso apoiador, entre na aba <span class="fw-bold">CONTATO</span> e mande um
         e-mail para nós.
       </p>
@@ -72,12 +95,14 @@
     </div>
   </section>
 
+
+
   <!-- Aba de Eventos Passados -->
 
   <div class="eventos-passados text-center pt-4">
-      <header>
-        <h1 class="fw-bold">Eventos passados</h1>
-      </header>
+    <header>
+      <h1 class="fw-bold pb-5">Eventos passados</h1>
+    </header>
   </div>
 
   <!-- Footer -->
@@ -90,6 +115,9 @@
   <!------------------------------------------>
 
   <style>
+
+
+
     .texto-rvt {
       font-size: large;
 
