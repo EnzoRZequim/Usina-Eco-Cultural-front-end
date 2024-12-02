@@ -35,7 +35,7 @@ function Acessibilidade_Leitura() {
       if (textoParaLer.trim() !== '') {
         const utterance = new SpeechSynthesisUtterance(textoParaLer);
         utterance.lang = 'pt-BR'; // Configura o idioma
-        utterance.rate = 1; // Velocidade de fala
+        utterance.rate = 2.8; // Velocidade de fala
         utterance.pitch = 1; // Tom de voz
         window.speechSynthesis.speak(utterance);
       } else {
