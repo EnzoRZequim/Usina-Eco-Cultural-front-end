@@ -326,24 +326,3 @@ app.get('/loja', async (req, res) => {
         res.status(500).json({ error: "Erro ao obter itens da loja"});
     }
 });
-
-// -------------------- Validar ADM -------------------- \\
-// function validadorADM (){
-//     try {
-//         const criptedToken = localStorage.getItem('token')
-//         const token = parseJwt(criptedToken)
-
-//         if(!token)
-//             throw new error('token não encontrado')
-
-//         console.log(token)
-
-//     }   
-//     catch (error) {
-//         console.log(error)
-//     }
-// }
-
-// function parseJwt (token) {
-//     return JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
-// }

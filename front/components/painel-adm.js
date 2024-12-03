@@ -17,6 +17,7 @@ function painelAdm(section) {
     contentDiv.innerHTML = admContato();
   } else if (section === "estatisticas") {
     contentDiv.innerHTML = admEstatisticas();
+    carregarDados()
   }
   // Define o link atual como ativo
   const activeLink = document.querySelector(
@@ -106,7 +107,7 @@ function admNoticias() {
 }
 
 function admLoja() {
-    return `
+  return `
           <form id="lojaForm">
             <div class="p-4">
                 
@@ -137,15 +138,33 @@ function admLoja() {
 }
 
 function admContato() {
-  return `<h1>Contato</h1><p>Conteúdo da página de contato.</p>`;
+  return `
+       <h1>Contato</h1><p>Conteúdo da página de contato.</p>
+    `;
 }
 
 function admEstatisticas() {
-  return `<h1>Estatísticas</h1><p>Conteúdo da página de estatísticas.</p>`;
+  return `
+    <div class="card-body">
+      <p><strong>Total de Acessos:</strong> <span id="total-acessos">Carregando...</span></p>
+    </div>
+  `;
+}
+
+function carregarDados() {
+  // Total de Acessos
+  axios
+    .get("http://localhost:3000/acessos")
+    .then(function (response) {
+      document.getElementById("total-acessos").innerText =
+        response.data.totalAccesses;
+    })
+    .catch(function (error) {
+      console.error("Erro ao carregar total de acessos", error);
+    });
 }
 
 // contador de caracteres na info noticias
-
 function updateCounter() {
   const textarea = document.getElementById("info-noticia");
   const charCount = document.getElementById("charCount");
@@ -176,7 +195,7 @@ function CadastrarEvento() {
           }
         );
 
-        console.log(`Evento ${titulo_evento} cadastrado com sucesso!`);  
+        console.log(`Evento ${titulo_evento} cadastrado com sucesso!`);
         // alert(`Evento ${resposta.data.titulo} cadastrado com sucesso!`);
 
         window.location.href = "eventos.html";
@@ -192,58 +211,58 @@ function CadastrarEvento() {
 
 function CadastrarNoticia() {
   document
-  .getElementById("noticiaForm")
-  .addEventListener("submit", async function (event) {
-    event.preventDefault();
+    .getElementById("noticiaForm")
+    .addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-    const titulo_noticia = document.getElementById("titulo-noticia").value;
-    const info_noticia = document.getElementById("info-noticia").value;
+      const titulo_noticia = document.getElementById("titulo-noticia").value;
+      const info_noticia = document.getElementById("info-noticia").value;
 
-    try {
-      const resposta = await axios.post(
-        "http://localhost:3000/noticia_cadastro",
-        {
-          titulo: titulo_noticia,
-          info: info_noticia,
+      try {
+        const resposta = await axios.post(
+          "http://localhost:3000/noticia_cadastro",
+          {
+            titulo: titulo_noticia,
+            info: info_noticia,
+          }
+        );
+
+        console.log(`Noticia ${titulo_noticia} cadastrada com sucesso!`);
+        window.location.href = "noticias.html";
+      } catch (error) {
+        if (error.status === 409) {
+          alert("Erro ao cadastrar noticia", error.message);
         }
-      );
-
-      console.log(`Noticia ${titulo_noticia} cadastrada com sucesso!`);
-      window.location.href = "noticias.html";
-    } catch (error){
-      if (error.status === 409) {
-        alert("Erro ao cadastrar noticia", error.message)
+        console.error("Erro ao cadastrar:", error.message);
       }
-      console.error("Erro ao cadastrar:", error.message)
-    }
-  })
+    });
 }
 
 function CadastrarProduto() {
   document
-  .getElementById("lojaForm")
-  .addEventListener("submit", async function (event) {
-    event.preventDefault();
+    .getElementById("lojaForm")
+    .addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-    const item_loja = document.getElementById("nome-produto").value
-    const preco_loja = document.getElementById("preco-produto").value
+      const item_loja = document.getElementById("nome-produto").value;
+      const preco_loja = document.getElementById("preco-produto").value;
 
-    try {
+      try {
+        const resposta = await axios.post(
+          "http://localhost:3000/loja_cadastro",
+          {
+            nome: item_loja,
+            preco: preco_loja,
+          }
+        );
 
-      const resposta = await axios.post(
-        "http://localhost:3000/loja_cadastro",
-      {
-        nome: item_loja,
-        preco: preco_loja,
-      });
-
-      console.log(`Item ${item_loja} cadastrado com sucesso`)
-      window.location.href = "loja.html"
-    } catch (error) {
-      if (error.status === 409) {
-        alert("Erro ao cadastrar um item", error.message)
+        console.log(`Item ${item_loja} cadastrado com sucesso`);
+        window.location.href = "loja.html";
+      } catch (error) {
+        if (error.status === 409) {
+          alert("Erro ao cadastrar um item", error.message);
+        }
+        console.error("Erro ao Cadastrar", error.message);
       }
-      console.error("Erro ao Cadastrar", error.message)
-    }
-  })
+    });
 }
