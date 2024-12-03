@@ -17,46 +17,42 @@ function BuscarEventos() {
             container.innerHTML = '';
 
             data.forEach(item => {
-                // Cria uma div para cada evento
                 const div = document.createElement('div');
-                div.classList.add('body-caixas'); // Adiciona a classe para estilo
-                div.classList.add('col-5');
-
-                //Formatar data 
+                div.classList.add('col-12', 'col-md-6', 'px-3'); // Exibe dois eventos por linha em telas médias e grandes
+            
                 const dataFormatada = formatarData(item.data);
-                
-                // Adiciona o HTML à div criada
+            
                 div.innerHTML = `
-                    <div class="caixa-evento">
-                        <div>
-                            <div class="d-flex">
-                                <div class="caixa-evento-titulo">
-                                    <h3>${item.titulo}</h3>
-                                </div>
-                                <div class="caixa-evento-titulo">
-                                    <h3>${dataFormatada}</h3>
-                                </div>
-                            </div>
-                        
-                            <div class="caixa-mensagem m-4">
-                                <p>${item.info}</p>
-                            </div>
-                        
-                            <div class="d-flex justify-content-between m-4">
-                                <div>
-                                    <p>${item.local}</p>
-                                </div>
-                                <div>
-                                    <button class="btn btn-success">Me Inscrever</button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="caixa-evento bg-white shadow mb-5 border rounded-5">
+                    <div class="d-flex flex-column flex-md-row pt-3 justify-content-between px-4">
+                        <h3 class="fw-bold text-start mb-3 mb-md-0 evento-info">${item.titulo}</h3>
+                        <h3 class="fw-bold text-start mb-3 mb-md-0">${dataFormatada}</h3>
                     </div>
-                `;
+                    <div class="caixa-mensagem m-4 d-flex flex-column flex-md-row align-items-start">
+                        <p class="fw-bold me-2 mb-2 mb-md-0">Informações do evento:</p>
+                        <p>${item.info}</p>
+                    </div>
+                    <div class="caixa-mensagem m-4 d-flex flex-column flex-md-row align-items-start">
+                        <p class="fw-bold me-2 mb-2 mb-md-0"><i class="fi fi-br-marker me-1"></i>Local do evento:</p>
+                        <p>${item.local}</p>
+                    </div>
+                    <div class="d-flex justify-content-center pb-3">
+                        <button class="btn btn-success">Me Inscrever</button>
+                    </div>
+                </div>
 
-                // Adiciona a div ao container principal
+                <style>
+                    .evento-info {
+                      word-wrap: break-word; 
+                      word-break: break-word;
+                    }
+                  </style>
+                `;
+            
                 container.appendChild(div);
             });
+            
+            
         })
         .catch(erro => console.log(erro));
 }

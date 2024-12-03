@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,27 +14,73 @@
 </head>
 
 <body onload="BuscarEventos()">
-   <div class="homeheader align-content-between"></div>
   <div id="navbar"></div>
 
-  <div class="m-5">
-    <div>
-      <h1>Calendário de Eventos</h1>
+  <div class="m-5 pt-lg-5">
+    <div class="pt-lg-5">
+      <h1 class="fw-bold">Calendário de Eventos</h1>
     </div>
-  
-    <div class="d-flex justify-content-between">
-      <div class="me-1">
-        <h3>Eventos da Semana</h3>
+
+    <div class="d-flex justify-content-between pt-5">
+      <h3 class="fw-bold">Eventos da Semana</h3>
+      <h3>De 18/11/24 - 22/11/24</h3>
+    </div>
+    <div id="conteudo-evento" class="container-fluid row gx-4 gy-4 justify-content-center pt-5"></div>
+  </div>
+
+
+  <div class="d-flex flex-column align-items-center pt-5">
+    <h3 class="fw-bold text-left pb-3">Eventos passados</h3>
+    <div class="scroll-container d-flex flex-column flex-lg-row">
+      <div class="me-2 bg-white shadow mb-5 border rounded-5">
+        <div class="d-flex flex-column flex-md-row pt-3 justify-content-between px-4">
+          <h3 class="fw-bold text-start mb-3 mb-md-0">2° Feira Literária da<br />Usina Eco Cultural</h3>
+          <h3 class="fw-bold text-start mb-3 mb-md-0">30/11</h3>
+        </div>
+        <div class="m-4 d-flex flex-column flex-md-row align-items-start">
+          <p class="fw-bold me-2 mb-2 mb-md-0">Informações do evento:</p>
+          <p>Destaque das lutas populares<br /> de São Paulo e Brasil, com muita<br /> literatura, cultura, e reflexão</p>
+        </div>
+        <div class="m-4 d-flex flex-column flex-md-row align-items-start">
+          <p class="fw-bold me-2 mb-2 mb-md-0"><i class="fi fi-br-marker me-1"></i>Local do evento:</p>
+          <p>Rua Breno Ferraz do Amaral, 415B</p>
+        </div>
       </div>
-      <div class="me-1">
-        <h4>De 18/11/24 - 22/11/24</h4>
+  
+      <div class="me-2 bg-white shadow mb-5 border rounded-5">
+        <div class="d-flex flex-column flex-md-row pt-3 justify-content-between px-4">
+          <h3 class="fw-bold text-start mb-3 mb-md-0">Bazar na casa ó</h3>
+          <h3 class="fw-bold text-start mb-3 mb-md-0">09/11</h3>
+        </div>
+        <div class="m-4 d-flex flex-column flex-md-row align-items-start">
+          <p class="fw-bold me-2 mb-2 mb-md-0">Informações do evento:</p>
+          <p>Participação de DJs, e cozinha da Katita</p>
+        </div>
+        <div class="m-4 d-flex flex-column flex-md-row align-items-start">
+          <p class="fw-bold me-2 mb-2 mb-md-0"><i class="fi fi-br-marker me-1"></i>Local do evento:</p>
+          <p>Rua Dom Silvério Pimenta, 227 - Ipiranga</p>
+        </div>
+      </div>
+  
+      <div class="me-2 bg-white shadow mb-5 border rounded-5">
+        <div class="d-flex flex-column flex-md-row pt-3 justify-content-between px-4">
+          <h3 class="fw-bold text-start mb-3 mb-md-0">O Skate na Usina</h3>
+          <h3 class="fw-bold text-start mb-3 mb-md-0">25/08</h3>
+        </div>
+        <div class="m-4 d-flex flex-column flex-md-row align-items-start">
+          <p class="fw-bold me-2 mb-2 mb-md-0">Informações do evento:</p>
+          <p>Vamos nos juntar pela resistência<br /> ao skate de rua e a luta pelo Direito<br /> à Cidade. Grafite + campeonato + bandas.</p>
+        </div>
+        <div class="m-4 d-flex flex-column flex-md-row align-items-start">
+          <p class="fw-bold me-2 mb-2 mb-md-0"><i class="fi fi-br-marker me-1"></i>Local do evento:</p>
+          <p>Rua Breno Ferraz do Amaral, 415B</p>
+        </div>
       </div>
     </div>
   </div>
-
-  <div id="conteudo-evento" class="container row d-flex justify-content-center"></div>
-
-
+  
+  
+  
   <script src="../components/navbar.js"></script>
   <script>
     const navbarElement = document.getElementById("navbar");
@@ -47,23 +94,3 @@
 </body>
 
 </html>
-<!-- 
-<div class="navheader">
-  <div class="navbar">
-      <a href="../pages/home.html" class="${
-        currentPath.endsWith("/pages/home.html") ? "active" : ""
-      }">Início</a>
-      <a href="../pages/eventos.html" class="${
-        currentPath.endsWith("/pages/eventos.html") ? "active" : ""
-      }">Eventos</a>
-      <a href="../pages/noticias.html" class="${
-        currentPath.endsWith("/pages/noticias.html") ? "active" : ""
-      }">Notícias</a>
-      <a href="../pages/loja.html" class="${
-        currentPath.endsWith("/pages/loja.html") ? "active" : ""
-      }">Loja</a>
-      <a href="../pages/contato.html" class="${
-        currentPath.endsWith("/pages/contato.html") ? "active" : ""
-      }">Contato</a>
-  </div>
-</div> -->
