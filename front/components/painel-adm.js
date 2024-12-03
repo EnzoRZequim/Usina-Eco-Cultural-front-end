@@ -108,34 +108,68 @@ function admNoticias() {
 
 function admLoja() {
   return `
-          <form id="lojaForm">
-            <div class="p-4">
-                
-                <div class="pt-4"><p class="text-black text-decoration-underline fw-bold fs-4 pb-4" href="#">Criador de Produtos</p></div>
+    <form id="lojaForm">
+      <div class="p-4">
+        <div class="pt-4">
+          <p class="text-black text-decoration-underline fw-bold fs-4 pb-4" href="#">Criador de Produtos</p>
+        </div>
 
-                <div>
-                    <label for="titulo-noticia" class="fw-bold fs-4 d-block mb-2">Nome do produto</label>
-                    <input type="text" id="nome-produto" class="border rounded-4 form-control " style="line-height: 45px;" placeholder="Digite o nome do produto">
-                </div>
+        <div>
+          <label for="titulo-noticia" class="fw-bold fs-4 d-block mb-2">Nome do produto</label>
+          <input type="text" id="nome-produto" class="border rounded-4 form-control " style="line-height: 45px;" placeholder="Digite o nome do produto">
+        </div>
 
-                <div class="pt-3">
-                    <label for="preco-produto" class="fw-bold fs-4 d-block mb-2">Preço do produto</label>
-                    <div class="input-group">
-                      <input type="number" id="preco-produto" class="form-control border rounded-4" style="line-height: 45px;" placeholder="Digite o preço">
-                    </div>
-                  </div>
-                
-                <div class="pt-3">
-                    <p class="fw-bold fs-4 mt-3">Carregue a imagem do produto</p>
-                    <button class="btn-preto"><i class="fi fi-br-upload m-2"></i>Carregar</button>
-                    
+        <div class="pt-3">
+          <label for="preco-produto" class="fw-bold fs-4 d-block mb-2">Preço do produto</label>
+          <div class="input-group">
+            <input type="number" id="preco-produto" class="form-control border rounded-4" style="line-height: 45px;" placeholder="Digite o preço">
+          </div>
+        </div>
+
+        <div class="pt-3">
+          <p class="fw-bold fs-4 mt-3">Carregue a imagem do produto</p>
+          <input type="file" id="imagem-produto" accept="image/*" onchange="carregarImagem()">
+        </div>
+        <button class="btn-verde w-auto pe-5 ps-5 mt-5" type="submit" onclick="CadastrarProduto()">PUBLICAR</button>
+
+
+        <button class="btn-verde w-auto pe-5 ps-5 mt-5" type="submit" onclick="CadastrarProduto()">PUBLICAR</button>
+      </div>
+    </form>
+    <div id="lista-produtos"></div>
+    <script>
+      function listarProdutos() {
+        axios.get('http://localhost:3000/loja')
+          .then(resposta => {
+            const data = resposta.data;
+            const container = document.getElementById('lista-produtos');
+            container.innerHTML = '';
+            data.forEach(item => {
+              container.innerHTML += \`
+                <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+                  <p>\${item.nome}</p>
+                  <p>R$ \${item.preco}</p>
+                  <button class="btn btn-danger" onclick="deletarProduto(\${item.id})">Deletar</button>
                 </div>
-                <button class="btn-verde w-auto pe-5 ps-5 mt-5" type="submit" onclick="CadastrarProduto()">PUBLICAR</button>
-                
-            </div>
-          </form>
-    `;
+              \`;
+            });
+          })
+          .catch(erro => console.log(erro))
+      }
+
+      function deletarProduto(id) {
+        axios.delete(\`http://localhost:3000/loja/\${id}\`)
+          .then(() => {
+            alert('Produto deletado com sucesso!');
+            listarProdutos();
+          })
+          .catch(erro => console.log(erro));
+      }
+    </script>
+  `;
 }
+
+
 
 function admContato() {
   return `
@@ -266,3 +300,4 @@ function CadastrarProduto() {
       }
     });
 }
+
