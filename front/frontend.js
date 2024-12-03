@@ -2,18 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
    await GetTokenFromLogin()
 })
 
-async function GetTokenFromLogin() {
-    var token = localStorage.getItem('token')
 
-    // var usuarioAutenticado = document.getElementById('usuario-autenticado')
-    
-    // if(!token) {
-    //     usuarioAutenticado.textContent = 'Usuário não autenticado'
-    // }
-    // else {
-    //     usuarioAutenticado.textContent = 'Usuário autenticado'
-    // }
-}
 
 // -------------------- Acessibilidade -------------------- \\
 
@@ -73,17 +62,6 @@ function validadorADM (){
     }
 }
 
-// descriptografar token
-function parseJwt (token) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-
-    return JSON.parse(jsonPayload);
-}
-
 //ao carregar painel-adm.html
 function entrarPainelADM (){
     try {   
@@ -105,6 +83,21 @@ function entrarPainelADM (){
     }   
 }
 
+// -------------------- Token -------------------- \\
+async function GetTokenFromLogin() {
+  var token = localStorage.getItem('token')
+}
+
+// descriptografar token
+function parseJwt (token) {
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  return JSON.parse(jsonPayload);
+}
 
 function convertToken() {
     const cripted = localStorage.getItem('token')
