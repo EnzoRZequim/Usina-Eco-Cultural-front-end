@@ -15,8 +15,8 @@ class Navbar {
       }
     </style>
     <div>
-      <button class="btn btn-lg d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-        <i class="fi fi-br-menu-burger" style="color: black; font-size: xx-large;"></i>
+      <button class="btn btn-lg d-block position-fixed d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="fi fi-br-menu-burger" style="color: black; font-size: 50px;"></i>
       </button>
          
       
