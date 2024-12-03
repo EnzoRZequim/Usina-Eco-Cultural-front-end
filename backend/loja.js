@@ -85,7 +85,7 @@ function CadastrarProduto() {
             });
 
             console.log(`Item ${item_loja} cadastrado com sucesso`);
-            window.location.href = "loja.html";
+            // window.location.href = "loja.html";
         } catch (error) {
             if (error.status === 409) {
                 alert("Erro ao cadastrar um item", error.message);

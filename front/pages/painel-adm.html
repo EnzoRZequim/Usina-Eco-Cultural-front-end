@@ -65,11 +65,25 @@
         <!-- Conteúdo da direita -->
         <div id="content" class="flex-grow-1 p-3" style="min-height: 100vh;">
 
-            
+
 
 
         </div>
     </div>
+
+    <script>
+        // Verifica se há uma seção armazenada no localStorage e chama a função correspondente
+        document.addEventListener("DOMContentLoaded", function () {
+            const savedSection = localStorage.getItem("currentSection");
+
+            if (savedSection) {
+                painelAdm(savedSection); // Chama a função da seção salva
+            } else {
+                painelAdm("inicio"); // Se não houver seção salva, carrega a inicial
+            }
+        });
+
+    </script>
 
     <script src="../components/painel-adm.js"></script>
     <script>

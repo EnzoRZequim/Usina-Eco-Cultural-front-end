@@ -1,9 +1,11 @@
 function painelAdm(section) {
   const contentDiv = document.getElementById("content");
+  
   // Reseta os links
   document
     .querySelectorAll(".nav-link")
     .forEach((link) => link.classList.remove("active", "btn-verde-ativo"));
+  
   // Chama a função correspondente à seção
   if (section === "inicio") {
     contentDiv.innerHTML = admInicio();
@@ -17,14 +19,19 @@ function painelAdm(section) {
     contentDiv.innerHTML = admContato();
   } else if (section === "estatisticas") {
     contentDiv.innerHTML = admEstatisticas();
-    carregarDados()
+    carregarDados();
   }
+
   // Define o link atual como ativo
   const activeLink = document.querySelector(
     `.nav-link[data-section="${section}"]`
   );
   activeLink.classList.add("active", "btn-verde-ativo");
+
+  // Salva a seção no localStorage para lembrar a aba
+  localStorage.setItem("currentSection", section);
 }
+
 
 // --------------- TELA DE INICIO ADM ------------------
 
@@ -130,9 +137,6 @@ function admLoja() {
           <p class="fw-bold fs-4 mt-3">Carregue a imagem do produto</p>
           <input type="file" id="imagem-produto" accept="image/*" onchange="carregarImagem()">
         </div>
-        <button class="btn-verde w-auto pe-5 ps-5 mt-5" type="submit" onclick="CadastrarProduto()">PUBLICAR</button>
-
-
         <button class="btn-verde w-auto pe-5 ps-5 mt-5" type="submit" onclick="CadastrarProduto()">PUBLICAR</button>
       </div>
     </form>
