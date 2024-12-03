@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
    await GetTokenFromLogin()
+   verificaLogin()
 })
 
 
@@ -100,6 +101,6 @@ function parseJwt (token) {
 }
 
 function convertToken() {
-    const cripted = localStorage.getItem('token')
+    const cripted = localStorage.getItem('token')    
     return parseJwt(cripted)
 }

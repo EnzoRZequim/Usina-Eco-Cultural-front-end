@@ -32,9 +32,6 @@ class Navbar {
 
         <div class="offcanvas-body align-content-between">
           <ul class="list-unstyled p-10 fw-bolder" style="font-size: larger;">
-            <li>
-              <a href="./login.html" class="login-link mb-3" id="login-button">Fazer Login</a>
-            </li>
             <li class="mb-3">
               <a class="text-decoration-none ${currentPath.endsWith('/pages/home.html') ? 'active' : ''}" href="../pages/home.html">Início</a>
             </li>
@@ -73,15 +70,75 @@ class Navbar {
             currentPath.endsWith("/pages/contato.html") ? "active" : ""
           }">Contato</a>
         </div>
-        <a href="./login.html" class="login-link">Fazer Login</a>
+        <a href="./login.html" class="login-link" id="login">Fazer Login</a>
     </div>
     
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/front/frontend.js"></script>
-    
-        
     `;
   }
+}
+
+function verificaLogin() {
+  var encriptedToken = localStorage.getItem('token')
+  var token = convertToken(encriptedToken)
+
+  if(token) {
+    criarBotaoDropdown(token)
+  }
+}
+
+function logout() {
+  localStorage.clear()
+  window.location.reload()
+}
+
+function criarBotaoDropdown(token) {
+  var login = document.getElementById('login')
+  login.classList.remove('login-link')
+  login.textContent = ''
+  login.removeAttribute('href')
+
+  // criar elementos da div
+  const emailDropdown = document.createElement('a')
+  const menuDropdown = document.createElement('ul')
+  const menuItemLogoutDropdown = document.createElement('li')
+  const menuItemPainelADMDropdown = document.createElement('li')
+  const logoutDropdown = document.createElement('a')
+  const painelADMDropdown = document.createElement('a')
+
+  // adicionar propriedades (classes) nas divs e elementos
+  login.classList.add('dropdown')
+
+  emailDropdown.classList.add('btn')
+  emailDropdown.classList.add('btn-success')
+  emailDropdown.classList.add('dropdown-toggle')
+  emailDropdown.textContent = token['email']
+  emailDropdown.setAttribute('role', 'button')
+  emailDropdown.setAttribute('data-bs-toggle', 'dropdown')
+  emailDropdown.setAttribute('aria-expanded', 'false')
+
+  menuDropdown.classList.add('dropdown-menu')
+
+  logoutDropdown.classList.add('dropdown-item')
+  logoutDropdown.textContent = 'Logout'
+  logoutDropdown.setAttribute('href', './login.html')
+
+  if(token['adm']) {
+    painelADMDropdown.classList.add('dropdown-item')
+    painelADMDropdown.classList.add('btn')
+    painelADMDropdown.textContent = 'Painel ADM'
+    painelADMDropdown.setAttribute('href', './painel-adm.html')
+  }
+
+  menuItemLogoutDropdown.appendChild(logoutDropdown)
+  menuItemPainelADMDropdown.appendChild(painelADMDropdown)
+
+  menuDropdown.appendChild(menuItemLogoutDropdown)
+  menuDropdown.appendChild(menuItemPainelADMDropdown)
+
+  login.appendChild(menuDropdown)
+  login.appendChild(emailDropdown)
 }
