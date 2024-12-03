@@ -236,7 +236,7 @@ function CadastrarEvento() {
         console.log(`Evento ${titulo_evento} cadastrado com sucesso!`);
         // alert(`Evento ${resposta.data.titulo} cadastrado com sucesso!`);
 
-        window.location.href = "eventos.html";
+        window.location.href = "painel-adm.html";
       } catch (erro) {
         if (erro.status === 409) {
           alert("Erro ao cadastrar evento", erro.message);
@@ -266,7 +266,7 @@ function CadastrarNoticia() {
         );
 
         console.log(`Noticia ${titulo_noticia} cadastrada com sucesso!`);
-        window.location.href = "noticias.html";
+        window.location.href = "painel-adm.html";
       } catch (error) {
         if (error.status === 409) {
           alert("Erro ao cadastrar noticia", error.message);
@@ -295,7 +295,7 @@ function CadastrarProduto() {
         );
 
         console.log(`Item ${item_loja} cadastrado com sucesso`);
-        window.location.href = "loja.html";
+        window.location.href = "painel-adm.html";
       } catch (error) {
         if (error.status === 409) {
           alert("Erro ao cadastrar um item", error.message);
