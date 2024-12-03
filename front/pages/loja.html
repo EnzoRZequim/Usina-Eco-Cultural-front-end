@@ -12,17 +12,62 @@
   <script src="/backend/loja.js"></script>
 </head>
 
+
+
 <body onload="BuscarItem()">
-  <div class="homeheader align-content-between"></div>
   <div id="navbar"></div>
 
   <div class="m-5">
     <div class="">
       <h1>Loja</h1>
     </div>
-
+  
     <div id="conteudo-loja"></div>
   </div>
+  
+  <script>
+  function BuscarItem(){
+      axios.get('http://localhost:3000/loja')
+      .then(resposta =>{
+          const data = resposta.data;
+  
+          const container = document.getElementById('conteudo-loja');
+  
+          //limpar container
+          container.innerHTML = '';
+  
+          data.forEach(item => {
+              //Criar div
+              const div = document.createElement('div');
+                  div.classList.add('body-caixas');
+                  div.classList.add('col-5');
+  
+              //add Html
+              div.innerHTML =`
+              <div class="caixa-evento">
+                  <div>
+                      <div class="d-flex">
+                          <div class="caixa-evento-titulo">
+                              <h3>${item.nome}</h3>
+                          </div>
+                      </div>
+                  
+                      <div class="caixa-mensagem m-4">
+                          <p>R$ ${item.preco}</p>
+                      </div>                        
+                      <button class="btn btn-primary" onclick="adicionarAoCarrinho('${item.nome}', ${item.preco})">Adicionar ao Carrinho</button>
+                  </div>
+              </div>
+          `;
+  
+          // Adiciona a div ao container principal
+          container.appendChild(div);
+  });
+  })
+  .catch(erro => console.log(erro))
+  
+  }
+  </script>
 
   <script src="../components/navbar.js"></script>
   <script>
