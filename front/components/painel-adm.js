@@ -132,11 +132,7 @@ function admLoja() {
             <input type="number" id="preco-produto" class="form-control border rounded-4" style="line-height: 45px;" placeholder="Digite o preço">
           </div>
         </div>
-
-        <div class="pt-3">
-          <p class="fw-bold fs-4 mt-3">Carregue a imagem do produto</p>
-          <input type="file" id="imagem-produto" accept="image/*" onchange="carregarImagem()">
-        </div>
+        
         <button class="btn-verde w-auto pe-5 ps-5 mt-5" type="submit" onclick="CadastrarProduto()">PUBLICAR</button>
       </div>
     </form>
@@ -170,6 +166,31 @@ function admLoja() {
           .catch(erro => console.log(erro));
       }
     </script>
+
+    <script>
+  function carregarImagem() {
+    const input = document.getElementById('imagem-produto');
+    const previewContainer = document.getElementById('preview-container');
+    
+    const file = input.files[0]; // Pega o primeiro arquivo da lista de arquivos selecionados
+    if (file) {
+      const reader = new FileReader();
+      
+      reader.onload = function(event) {
+        const imgElement = document.createElement('img');
+        imgElement.src = event.target.result; // O conteúdo da imagem selecionada
+        imgElement.alt = "Pré-visualização da imagem do produto";
+        imgElement.classList.add('img-fluid', 'rounded');
+        previewContainer.innerHTML = ''; // Limpa qualquer pré-visualização anterior
+        previewContainer.appendChild(imgElement); // Exibe a imagem
+      };
+
+      reader.readAsDataURL(file); // Lê a imagem como uma URL base64
+    } else {
+      previewContainer.innerHTML = ''; // Limpa se nenhuma imagem for selecionada
+    }
+  }
+</script>
   `;
 }
 
