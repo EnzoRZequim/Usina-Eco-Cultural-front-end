@@ -189,18 +189,7 @@ function admEstatisticas() {
   `;
 }
 
-function carregarDados() {
-  // Total de Acessos
-  axios
-    .get("http://localhost:3000/acessos")
-    .then(function (response) {
-      document.getElementById("total-acessos").innerText =
-        response.data.totalAccesses;
-    })
-    .catch(function (error) {
-      console.error("Erro ao carregar total de acessos", error);
-    });
-}
+
 
 // contador de caracteres na info noticias
 function updateCounter() {
@@ -209,6 +198,8 @@ function updateCounter() {
   charCount.textContent = `${textarea.value.length}/1150`;
 }
 
+
+// -------------------- Funções Cadastro --------------------\\
 function CadastrarEvento() {
   document
     .getElementById("eventoForm")

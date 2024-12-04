@@ -81,6 +81,8 @@ class Navbar {
   }
 }
 
+
+// -------------------- Funções --------------------\\
 function verificaLogin() {
   var encriptedToken = localStorage.getItem('token')
   var token = convertToken(encriptedToken)
