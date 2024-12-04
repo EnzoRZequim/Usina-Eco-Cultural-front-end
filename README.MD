@@ -1,8 +1,51 @@
 # **Usina Eco-Cultural Front-End**
 Esse projeto foi desenvolvido pelos alunos do IMT, para o parceiro Usina Eco-Cultural:
-* Enzo R. Zequim (RA: 24.00085-0)
-* Eric Calil Souto (RA: 24.00941-5)
-* Thamires Pietra Menezes dos Santos (RA: 24.00872-9)
+
+* **Enzo R. Zequim (RA: 24.00085-0)**
+- **Documentação:**
+  - Itens 1 a 5 e 8 a 10. Com a Thamires
+  
+- **Contribuições no Codigo:**  
+  - **Pasta <ins>Backend</ins>:**
+  
+    - **BackEnd.js:**
+      - MongoDB
+      - Usuários, Cadastro, Login
+      - Contador de Acessos
+      - Evento, Notícias, Loja
+  
+    - **<ins>Cadastro.js</ins>:**
+  
+    - **<ins>Eventos.js</ins>:**
+        - Tudo exceto parte visual (HTML)
+  
+    - **<ins>Login.js</ins>**
+  
+    - **<ins>Loja.js</ins>**
+      - Tudo exceto parte visual (HTML)
+  
+    - **<ins>Noticias.js</ins>:**
+      - Tudo exceto parte visual (HTML)
+  
+  - **Pasta <ins>front</ins>:**
+    - **Pasta <ins>Componetes</ins>:**
+  
+      - **<ins>navbar.js:</ins>**
+        - Funções: (verificarLogin, logout, criarBotaoDropdown)
+  
+      - **<ins>painel-adm.js</ins>:**
+        -Funções Cadastro: (CadastrarEvento, CadastrarNoticia, CadastrarProduto)  
+    
+  - **Pasta <ins>pages</ins>:**
+    - <ins>cadastro.html</ins>
+      - Implementou função "cadastrar()". 
+    
+- **FrontEnd.js**
+  - Validar ADM
+  - Token
+
+* **Eric Calil Souto (RA: 24.00941-5)**
+* **Thamires Pietra Menezes dos Santos (RA: 24.00872-9)**
 
 ## **Requisitos**
 Antes de rodar o código, verifique se você tem os seguintes itens instalados no seu computador, e atualizados:
