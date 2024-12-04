@@ -5,6 +5,11 @@ body{
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;

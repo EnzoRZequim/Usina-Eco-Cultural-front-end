@@ -10,6 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
@@ -22,15 +23,14 @@
       <p class="text-white texto-rvt">UM ESPAÇO PARA REVITALIZAÇÃO DA CIDADE</p>
       <div class="d-flex align-items-center">
         <div class="flex-grow-1 border-top border-white border-4" style="height: 4px;"></div>
-        <button class="btn-verde w-25 mx-3">Quero ajudar</button>
+        <button class="btn-verde w-25 mx-3">Ver mais</button>
         <div class="flex-grow-1 border-top border-white border-4" style="height: 4px;"></div>
-        <button type="button" class="d-flex align-content-end text-white font-monospace" onclick="validadorADM()">Painel ADM</button>
       </div>
     </div>
   </div>
 
   <div class="d-flex justify-content-between p-5 Acess_Leitura">
-    <!-- Texto -->
+    <!-- QUEM SOMOS NOS -->
     <div class="text-left quem-somos m-5">
       <h1 class="fw-bold">Quem somos nós?</h1>
       <p>
@@ -38,22 +38,64 @@
         Fundada no dia 30 de março de 2023, Dia Internacional das Nações Unidas do Resíduo Zero, a nossa associação é composta por moradores, artistas, ambientalistas e membros ativos da sociedade civil.
         Estamos comprometidos com a promoção da cultura, educação ambiental, arte e paz, sem distinção por política, crença, raça, gênero ou qualquer outra característica.
       </p>
-      <a href="#" class="btn-verde p-2 pb-2 text-decoration-none max">Quero ajudar</a>
+      <a href="#secao-ajuda" class="btn-verde p-2 pb-2 text-decoration-none max">Quero ajudar</a>
     </div>
-  
-    <!-- Imagem -->
+
     <div class="quem-somos-imagem d-none d-lg-block ms-5">
-      <img src="/front/img/pessoas-na-usina.jpg" alt="equipe da usina" class="w-75 rounded">
+      <img src="/front/img/pessoas-na-usina.jpg" alt="equipe da usina" class="w-75 h-100 rounded">
     </div>
   </div>
 
-  <!-- Divisões para parceiros -->
-  <section aria-label="Seção com logotipos dos parceiros. Use o botão de acessibilidade para ouvir o conteúdo.">
-    <header class="Acess_Leitura">
+  <!-- SEÇÃO DE AJUDA -->
+  <div class="d-flex justify-content-center align-items-center p-5 Acess_Leitura">
+    <div class="text-center m-5">
+      <h1 class="fw-bold">Contamos com sua ajuda!</h1>
+      <p class="fs-2 pt-2" >Nosso objetivo é transformar a vida de muitas pessoas que participam do projeto da Usina,</br> buscando um acolhimento dentro de um grupo</p>
+    </div>
+  </div>  
+
+  <div id="secao-ajuda" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 text-center p-lg-5 Acess_Leitura">
+    <div class="col d-flex">
+      <div class="ajuda-card w-100 shadow p-3 border rounded-5">
+        <i class="fi fi-tr-hand-holding-heart" style="font-size: 150px;"></i>
+        <h1>Doação Única</h1>
+        <p class="text-wrap">Você pode realizar uma doação única a qualquer momento para ajudar a Usina. Como
+          agradecimento, você recebe pontos que podem ser trocados por descontos em nossos produtos e para participar de
+          eventos.</p>
+        <a href="#" class="btn-verde p-2 text-decoration-none">SAIBA MAIS</a>
+      </div>
+    </div>
+
+    <div class="col d-flex">
+      <div class="ajuda-card w-100 shadow p-3 border rounded-5">
+        <i class="fi fi-tr-basket-shopping-simple" style="font-size: 150px;"></i>
+        <h1>Produtos</h1>
+        <p class="text-wrap">Outra forma de contribuir é adquirindo nossos produtos. Acesse a área “Produtos” e, se
+          tiver pontos acumulados, pode utilizá-los para descontos nas compras.</p>
+        <a href="#" class="btn-verde p-2 text-decoration-none">SAIBA MAIS</a>
+      </div>
+    </div>
+
+    <div class="col d-flex">
+      <div class="ajuda-card w-100 shadow p-3 border rounded-5">
+        <i class="fi fi-tr-membership-vip" style="font-size: 150px;"></i>
+        <h1>Planos de Assinatura</h1>
+        <p class="text-wrap">Oferecemos planos de assinatura para quem deseja contribuir de forma recorrente ao projeto
+          da Usina. Os valores variam de 5 a 50 reais por mês. Com a assinatura, você ganha benefícios exclusivos.</p>
+        <a href="#" class="btn-verde p-2 text-decoration-none">SAIBA MAIS</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARCEIROS -->
+  <section id="Acess_Leitura" class="mt-4 Acess_Leitura"
+    aria-label="Seção com logotipos dos parceiros. Use o botão de acessibilidade para ouvir o conteúdo.">
+    <header>
       <h1 class="text-center fw-bold">Nossos parceiros</h1>
       <p class="text-center">
-        Caso você tenha interesse em ser nosso apoiador, entre na aba <span class="fw-bold">CONTATO</span> e mande um e-mail para nós.
-      </p>
+        Caso você tenha interesse em ser nosso apoiador, entre na aba <span class="fw-bold">CONTATO</span> e mande um
+        e-mail para nós.
+        <button id="btn-acessibilidade" class="btn align-items-center">Ativar Modo Leitura</button>
     </header>
   
     <div class="container text-center">
@@ -61,34 +103,52 @@
     </div>
   
     <div id="Acess_Leitura" class="logos Acess_Leitura" aria-hidden="false" aria-roledescription="carousel">
-      <div class="logos-slide border-top border-bottom border-start-0 border-end-0 border-2" aria-label="Logotipos dos parceiros">
+      <div class="logos-slide border-top border-bottom border-start-0 border-end-0 border-2"
+        aria-label="Logotipos dos parceiros">
         <img src="/front/img/logos_parceiros/ABONG.png" alt="Parceiro: ABONG" aria-label="Parceiro: ABONG">
         <img src="/front/img/logos_parceiros/APIB.png" alt="Parceiro: APIB" aria-label="Parceiro: APIB">
         <img src="/front/img/logos_parceiros/ARAPYAU.png" alt="Parceiro: Arapyaú" aria-label="Parceiro: Arapyaú">
         <img src="/front/img/logos_parceiros/BEM TE VI.png" alt="Parceiro: Bem Te Vi" aria-label="Parceiro: Bem Te Vi">
         <img src="/front/img/logos_parceiros/CAFOD.png" alt="Parceiro: CAFOD" aria-label="Parceiro: CAFOD">
-        <img src="/front/img/logos_parceiros/CLIMATE AND LAND.png" alt="Parceiro: Climate and Land" aria-label="Parceiro: Climate and Land">
+        <img src="/front/img/logos_parceiros/CLIMATE AND LAND.png" alt="Parceiro: Climate and Land"
+          aria-label="Parceiro: Climate and Land">
         <img src="/front/img/logos_parceiros/CONAQ.png" alt="Parceiro: CONAQ" aria-label="Parceiro: CONAQ">
-        <img src="/front/img/logos_parceiros/EMBAIXADA DA NORUEGA.png" alt="Parceiro: Embaixada da Noruega" aria-label="Parceiro: Embaixada da Noruega">
-        <img src="/front/img/logos_parceiros/ENVIROMENTAL DETENSE FUND.png" alt="Parceiro: Environmental Defense Fund" aria-label="Parceiro: Environmental Defense Fund">
-        <img src="/front/img/logos_parceiros/FORD FOUNDATION.png" alt="Parceiro: Ford Foundation" aria-label="Parceiro: Ford Foundation"> 
-        <img src="/front/img/logos_parceiros/GOOD FOUNDATION.png" alt="Parceiro: Good Foundation" aria-label="Parceiro: Good Foundation">
-        <img src="/front/img/logos_parceiros/GUSMÃO.png" alt="Parceiro: Instituto Gusmão" aria-label="Parceiro: Instituto Gusmão">
-        <img src="/front/img/logos_parceiros/ICS.png" alt="Parceiro: Instituto Clima e Sociedade (ICS)" aria-label="Parceiro: Instituto Clima e Sociedade (ICS)">
-        <img src="/front/img/logos_parceiros/MOORE.png" alt="Parceiro: Moore Foundation" aria-label="Parceiro: Moore Foundation">
-        <img src="/front/img/logos_parceiros/MOTT FOUNDATION.png" alt="Parceiro: Mott Foundation" aria-label="Parceiro: Mott Foundation">
+        <img src="/front/img/logos_parceiros/EMBAIXADA DA NORUEGA.png" alt="Parceiro: Embaixada da Noruega"
+          aria-label="Parceiro: Embaixada da Noruega">
+        <img src="/front/img/logos_parceiros/ENVIROMENTAL DETENSE FUND.png" alt="Parceiro: Environmental Defense Fund"
+          aria-label="Parceiro: Environmental Defense Fund">
+        <img src="/front/img/logos_parceiros/FORD FOUNDATION.png" alt="Parceiro: Ford Foundation"
+          aria-label="Parceiro: Ford Foundation">
+        <img src="/front/img/logos_parceiros/GOOD FOUNDATION.png" alt="Parceiro: Good Foundation"
+          aria-label="Parceiro: Good Foundation">
+        <img src="/front/img/logos_parceiros/GUSMÃO.png" alt="Parceiro: Instituto Gusmão"
+          aria-label="Parceiro: Instituto Gusmão">
+        <img src="/front/img/logos_parceiros/ICS.png" alt="Parceiro: Instituto Clima e Sociedade (ICS)"
+          aria-label="Parceiro: Instituto Clima e Sociedade (ICS)">
+        <img src="/front/img/logos_parceiros/MOORE.png" alt="Parceiro: Moore Foundation"
+          aria-label="Parceiro: Moore Foundation">
+        <img src="/front/img/logos_parceiros/MOTT FOUNDATION.png" alt="Parceiro: Mott Foundation"
+          aria-label="Parceiro: Mott Foundation">
         <img src="/front/img/logos_parceiros/NIA TERO.png" alt="Parceiro: Nia Tero" aria-label="Parceiro: Nia Tero">
-        <img src="/front/img/logos_parceiros/OBSERVATORIO DO CLIMA.png" alt="Parceiro: Observatório do Clima" aria-label="Parceiro: Observatório do Clima">
-        <img src="/front/img/logos_parceiros/OBSERVATORIO.png" alt="Parceiro: Observatório" aria-label="Parceiro: Observatório">
+        <img src="/front/img/logos_parceiros/OBSERVATORIO DO CLIMA.png" alt="Parceiro: Observatório do Clima"
+          aria-label="Parceiro: Observatório do Clima">
+        <img src="/front/img/logos_parceiros/OBSERVATORIO.png" alt="Parceiro: Observatório"
+          aria-label="Parceiro: Observatório">
         <img src="/front/img/logos_parceiros/RAISG.png" alt="Parceiro: RAISG" aria-label="Parceiro: RAISG">
         <img src="/front/img/logos_parceiros/RCA.png" alt="Parceiro: RCA" aria-label="Parceiro: RCA">
-        <img src="/front/img/logos_parceiros/REDE DE SEMENTES.png" alt="Parceiro: Rede de Sementes" aria-label="Parceiro: Rede de Sementes">
-        <img src="/front/img/logos_parceiros/REDE SEMENTES XINGU.png" alt="Parceiro: Rede de Sementes do Xingu" aria-label="Parceiro: Rede de Sementes do Xingu">
-        <img src="/front/img/logos_parceiros/REGNSKOGFONDET.png" alt="Parceiro: Regnskogfondet (Rainforest Foundation Norway)" aria-label="Parceiro: Regnskogfondet (Rainforest Foundation Norway)">
+        <img src="/front/img/logos_parceiros/REDE DE SEMENTES.png" alt="Parceiro: Rede de Sementes"
+          aria-label="Parceiro: Rede de Sementes">
+        <img src="/front/img/logos_parceiros/REDE SEMENTES XINGU.png" alt="Parceiro: Rede de Sementes do Xingu"
+          aria-label="Parceiro: Rede de Sementes do Xingu">
+        <img src="/front/img/logos_parceiros/REGNSKOGFONDET.png"
+          alt="Parceiro: Regnskogfondet (Rainforest Foundation Norway)"
+          aria-label="Parceiro: Regnskogfondet (Rainforest Foundation Norway)">
         <img src="/front/img/logos_parceiros/RIO NEGRO.png" alt="Parceiro: Rio Negro" aria-label="Parceiro: Rio Negro">
-        <img src="/front/img/logos_parceiros/RMA MATA.png" alt="Parceiro: RMA Mata Atlântica" aria-label="Parceiro: RMA Mata Atlântica">
-        <img src="/front/img/logos_parceiros/UNIAO EUROPEIA.png" alt="Parceiro: União Europeia" aria-label="Parceiro: União Europeia">
-        <img src="/front/img/logos_parceiros/XINGU.png" alt="Parceiro: Xingu" aria-label="Parceiro: Xingu">        
+        <img src="/front/img/logos_parceiros/RMA MATA.png" alt="Parceiro: RMA Mata Atlântica"
+          aria-label="Parceiro: RMA Mata Atlântica">
+        <img src="/front/img/logos_parceiros/UNIAO EUROPEIA.png" alt="Parceiro: União Europeia"
+          aria-label="Parceiro: União Europeia">
+        <img src="/front/img/logos_parceiros/XINGU.png" alt="Parceiro: Xingu" aria-label="Parceiro: Xingu">
       </div>
     </div>
     <!-- Parte invisível para leitores de tela -->
@@ -174,7 +234,7 @@
       </div>
     </div>
   </footer>
-  
+  </section>
 
   <!-- Script para duplicar a div das logos -->
   <script>

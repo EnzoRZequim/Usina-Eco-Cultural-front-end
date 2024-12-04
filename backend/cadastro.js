@@ -78,7 +78,6 @@ function Cadastrar() {
 
       window.location.href = 'home.html';
     } catch (erro) {
-      
       if(erro.status === 409) {
         let emailForm = document.getElementById('email');
         emailForm.classList.add('invalid');
