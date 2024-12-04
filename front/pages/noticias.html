@@ -40,7 +40,7 @@
 
 <body onload="BuscarNoticias()">
 
-  <div id="navbar"></div>
+  <div id="navbar" style="z-index: 900;"></div>
 
   <div class="m-5 pt-5">
     <div class="pt-5">
@@ -53,6 +53,16 @@
 
     <div id="conteudo-noticia" class="container-fluid gx-4 gy-4 justify-content-center"></div>
   </div>
+
+  <style>
+    #conteudo-noticia {
+      position: relative;
+      /* Garantir que o conteúdo fique abaixo */
+      margin-top: 0px;
+      /* Ajuste esse valor conforme necessário */
+    }
+
+  </style>
 
   <script src="../components/navbar.js"></script>
   <script>

@@ -71,8 +71,6 @@ function admEventos() {
                 </div>
 
                 <div class="pt-3">
-                    <p class="fw-bold fs-4 mt-3">Carregue uma imagem</p>
-                    <button class="btn-preto"><i class="fi fi-br-upload m-2"></i> Carregar</button>
 
                     <p class="pt-4 fw-bold fs-4">Mensagem</p>
                     <textarea rows="7" id="info-evento" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre o evento" maxlength="1150" oninput="updateCounter()"></textarea>
@@ -97,11 +95,8 @@ function admNoticias() {
                       <input type="text" id="titulo-noticia" class="border rounded-4 form-control " style="line-height: 45px;" placeholder="Digite o título">
                   </div>
                   
-                  <div class="pt-3">
-                      <p class="fw-bold fs-4 mt-3">Carregue uma imagem</p>
-                      <button class="btn-preto"><i class="fi fi-br-upload m-2"></i> Carregar</button>
-                      
-                      <p class="pt-4 fw-bold fs-4">Mensagem</p>
+                  <div>
+                      <p class="pt-3 fw-bold fs-4">Mensagem</p>
                       <textarea rows="7" id="info-noticia" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre a notícia" maxlength="1150" oninput="updateCounter()"></textarea>
                       <p id="charCount" class="text-end">0/1150</p>
                       
@@ -166,31 +161,6 @@ function admLoja() {
           .catch(erro => console.log(erro));
       }
     </script>
-
-    <script>
-  function carregarImagem() {
-    const input = document.getElementById('imagem-produto');
-    const previewContainer = document.getElementById('preview-container');
-    
-    const file = input.files[0]; // Pega o primeiro arquivo da lista de arquivos selecionados
-    if (file) {
-      const reader = new FileReader();
-      
-      reader.onload = function(event) {
-        const imgElement = document.createElement('img');
-        imgElement.src = event.target.result; // O conteúdo da imagem selecionada
-        imgElement.alt = "Pré-visualização da imagem do produto";
-        imgElement.classList.add('img-fluid', 'rounded');
-        previewContainer.innerHTML = ''; // Limpa qualquer pré-visualização anterior
-        previewContainer.appendChild(imgElement); // Exibe a imagem
-      };
-
-      reader.readAsDataURL(file); // Lê a imagem como uma URL base64
-    } else {
-      previewContainer.innerHTML = ''; // Limpa se nenhuma imagem for selecionada
-    }
-  }
-</script>
   `;
 }
 
