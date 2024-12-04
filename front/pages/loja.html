@@ -10,10 +10,24 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
   <script src="/backend/loja.js"></script>
+  <style>
+    body {
+      padding-top: 80px; /* Adicionando espaço para a navbar fixa */
+    }
+    #navbar {
+      position: fixed; /* Navbar fixa */
+      top: 0;
+      width: 100%;
+      z-index: 1050; /* Garantir que a navbar fique acima de outros conteúdos */
+    }
+    #conteudo-loja {
+      margin-top: 20px; /* Aumenta o espaçamento entre o conteúdo e a navbar */
+    }
+  </style>
 </head>
 
 <body onload="BuscarItem()">
-  <div id="navbar"></div>
+  <div id="navbar"></div> <!-- Navbar que ficará fixa -->
 
   <div class="m-5 pt-5">
     <div class="pt-5">
@@ -30,10 +44,10 @@
         </div>
       </div>
     </div>
-  
+
     <div id="conteudo-loja" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4"></div> <!-- Alinhamento correto dos itens -->
   </div>
-  
+
   <script>
   function BuscarItem(){
       axios.get('http://localhost:3000/loja')
