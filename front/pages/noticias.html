@@ -39,8 +39,7 @@
 </style>
 
 <body onload="BuscarNoticias()">
-
-  <div id="navbar" style="z-index: 900;"></div>
+  <div id="navbar"></div>
 
   <div class="m-5 pt-5">
     <div class="pt-5">
@@ -61,7 +60,11 @@
       margin-top: 0px;
       /* Ajuste esse valor conforme necessário */
     }
-
+    
+    #navbar {
+      position: fixed; /* Fixa a navbar no topo */
+      z-index: 1050; /* Fica acima dos outros elementos */
+    }
   </style>
 
   <script src="../components/navbar.js"></script>
