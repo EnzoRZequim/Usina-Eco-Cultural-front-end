@@ -8,18 +8,14 @@ Esse projeto foi desenvolvido pelos alunos do IMT, para o parceiro Usina Eco-Cul
 - **Contribuições no Codigo:**  
   - **Pasta <ins>Backend</ins>:**
   
-    - **BackEnd.js:**
-      - MongoDB
-      - Usuários, Cadastro, Login
-      - Contador de Acessos
-      - Evento, Notícias, Loja
+    - **BackEnd.js (Tudo):**
   
-    - **<ins>Cadastro.js</ins>:**
+    - **<ins>Cadastro.js (Tudo)</ins>:**
   
     - **<ins>Eventos.js</ins>:**
         - Tudo exceto parte visual (HTML)
   
-    - **<ins>Login.js</ins>**
+    - **<ins>Login.js (Tudo)</ins>**
   
     - **<ins>Loja.js</ins>**
       - Tudo exceto parte visual (HTML)
