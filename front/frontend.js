@@ -111,3 +111,32 @@ function convertToken() {
     return parseJwt(cripted)
 }
 
+// Popup de Natal \\
+
+// Função para exibir o pop-up
+function showPopup() {
+  const popupOverlay = document.getElementById('popup-overlay');
+  popupOverlay.style.display = 'flex'; // Exibe o pop-up
+}
+
+// Função para fechar o pop-up
+function closePopup() {
+  const popupOverlay = document.getElementById('popup-overlay');
+  popupOverlay.style.display = 'none'; // Oculta o pop-up
+}
+
+// Função para redirecionar para a página de contato
+function goToContactPage() {
+  window.location.href = 'contato.html'; // Redireciona para a página de contato
+}
+
+// Evento para exibir o pop-up quando a página for carregada
+window.addEventListener('load', showPopup);
+
+// Evento para o botão "Doar"
+const contactButton = document.getElementById('contact-button');
+contactButton.addEventListener('click', goToContactPage);
+
+// Evento para fechar o pop-up ao clicar no botão "Talvez mais tarde"
+const closeButton = document.getElementById('close-popup');
+closeButton.addEventListener('click', closePopup);

@@ -571,3 +571,91 @@ html {
     height: 45px;
   }
 }
+
+/* Pop-up de Natal */
+
+    /* Fundo escurecido para o pop-up */
+    #popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000; /* Fica no topo da interface */
+    }
+
+    /* Container do pop-up */
+    #popup-content {
+      background: url('/front/img/Fundo-Pop-up-Natal.png') no-repeat center center; 
+      background-size: cover;
+      display: flex; /* Ativando o flexbox */
+      flex-direction: column; /* Itens alinhados em linha */
+      width: 90%;
+      max-width: 800px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      color: white; /* Texto em branco para contraste */
+      align-items: end; /* Alinhamento vertical centralizado */
+    }
+    
+    .popup-textos {
+      width: 45%;
+      flex: 1; /* Ocupa espaço proporcional */
+      text-align: center; /* Alinha o texto à esquerda */
+    }
+
+    /* Título */
+    #popup-content h2 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* Parágrafos */
+    #popup-content p {
+      font-size: 16px;
+      margin: 10px 0;
+      line-height: 1.5;
+      font-weight: normal;
+    }
+
+    /* Botões */
+    .popup-button {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    .popup-buttons {
+      display: flex;
+      flex-direction: column; /* Organiza os botões verticalmente */
+      justify-content: flex-start; /* Alinha ao topo */
+      align-items: center; /* Alinha à direita */
+    }
+    
+    
+    .donate-button {
+      background-color: #28a745;
+      color: white;
+      width: 100%;
+      border-radius: 100px;
+    }
+    
+    .later-button {
+      margin-top: 5px;
+      background-color: transparent;
+      color: white;
+    }
+
+    .popup-button:hover {
+      opacity: 0.9;
+    }
