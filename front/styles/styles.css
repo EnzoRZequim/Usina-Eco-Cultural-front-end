@@ -24,6 +24,26 @@ html {
   }
 }
 
+.aviso-inscricoes{
+  background-color: green;
+  color: white;
+  border-radius: 20px;
+  width: 350px;
+  height: 50px;
+  border: none;
+  text-wrap: nowrap;
+}
+
+.inscricoes-fechadas{
+  background-color: red;
+  color: white;
+  border-radius: 20px;
+  width: 250px;
+  height: 50px;
+  border: none;
+  text-wrap: nowrap;
+}
+
 .btn-preto {
   background-color:black;
   font-weight: bold;
@@ -163,12 +183,6 @@ html {
     height: 50px;
     cursor: pointer;
 }
-
-
-
-
-
-
 
 /* --------------------------- LOGIN BUTTON ------------------------- */
 .login-link {
