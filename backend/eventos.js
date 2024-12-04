@@ -21,7 +21,8 @@ function BuscarEventos() {
                 div.classList.add('col-12', 'col-md-6', 'px-3'); // Exibe dois eventos por linha em telas médias e grandes
             
                 const dataFormatada = formatarData(item.data);
-            
+                
+                //Parte Visual
                 div.innerHTML = `
                 <div class="caixa-evento bg-white shadow mb-5 border rounded-5">
                     <div class="d-flex flex-column flex-md-row pt-3 justify-content-between px-4">
