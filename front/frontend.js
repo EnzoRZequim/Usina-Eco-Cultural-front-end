@@ -8,39 +8,42 @@ document.addEventListener('DOMContentLoaded', async () => {
 // -------------------- Acessibilidade -------------------- \\
 
 function Acessibilidade_Leitura() {
-    // Verifica se já há uma fala em andamento e a cancela
-    if (window.speechSynthesis.speaking) {
-      window.speechSynthesis.cancel();
-    } else {
-      // Seleciona todos os elementos com a classe 'Acess_Leitura'
-      const elementos = document.querySelectorAll('.Acess_Leitura');
-      let textoParaLer = '';
-  
-      // Concatena o texto de todos os elementos encontrados
-      elementos.forEach((elemento) => {
+  // Verifica se já há uma fala em andamento e a cancela
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+  } else {
+    // Seleciona todos os elementos com a classe 'Acess_Leitura'
+    const elementos = document.querySelectorAll('.Acess_Leitura');
+    let textoParaLer = '';
+
+    // Será lido o texto de todos os elementos encontrados que não possuem aria-hidden="true"
+    elementos.forEach((elemento) => {
+      const ariaHidden = elemento.getAttribute('aria-hidden');
+      if (!ariaHidden || ariaHidden !== 'true') {
         textoParaLer += elemento.textContent.trim() + ' ';
-      });
-  
-      // Configura a narração
-      if (textoParaLer.trim() !== '') {
-        const utterance = new SpeechSynthesisUtterance(textoParaLer);
-        utterance.lang = 'pt-BR'; // Configura o idioma
-        utterance.rate = 2.8; // Velocidade de fala
-        utterance.pitch = 1; // Tom de voz
-        window.speechSynthesis.speak(utterance);
-      } else {
-        console.warn('Nenhum texto disponível para leitura.');
       }
+    });
+
+    // Configura a narração
+    if (textoParaLer.trim() !== '') {
+      const utterance = new SpeechSynthesisUtterance(textoParaLer);
+      utterance.lang = 'pt-BR'; // Configura o idioma
+      utterance.rate = 2.5; // Velocidade de fala (ajustável entre 0.1 e 2)
+      utterance.pitch = 1; // Tom de voz (ajustável entre 0 e 2)
+      window.speechSynthesis.speak(utterance);
+    } else {
+      console.warn('Nenhum texto disponível para leitura.');
     }
   }
-  
-  // Adiciona o evento ao botão de leitura
-  const btnAcessibilidade = document.getElementById('btn-acessibilidade');
-  if (btnAcessibilidade) {
-    btnAcessibilidade.addEventListener('click', Acessibilidade_Leitura);
-  } else {
-    console.error('Botão de acessibilidade não encontrado.');
-  }
+}
+
+// Adiciona o evento ao botão de leitura
+const btnAcessibilidade = document.getElementById('btn-acessibilidade');
+if (btnAcessibilidade) {
+  btnAcessibilidade.addEventListener('click', Acessibilidade_Leitura);
+} else {
+  console.error('Botão de acessibilidade não encontrado.');
+}
 
 // -------------------- Validar ADM -------------------- \\
 function validadorADM (){
