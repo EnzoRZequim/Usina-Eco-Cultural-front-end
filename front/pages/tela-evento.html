@@ -76,23 +76,25 @@
     
 
     <!-- Hero Section -->
-    <div class="hero container">
+    <div class="hero container Acess_Leitura">
         <div class="texto-banner">
             <h1>Evento Rock Diversidade</h1>
             <h2>Desperte Seu Lado Rock</h2>
             <p>Data: 22/11/24 às 18h</p>
             <p>Dentro da Usina Eco Cultural</p>
+            <button id="btn-acessibilidade" class="btn btn-success" aria-hidden="true">Ativar Modo Leitura</button>
         </div>
     </div>
 
     <!-- Evento Principal -->
-    <div class="container my-5">
+    <div class="container my-5 Acess_Leitura">
         <div class="event-card">
             <div class="d-flex justify-content-between align-items-center">
-                <button class="btn btn-danger">INSCRIÇÕES FECHADAS</button>
                 <!-- Texto do Botão pega condição de lista, se lotada então texto igual "INSCRIÇÕES FECHADAS" -->
+                <button class="btn btn-danger">INSCRIÇÕES FECHADAS</button>
+
+                <!-- Texto do Botão pega condição, se não tiver lotada então esse botão some  -->
                 <button class="btn btn-success">Avisar para os próximos eventos</button>
-                 <!-- Texto do Botão pega condição, se não tiver lotada então esse botão some  -->
             </div>
             <hr>
             <h5><i class="bi bi-geo-alt-fill text-danger"></i> Local: Rua Barão de Juparanã 67, São Paulo, SP</h5>
@@ -111,7 +113,7 @@
     </div>
 
     <!-- Próximos Eventos -->
-    <div class="container mb-5">
+    <div class="container mb-5 Acess_Leitura">
         <div class="d-flex align-items-center justify-content-between mb-2">
             <h3 class="fw-bold">Próximos Eventos</h3>
             <h5 class="">Eventos da Semana - Data: 18/11 - 22/11</h5>
@@ -188,7 +190,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="../components/navbar.js"></script>
     <script>
         const navbarElement = document.getElementById("navbar");
