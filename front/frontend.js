@@ -111,8 +111,6 @@ function convertToken() {
     return parseJwt(cripted)
 }
 
-// Popup de Natal \\
-
 // Função para exibir o pop-up
 function showPopup() {
   const popupOverlay = document.getElementById('popup-overlay');
@@ -130,8 +128,17 @@ function goToContactPage() {
   window.location.href = 'contato.html'; // Redireciona para a página de contato
 }
 
+// Verifica se o pop-up já foi exibido durante a sessão
+function checkPopup() {
+  // Se a chave 'popupShown' não existir, significa que o pop-up nunca foi exibido nesta sessão
+  if (!sessionStorage.getItem('popupShown')) {
+    showPopup(); // Exibe o pop-up
+    sessionStorage.setItem('popupShown', 'true'); // Marca que o pop-up foi mostrado
+  }
+}
+
 // Evento para exibir o pop-up quando a página for carregada
-window.addEventListener('load', showPopup);
+window.addEventListener('load', checkPopup);
 
 // Evento para o botão "Doar"
 const contactButton = document.getElementById('contact-button');
