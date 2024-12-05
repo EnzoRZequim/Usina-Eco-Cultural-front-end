@@ -43,7 +43,7 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-center align-items-center home-fundo">
+  <div class="d-flex justify-content-center align-items-center home-fundo" id="estatuto">
 
     <div class="position-absolute top-0 end-0 m-3 pt-lg-5 mt-lg-5">
       <button id="btn-acessibilidade " 
@@ -63,6 +63,7 @@
       </div>
     </div>
   </div>
+  <div id="sobrenos"></div>
 
   <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center p-5 Acess_Leitura">
     <!-- QUEM SOMOS NÓS -->
@@ -79,16 +80,18 @@
       <a href="#secao-ajuda" class="btn-verde p-2 text-decoration-none max">Quero ajudar</a>
     </div>
 
+    <div id="secao-ajuda"></div>
     <!-- IMAGEM -->
     <div class="quem-somos-imagem text-center order-1 order-lg-2 pe-lg-5">
       <img src="/front/img/pessoas-na-usina.jpg" alt="equipe da usina" class="img-fluid rounded w-100">
     </div>
   </div>
 
+
   <!-- SEÇÃO DE AJUDA -->
-  <div class="d-flex justify-content-center align-items-center Acess_Leitura">
+  <div class="d-flex justify-content-center align-items-center Acess_Leitura pt-5">
     <div class="text-center">
-      <h1 id="secao-ajuda" class="fw-bold">Contamos com sua ajuda!</h1>
+      <h1 class="fw-bold">Contamos com sua ajuda!</h1>
       <p class="fs-5 pt-2">Nosso objetivo é transformar a vida de muitas pessoas que participam do projeto da
         Usina,</br> buscando um acolhimento dentro de um grupo</p>
     </div>
@@ -141,6 +144,8 @@
       </div>
     </div>
   </div>
+
+  <div id="nossosparceiros"></div>
 
   <!-- PARCEIROS -->
   <section id="Acess_Leitura" class="mt-4 Acess_Leitura"
@@ -208,78 +213,9 @@
         Mott Foundation, Nia Tero, Observatório do Clima, Observatório, RAISG, RCA, Rede de Sementes, Rede de Sementes
         do Xingu, Regnskogfondet, Rio Negro, RMA Mata Atlântica, União Europeia e Xingu.</p>
     </div>
-  </section>
 
-  <footer class="footer">
-    <div class="container">
-      <!-- Seção Superior do Footer -->
-      <div class="footer-upper-content">
-        <!-- Logo -->
-        <div class="footer-logo">
-          <img src="/front/img/usina-logo.png" alt="Logo Usina Eco-Cultural">
-        </div>
-        <button class="contact-button">ENVIAR UMA MENSAGEM</button>
-      </div>
+    <footer id="Footer" class="pt-5"></footer>
 
-      <!-- Linha divisória -->
-      <hr class="only-border-content">
-
-      <!-- Conteúdo Principal do Footer -->
-      <div class="footer-content">
-        <!-- Links de Navegação -->
-        <nav class="footer-links" aria-label="Links de Navegação">
-          <div class="footer-column">
-            <h2 class="footer-heading">Página Inicial</h2>
-            <ul>
-              <li><a href="#">Sobre nós</a></li>
-              <li><a href="#">Parceiros</a></li>
-              <li><a href="#">Eventos Passados</a></li>
-              <li><a href="#">Termos e Condições</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h2 class="footer-heading">Produtos</h2>
-            <ul>
-              <li><a href="#">Produtos</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h2 class="footer-heading">Mídia</h2>
-            <ul>
-              <li><a href="#">Notícias</a></li>
-              <li><a href="#">Última Notícia</a></li>
-              <li><a href="#">Eventos</a></li>
-              <li><a href="#">Eventos Passados</a></li>
-            </ul>
-          </div>
-        </nav>
-
-        <!-- Contato -->
-        <section class="footer-contact" aria-labelledby="contact-heading">
-          <h2 id="contact-heading" class="footer-heading">Contato</h2>
-          <address>
-            <p><a href="mailto:usina.eco.cultural@gmail.com">usina.eco.cultural@gmail.com</a></p>
-            <p>ou</p>
-            <div class="social-icons">
-              <a href="#" aria-label="Instagram">
-                <img src="/front/img/redes_sociais/InstagramIcon.png" alt="Instagram">
-              </a>
-              <a href="#" aria-label="Facebook">
-                <img src="/front/img/redes_sociais/FacebookIcon.png" alt="Facebook">
-              </a>
-              <a href="#" aria-label="YouTube">
-                <img src="/front/img/redes_sociais/YouTubeIcon.png" alt="YouTube">
-              </a>
-              <a href="#" aria-label="X">
-                <img src="/front/img/redes_sociais/XIcon.png" alt="X">
-              </a>
-            </div>
-          </address>
-        </section>
-      </div>
-    </div>
-  </footer>
-  </section>
 
   <!-- Script para duplicar a div das logos -->
   <script>
@@ -326,6 +262,8 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="/front/frontend.js"></script>
+  <script src="../components/footer.js"></script>
+  <script src="../components/termos-de-uso.js"></script>
 </body>
 
 </html>

@@ -17,6 +17,11 @@ html {
 
 /* --------------------------- BOTOES! ------------------------- */
 
+.custom-shadow {
+    background-color: #F0F0F0;
+  }
+
+
 
 @media (max-width: 576px) {
   .btn-vermelho {
