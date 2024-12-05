@@ -47,6 +47,10 @@ class Navbar {
             <li class="mb-3">
               <a class="text-decoration-none ${currentPath.endsWith('/pages/contato.html') ? 'active' : ''}" href="../pages/contato.html">Contato</a>
             </li>
+            <li class="mb-3">
+              <!-- Botão de Login no Menu Hambúrguer -->
+              <a href="./login.html" class="login-link" id="login-hamburguer">Fazer Login</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -86,63 +90,56 @@ class Navbar {
 
 // -------------------- Funções --------------------\\
 function verificaLogin() {
-  var encriptedToken = localStorage.getItem('token')
-  var token = convertToken(encriptedToken)
+  var encriptedToken = localStorage.getItem('token');
+  var token = convertToken(encriptedToken);
 
-  if(token) {
-    criarBotaoDropdown(token)
+  if (token) {
+    criarBotaoDropdown(token, 'login'); // Atualiza o botão de desktop
+    criarBotaoDropdown(token, 'login-hamburguer'); // Atualiza o botão do menu hambúrguer
   }
 }
 
-function logout() {
-  localStorage.clear()
-  window.location.reload()
-}
+function criarBotaoDropdown(token, buttonId) {
+  var login = document.getElementById(buttonId);
+  login.classList.remove('login-link');
+  login.textContent = '';
+  login.removeAttribute('href');
 
-function criarBotaoDropdown(token) {
-  var login = document.getElementById('login')
-  login.classList.remove('login-link')
-  login.textContent = ''
-  login.removeAttribute('href')
+  // Criar elementos do dropdown
+  const emailDropdown = document.createElement('a');
+  const menuDropdown = document.createElement('ul');
+  const menuItemLogoutDropdown = document.createElement('li');
+  const menuItemPainelADMDropdown = document.createElement('li');
+  const logoutDropdown = document.createElement('a');
+  const painelADMDropdown = document.createElement('a');
 
-  // criar elementos da div
-  const emailDropdown = document.createElement('a')
-  const menuDropdown = document.createElement('ul')
-  const menuItemLogoutDropdown = document.createElement('li')
-  const menuItemPainelADMDropdown = document.createElement('li')
-  const logoutDropdown = document.createElement('a')
-  const painelADMDropdown = document.createElement('a')
+  // Configurar os elementos
+  login.classList.add('dropdown');
 
-  // adicionar propriedades (classes) nas divs e elementos
-  login.classList.add('dropdown')
+  emailDropdown.classList.add('btn', 'btn-success', 'dropdown-toggle');
+  emailDropdown.textContent = token['email'];
+  emailDropdown.setAttribute('role', 'button');
+  emailDropdown.setAttribute('data-bs-toggle', 'dropdown');
+  emailDropdown.setAttribute('aria-expanded', 'false');
 
-  emailDropdown.classList.add('btn')
-  emailDropdown.classList.add('btn-success')
-  emailDropdown.classList.add('dropdown-toggle')
-  emailDropdown.textContent = token['email']
-  emailDropdown.setAttribute('role', 'button')
-  emailDropdown.setAttribute('data-bs-toggle', 'dropdown')
-  emailDropdown.setAttribute('aria-expanded', 'false')
+  menuDropdown.classList.add('dropdown-menu');
 
-  menuDropdown.classList.add('dropdown-menu')
+  logoutDropdown.classList.add('dropdown-item');
+  logoutDropdown.textContent = 'Logout';
+  logoutDropdown.setAttribute('href', './login.html');
 
-  logoutDropdown.classList.add('dropdown-item')
-  logoutDropdown.textContent = 'Logout'
-  logoutDropdown.setAttribute('href', './login.html')
-
-  if(token['adm']) {
-    painelADMDropdown.classList.add('dropdown-item')
-    painelADMDropdown.classList.add('btn')
-    painelADMDropdown.textContent = 'Painel ADM'
-    painelADMDropdown.setAttribute('href', './painel-adm.html')
+  if (token['adm']) {
+    painelADMDropdown.classList.add('dropdown-item', 'btn');
+    painelADMDropdown.textContent = 'Painel ADM';
+    painelADMDropdown.setAttribute('href', './painel-adm.html');
   }
 
-  menuItemLogoutDropdown.appendChild(logoutDropdown)
-  menuItemPainelADMDropdown.appendChild(painelADMDropdown)
+  menuItemLogoutDropdown.appendChild(logoutDropdown);
+  menuItemPainelADMDropdown.appendChild(painelADMDropdown);
 
-  menuDropdown.appendChild(menuItemLogoutDropdown)
-  menuDropdown.appendChild(menuItemPainelADMDropdown)
+  menuDropdown.appendChild(menuItemLogoutDropdown);
+  menuDropdown.appendChild(menuItemPainelADMDropdown);
 
-  login.appendChild(menuDropdown)
-  login.appendChild(emailDropdown)
+  login.appendChild(menuDropdown);
+  login.appendChild(emailDropdown);
 }
