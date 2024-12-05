@@ -53,15 +53,12 @@
         <p class="text-white m-0" style="font-size: small;">Ativar modo<br>leitura</p>
       </button>
     </div>
-  
     
-    
-
     <div class="text-center">
       <p class="text-white texto-rvt">UM ESPAÇO PARA REVITALIZAÇÃO DA CIDADE</p>
       <div class="d-flex align-items-center">
         <div class="flex-grow-1 border-top border-white border-4" style="height: 4px;"></div>
-        <button class="btn-verde w-25 mx-3">Ver mais</button>
+        <a href="https://drive.google.com/file/d/1kDx72fzrCsVuIQG3DY9QdLEcpThjbB56/view?fbclid=PAZXh0bgNhZW0CMTEAAabyM359xU6CMtXMMyAabMhrRVZ9U617j5VS78UR-960-glCqqfLWZ5McxM_aem_VGBK1MglwtxNBcCZ_GA8zw" class="btn-verde w-25 mx-3 text-decoration-none">Estatuto</a>
         <div class="flex-grow-1 border-top border-white border-4" style="height: 4px;"></div>
       </div>
     </div>
@@ -91,29 +88,26 @@
   <!-- SEÇÃO DE AJUDA -->
   <div class="d-flex justify-content-center align-items-center Acess_Leitura">
     <div class="text-center">
-      <h1 class="fw-bold">Contamos com sua ajuda!</h1>
+      <h1 id="secao-ajuda" class="fw-bold">Contamos com sua ajuda!</h1>
       <p class="fs-5 pt-2">Nosso objetivo é transformar a vida de muitas pessoas que participam do projeto da
         Usina,</br> buscando um acolhimento dentro de um grupo</p>
     </div>
   </div>
-  <div id="secao-ajuda" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 text-center p-5 Acess_Leitura">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 text-center p-5 Acess_Leitura">
     <div class="col d-flex">
       <div class="ajuda-card w-100 shadow p-3 border rounded-5">
         <i class="fi fi-tr-hand-holding-heart" style="font-size: 150px;"></i>
         <h1>Doação Única</h1>
-        <p class="text-wrap">Você pode realizar uma doação única a qualquer momento para ajudar a Usina. Como
-          agradecimento, você recebe pontos que podem ser trocados por descontos em nossos produtos e para participar de
-          eventos.</p>
-        <a href="#" class="btn-verde p-2 text-decoration-none">SAIBA MAIS</a>
+        <p class="text-wrap">Você pode realizar uma doação única a qualquer momento para ajudar a Usina.</p>
+        <a href="#" class="btn-verde p-2 text-decoration-none" data-bs-toggle="modal" data-bs-target="#modalPix">QUERO DOAR</a>
       </div>
     </div>
     <div class="col d-flex">
       <div class="ajuda-card w-100 shadow p-3 border rounded-5">
         <i class="fi fi-tr-basket-shopping-simple" style="font-size: 150px;"></i>
         <h1>Produtos</h1>
-        <p class="text-wrap">Adquirindo nossos produtos, você nos ajuda monetariamente. Acesse a área “Produtos” e, se
-          tiver pontos acumulados, pode utilizá-los para descontos nas compras.</p>
-        <a href="#" class="btn-verde p-2 text-decoration-none">SAIBA MAIS</a>
+        <p class="text-wrap">Adquirindo nossos produtos, você nos ajuda monetariamente. Acesse a área “Loja”.</p>
+        <a href="./loja.html" class="btn-verde p-2 text-decoration-none">IR PARA A LOJA</a>
       </div>
     </div>
 
@@ -122,8 +116,28 @@
         <i class="fi fi-tr-scroll-document-story" style="font-size: 150px;"></i>
         <h1>Abaixo-Assinado</h1>
         <p class="text-wrap">Ao assinar, você apoia a transformação do Incinerador Vergueiro em um Centro Cultural e
-          Ambiental, beneficiando a cultura, educação ambiental e a comunidade do Ipiranga e São Paulo.</p>
-        <a href="#" class="btn-verde p-2 text-decoration-none">SAIBA MAIS</a>
+          Ambiental.</p>
+        <a href="https://secure.avaaz.org/community_petitions/po/prefeitura_municipal_de_sao_paulo_eu_apoio_incinerador_vergueiro_devera_ser_um_espaco_de_conscientizacao_ambiental_e_vida/" class="btn-verde p-2 text-decoration-none">QUERO ASSINAR</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PIX -->
+
+  <div class="modal fade" id="modalPix" tabindex="-1" aria-labelledby="modalPixLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalPixLabel">Chave PIX</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p>Use a chave PIX abaixo para realizar sua doação:</p>
+          <p class="fw-bold text-center text-primary">chavepix@exemplo.com</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
       </div>
     </div>
   </div>
@@ -133,7 +147,7 @@
     aria-label="Seção com logotipos dos parceiros. Use o botão de acessibilidade para ouvir o conteúdo.">
     <header>
       <h1 class="text-center fw-bold">Nossos parceiros</h1>
-      <p class="text-center">
+      <p class="text-center fs-5">
         Caso você tenha interesse em ser nosso apoiador, entre na aba <span class="fw-bold">CONTATO</span> e mande um
         e-mail para nós.
     </header>
