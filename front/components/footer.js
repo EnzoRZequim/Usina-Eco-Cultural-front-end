@@ -12,7 +12,9 @@ class Footer {
         <!-- Área Superior -->
         <div class="d-none d-md-block">
           <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <img src="../img/usina-logo.png" alt="Logo" class="logo mb-3 mb-md-0">
+            <a href="home.html">
+              <img src="../img/usina-logo.png" alt="logo usina" class="logo">
+            </a>
             <a href="#" class="btn-verde text-center text-decoration-none fw-normal p-2 w-25 ">ENVIAR UMA MENSAGEM</a>
           </div>
         </div>
