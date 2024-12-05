@@ -52,7 +52,9 @@ class Navbar {
       </div>
       
       <div class="container d-none d-lg-flex position-fixed top-0 start-50 translate-middle-x align-items-center">
-        <img src="../img/usina-logo.png" alt="logo usina" class="logo">
+        <a href="home.html">
+          <img src="../img/usina-logo.png" alt="logo usina" class="logo">
+        </a>
         <div class="navbar"> 
           <a href="../pages/home.html" class="${
             currentPath.endsWith("/pages/home.html") ? "active" : ""
