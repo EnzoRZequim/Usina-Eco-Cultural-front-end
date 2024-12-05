@@ -16,18 +16,17 @@
 <body onload="BuscarEventos()">
   <div id="navbar"></div>
   
-  <div class="m-5 pt-5">
+  <div class="m-5 pt-5 text-center Acess_Leitura">
     <div class="pt-5">
       <h1 class="fw-bold">Calendário de Eventos</h1>
+      <div class="w-100 pt-2">
+        <button id="btn-acessibilidade" class="estilizacao-btn-acessibilidade w-50" aria-hidden="true">Ativar Modo
+          Leitura</button>
+      </div>
     </div>
 
-    <div class="d-flex justify-content-between pt-5">
-      <h3 class="fw-bold">Eventos da Semana</h3>
-      <h3>De 18/11/24 - 22/11/24</h3>
-    </div>
-    <div id="conteudo-evento" class="container-fluid row gx-4 gy-4 justify-content-center pt-5"></div>
+    <div id="conteudo-evento" class="container-fluid row gx-4 gy-4 justify-content-center pt-5 Acess_Leitura"></div>
   </div>
-
 
   <div class="d-flex flex-column align-items-center pt-5">
     <h3 class="fw-bold text-left pb-3">Eventos passados</h3>
@@ -78,8 +77,6 @@
       </div>
     </div>
   </div>
-  
-  
   
   <script src="../components/navbar.js"></script>
   <script>
