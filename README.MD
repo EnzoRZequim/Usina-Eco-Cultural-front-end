@@ -54,7 +54,7 @@ Esse projeto foi desenvolvido pelos alunos do IMT para o parceiro Usina Eco-Cult
     - **Pasta `pages`:**
       - **`home.html`:**
         - Criou Pop-Up de Natal.
-        - Refez parte visual.
+        - footer e área dos parceiros
       
     - **`FrontEnd.js`:**
       - Acessibilidade.
@@ -92,7 +92,7 @@ Esse projeto foi desenvolvido pelos alunos do IMT para o parceiro Usina Eco-Cult
         - **`contato.html` (Tudo):**
         - **`eventos.html` (Tudo):**
         - **`home.html`:**
-          - Parte funcional (botões e redirecionamento funcional).
+          - Tudo menos o visual do footer e area dos parceiros
         - **`login.html` (Tudo):**
         - **`loja.html` (Tudo):**
         - **`painel-adm.html` (Tudo):**
