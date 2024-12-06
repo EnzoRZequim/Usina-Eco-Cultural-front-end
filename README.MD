@@ -1,7 +1,7 @@
 # **Usina Eco-Cultural Front-End**
 Esse projeto foi desenvolvido pelos alunos do IMT para o parceiro Usina Eco-Cultural:
 
-1. **Enzo R. Zequim (RA: 24.00085-0)** *(Aprocimadamente 51% dos Commits)*
+1. **Enzo R. Zequim (RA: 24.00085-0)** 
     - **Função Principal:** Documentação e Back-End
     - **Documentação:**
       - Itens 1 a 4 e 8 a 10, com a Thamires.
@@ -34,7 +34,7 @@ Esse projeto foi desenvolvido pelos alunos do IMT para o parceiro Usina Eco-Cult
       - Token.
       - README.md.
 
-2. **Eric Calil Souto (RA: 24.00941-5)** *(Aprocimadamente 4% dos Commits)*
+2. **Eric Calil Souto (RA: 24.00941-5)** 
    - **Função Principal:** Prototipação
     - **Design:**
       - Criou o Figma.
@@ -60,7 +60,7 @@ Esse projeto foi desenvolvido pelos alunos do IMT para o parceiro Usina Eco-Cult
       - Acessibilidade.
       - Visual do Pop-Up.
 
-3. **Thamires Pietra Menezes dos Santos (RA: 24.00872-9)** *(Aprocimadamente 45% dos Commits)*
+3. **Thamires Pietra Menezes dos Santos (RA: 24.00872-9)**
    - **Função Principal:** Documentação e Front-End
     - **Documentação:**
       - Ajudou com os itens 1 a 4 e 8 a 10.
