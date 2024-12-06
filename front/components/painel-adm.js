@@ -123,7 +123,7 @@ function admLoja() {
         <div class="pt-3">
           <label for="preco-produto" class="fw-bold fs-4 d-block mb-2">Preço do produto</label>
           <div class="input-group">
-            <input type="number" id="preco-produto" class="form-control border rounded-4" style="line-height: 45px;" placeholder="Digite o preço">
+            <input type="price" id="preco-produto" class="form-control border rounded-4" style="line-height: 45px;" placeholder="Digite o preço">
           </div>
         </div>
         

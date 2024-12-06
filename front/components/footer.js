@@ -82,13 +82,13 @@ class Footer {
                     <p><a href="mailto:usina.eco.cultural@gmail.com">usina.eco.cultural@gmail.com</a></p>
                     <p>ou</p>
                     <div class="social-icons">
-                      <a href="#" aria-label="Instagram">
+                      <a href="https://www.instagram.com/usinaecocultural/?igshid=YmMyMTA2M2Y%3D" aria-label="Instagram">
                         <img src="/front/img/redes_sociais/InstagramIcon.png" alt="Instagram">
                       </a>
-                      <a href="#" aria-label="Facebook">
+                      <a href="https://www.facebook.com/usinaecocultural/" aria-label="Facebook">
                         <img src="/front/img/redes_sociais/FacebookIcon.png" alt="Facebook">
                       </a>
-                      <a href="#" aria-label="YouTube">
+                      <a href="https://www.youtube.com/@usinaecocultural" aria-label="YouTube">
                         <img src="/front/img/redes_sociais/YouTubeIcon.png" alt="YouTube">
                       </a>
                       <a href="#" aria-label="X">
@@ -175,13 +175,13 @@ class Footer {
                       <p><a href="mailto:usina.eco.cultural@gmail.com">usina.eco.cultural@gmail.com</a></p>
                       <p>ou</p>
                       <div class="social-icons d-flex justify-content-center"> <!-- Centraliza os ícones -->
-                        <a href="#" aria-label="Instagram" class="mx-2"> <!-- Adiciona espaçamento entre os ícones -->
+                        <a href="https://www.instagram.com/usinaecocultural/?igshid=YmMyMTA2M2Y%3D" aria-label="Instagram" class="mx-2"> <!-- Adiciona espaçamento entre os ícones -->
                           <img src="/front/img/redes_sociais/InstagramIcon.png" alt="Instagram">
                         </a>
-                        <a href="#" aria-label="Facebook" class="mx-2">
-                          <img src="/front/img/redes_sociais/FacebookIcon.png" alt="Facebook">
-                        </a>
-                        <a href="#" aria-label="YouTube" class="mx-2">
+                      <a href="https://www.facebook.com/usinaecocultural/" aria-label="Facebook">
+                        <img src="/front/img/redes_sociais/FacebookIcon.png" alt="Facebook">
+                      </a>
+                        <a href="https://www.youtube.com/@usinaecocultural" aria-label="YouTube" class="mx-2">
                           <img src="/front/img/redes_sociais/YouTubeIcon.png" alt="YouTube">
                         </a>
                         <a href="#" aria-label="X" class="mx-2">
