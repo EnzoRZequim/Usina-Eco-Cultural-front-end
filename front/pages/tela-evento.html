@@ -76,24 +76,27 @@
     
 
     <!-- Hero Section -->
-    <div class="hero container">
+    <div class="hero container Acess_Leitura">
         <div class="texto-banner">
             <h1>Evento Rock Diversidade</h1>
             <h2>Desperte Seu Lado Rock</h2>
             <p>Data: 22/11/24 às 18h</p>
             <p>Dentro da Usina Eco Cultural</p>
+            <button id="btn-acessibilidade" class="btn btn-success" aria-hidden="true">Ativar Modo Leitura</button>
         </div>
     </div>
 
     <!-- Evento Principal -->
-    <div class="container my-5">
+    <div class="container my-5 Acess_Leitura">
         <div class="event-card">
-            <div class="d-flex justify-content-between align-items-center">
-                <button class="btn btn-danger">INSCRIÇÕES FECHADAS</button>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
                 <!-- Texto do Botão pega condição de lista, se lotada então texto igual "INSCRIÇÕES FECHADAS" -->
-                <button class="btn btn-success">Avisar para os próximos eventos</button>
-                 <!-- Texto do Botão pega condição, se não tiver lotada então esse botão some  -->
-            </div>
+                <button class="inscricoes-fechadas">INSCRIÇÕES FECHADAS</button>
+              
+                <!-- Texto do Botão pega condição, se não tiver lotada então esse botão some -->
+                <button class="aviso-inscricoes">Avisar para os próximos eventos</button>
+              </div>
+                        
             <hr>
             <h5><i class="bi bi-geo-alt-fill text-danger"></i> Local: Rua Barão de Juparanã 67, São Paulo, SP</h5>
             <p><strong>Contágio Cultural - O Direito à Cidade</strong></p>
@@ -111,7 +114,7 @@
     </div>
 
     <!-- Próximos Eventos -->
-    <div class="container mb-5">
+    <div class="container mb-5 Acess_Leitura">
         <div class="d-flex align-items-center justify-content-between mb-2">
             <h3 class="fw-bold">Próximos Eventos</h3>
             <h5 class="">Eventos da Semana - Data: 18/11 - 22/11</h5>
@@ -158,23 +161,28 @@
             <!-- Card com Imagem -->
             <div class="col-md-6">
                 <div class="event-card d-flex">
-                    <img src="image1.jpg" alt="Evento Passado" class="img-fluid me-3 event-image" style="width: 100px;">
+                    <img src="/front/img/pessoas-na-usina.jpg" alt="Evento Passado" class="img-fluid me-3 event-image" style="width: 100px;">
                     <div>
                         <h5>Contágio Cultural - O Direito à Cidade</h5>
                         <p>Matéria do Canal Futura</p>
+                        <div class="event-location mb-4">
+                            <i class="">Localização: 
+                            <span>Colocar localização aqui</span></i>
+                        </div>
+
                         <button class="btn btn-primary">Ver Álbum</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="event-card d-flex">
-                    <img src="image2.jpg" alt="Evento Passado" class="img-fluid me-3 event-image" style="width: 100px;">
+                    <img src="/front/img/pessoas-na-usina.jpg" alt="Evento Passado" class="img-fluid me-3 event-image" style="width: 100px;">
                     <div>
                         <h5>Contágio Cultural - O Direito à Cidade</h5>
                         <p>Matéria do Canal Futura</p>
                         <div class="event-location mb-4">
-                            <i class=""></i>
-                            <span>Colocar localização aqui</span>
+                            <i class="">Localização: 
+                            <span>Colocar localização aqui</span></i>
                         </div>
 
                         <button class="btn btn-primary">Ver Álbum</button>
@@ -183,10 +191,6 @@
             </div>
         </div>
     </div>
-
-
-    <!-- <div id="conteudo-noticia" class="container row d-flex justify-content-center"></div> -->
-
 
     <script src="../components/navbar.js"></script>
     <script>
@@ -198,6 +202,8 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/front/frontend.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../components/termos-de-uso.js"></script>
 </body>
 
 </html>

@@ -32,7 +32,6 @@ function painelAdm(section) {
   localStorage.setItem("currentSection", section);
 }
 
-
 // --------------- TELA DE INICIO ADM ------------------
 
 function admInicio() {
@@ -71,8 +70,6 @@ function admEventos() {
                 </div>
 
                 <div class="pt-3">
-                    <p class="fw-bold fs-4 mt-3">Carregue uma imagem</p>
-                    <button class="btn-preto"><i class="fi fi-br-upload m-2"></i> Carregar</button>
 
                     <p class="pt-4 fw-bold fs-4">Mensagem</p>
                     <textarea rows="7" id="info-evento" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre o evento" maxlength="1150" oninput="updateCounter()"></textarea>
@@ -97,11 +94,8 @@ function admNoticias() {
                       <input type="text" id="titulo-noticia" class="border rounded-4 form-control " style="line-height: 45px;" placeholder="Digite o título">
                   </div>
                   
-                  <div class="pt-3">
-                      <p class="fw-bold fs-4 mt-3">Carregue uma imagem</p>
-                      <button class="btn-preto"><i class="fi fi-br-upload m-2"></i> Carregar</button>
-                      
-                      <p class="pt-4 fw-bold fs-4">Mensagem</p>
+                  <div>
+                      <p class="pt-3 fw-bold fs-4">Mensagem</p>
                       <textarea rows="7" id="info-noticia" class="border rounded-4 form-control" style="line-height: 1.5;" placeholder="Informações sobre a notícia" maxlength="1150" oninput="updateCounter()"></textarea>
                       <p id="charCount" class="text-end">0/1150</p>
                       
@@ -129,14 +123,10 @@ function admLoja() {
         <div class="pt-3">
           <label for="preco-produto" class="fw-bold fs-4 d-block mb-2">Preço do produto</label>
           <div class="input-group">
-            <input type="number" id="preco-produto" class="form-control border rounded-4" style="line-height: 45px;" placeholder="Digite o preço">
+            <input type="price" id="preco-produto" class="form-control border rounded-4" style="line-height: 45px;" placeholder="Digite o preço">
           </div>
         </div>
-
-        <div class="pt-3">
-          <p class="fw-bold fs-4 mt-3">Carregue a imagem do produto</p>
-          <input type="file" id="imagem-produto" accept="image/*" onchange="carregarImagem()">
-        </div>
+        
         <button class="btn-verde w-auto pe-5 ps-5 mt-5" type="submit" onclick="CadastrarProduto()">PUBLICAR</button>
       </div>
     </form>
@@ -189,6 +179,7 @@ function admEstatisticas() {
   `;
 }
 
+
 function carregarDados() {
   // Total de Acessos
   axios
@@ -209,6 +200,8 @@ function updateCounter() {
   charCount.textContent = `${textarea.value.length}/1150`;
 }
 
+
+// -------------------- Funções Cadastro --------------------\\
 function CadastrarEvento() {
   document
     .getElementById("eventoForm")

@@ -10,17 +10,28 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
 </head>
 
 <body>
+
+
+
+  <div class="position-absolute top-0 end-0 m-3 pt-lg-5 mt-lg-5">
+    <button id="btn-acessibilidade" class="border border-0 bg-primary p-2 w-auto" aria-hidden="true">
+      <i class="fi fi-tr-catalog-magazine fs-4 text-white"></i>
+      <p class="text-white m-0" style="font-size: small;">Ativar modo<br>leitura</p>
+    </button>
+  </div>
+
   <div id="navbar"></div>
-  <div class="d-flex justify-content-center align-items-center  pt-md-5">
+  <div class="d-flex justify-content-center align-items-center pt-md-5 Acess_Leitura">
     <div class="d-flex justify-content-center align-items-center mt-lg-5 pt-md-5">
       <div class="bg-light shadow">
         <div class="m-3 div-ctt">
           <h1 class="text-left fw-bold h1txt">Contato</h1>
-          <p class="fonteTexto">Caso voce queira entrar em contato, favor enviar sua mensagem nos endereços de contato
+          <p class="fonteTexto">Caso você queira entrar em contato, favor enviar sua mensagem nos endereços de contato
             abaixo.</p>
           <p class="fonteTexto">Telefone: 1234-56789<br>
             E-mail: usinaecocultural1968@gmail.com<br>
@@ -36,14 +47,13 @@
             <a href="#" class="text-decoration-none pe-2"><i class="fi fi-brands-whatsapp"
                 style="color: rgb(59, 226, 59);"></i></a>
           </p>
-
         </div>
       </div>
       <img src="../img/usina-img.jpeg" alt="imagem da usina" class="imagem-usina shadow d-md-block d-none">
     </div>
   </div>
 
-  <div class="d-flex justify-content-center align-items-center mt-4 mt-md-5 pt-4">
+  <div class="d-flex justify-content-center align-items-center mt-4 mt-md-5 pt-4 Acess_Leitura">
     <div class="d-flex justify-content-center align-items-center">
       <div class="bg-light shadow d-flex flex-column flex-md-row border rounded-5">
         <!-- Seção de texto com ícone à esquerda e centralizado verticalmente -->
@@ -85,158 +95,163 @@
               <button class="btn-verde w-auto pe-5 ps-5">ENVIAR</button>
               <p class="mb-0">Você receberá nossa resposta por e-mail.</p>
             </div>
-            
-            
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <style>
-        .div-msg {
-          width: 250px;
-        }
-
-        .fi-br-marker {
-          font-size: 50px;
-        }
-
-        .mapa {
-          width: 250px;
-        }
-
-        .div-lcl {
-          width: 250px;
-        }
-
-        .bg-light {
-          border-radius: 30px;
-        }
-
-        .div-ctt {
-          width: 250px;
-          border-radius: 30px;
-        }
-
-        .fonteTexto {
-          font-size: x-small;
-        }
-
-        .h1txt {
-          font-size: x-large;
-
-        }
-
-        .pe-2 {
-          font-size: x-large;
-        }
-
-        @media (min-width: 768px) {
-          .fi-br-marker {
-            font-size: 100px;
-          }
-
-          .imagem-usina {
-            height: 302.40px;
-            border-top-right-radius: 30px;
-            border-bottom-right-radius: 30px;
-          }
-
-          .div-msg {
-          width: 753.19px;
-        }
-
-          .div-lcl {
-            width: 471.19px;
-          }
-
-          .bg-light {
-            border-top-right-radius: 0%;
-            border-bottom-right-radius: 0%;
-          }
-
-          .div-ctt {
-            width: 350px;
-          }
-
-          .h1txt {
-            font-size: xx-large;
-          }
-
-          .fonteTexto {
-            font-size: medium;
-          }
-
-          .pe-2 {
-            font-size: xx-large;
-          }
-        }
-
-        @media (min-width: 992px) {
-
-          .imagem-usina {
-            height: 293.40px;
-            border-top-right-radius: 30px;
-            border-bottom-right-radius: 30px;
-          }
-
-          .div-msg {
-          width: 891.19px;
-        }
-
-          .div-ctt {
-            width: 500px;
-          }
-
-          .div-lcl {
-            width: 609.19px;
-          }
-
-          .h1txt {
-            font-size: xx-large;
-          }
-
-          .fonteTexto {
-            font-size: large;
-          }
-
-          .pe-2 {
-            font-size: xx-large;
-          }
-        }
-
-        @media (min-width: 1480px) {
-
-          .div-msg {
-          width: 1291.19px;
-        }
-
-          .div-ctt {
-            width: 900px;
-          }
-
-          .mapa {
-            width: 600px;
-            height: 200px;
-          }
-
-          .div-lcl {
-            width: 659.19px;
-          }
-
-        }
-      </style>
+  <footer id="Footer" class="mt-auto"></footer>
 
 
-      <script src="../components/navbar.js"></script>
-      <script>
-        const navbarElement = document.getElementById("navbar");
-        new Navbar(navbarElement);
-      </script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-      <script src="/front/frontend.js"></script>
+  <style>
+    .div-msg {
+      width: 250px;
+    }
+
+    .fi-br-marker {
+      font-size: 50px;
+    }
+
+    .mapa {
+      width: 250px;
+    }
+
+    .div-lcl {
+      width: 250px;
+    }
+
+    .bg-light {
+      border-radius: 30px;
+    }
+
+    .div-ctt {
+      width: 250px;
+      border-radius: 30px;
+    }
+
+    .fonteTexto {
+      font-size: x-small;
+    }
+
+    .h1txt {
+      font-size: x-large;
+
+    }
+
+    .pe-2 {
+      font-size: x-large;
+    }
+
+    @media (min-width: 768px) {
+      .fi-br-marker {
+        font-size: 100px;
+      }
+
+      .imagem-usina {
+        height: 302.40px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+
+      .div-msg {
+        width: 753.19px;
+      }
+
+      .div-lcl {
+        width: 471.19px;
+      }
+
+      .bg-light {
+        border-top-right-radius: 0%;
+        border-bottom-right-radius: 0%;
+      }
+
+      .div-ctt {
+        width: 350px;
+      }
+
+      .h1txt {
+        font-size: xx-large;
+      }
+
+      .fonteTexto {
+        font-size: medium;
+      }
+
+      .pe-2 {
+        font-size: xx-large;
+      }
+    }
+
+    @media (min-width: 992px) {
+
+      .imagem-usina {
+        height: 293.40px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+
+      .div-msg {
+        width: 891.19px;
+      }
+
+      .div-ctt {
+        width: 500px;
+      }
+
+      .div-lcl {
+        width: 609.19px;
+      }
+
+      .h1txt {
+        font-size: xx-large;
+      }
+
+      .fonteTexto {
+        font-size: large;
+      }
+
+      .pe-2 {
+        font-size: xx-large;
+      }
+    }
+
+    @media (min-width: 1480px) {
+
+      .div-msg {
+        width: 1291.19px;
+      }
+
+      .div-ctt {
+        width: 900px;
+      }
+
+      .mapa {
+        width: 600px;
+        height: 200px;
+      }
+
+      .div-lcl {
+        width: 659.19px;
+      }
+
+    }
+  </style>
+
+
+  <script src="../components/navbar.js"></script>
+  <script>
+    const navbarElement = document.getElementById("navbar");
+    new Navbar(navbarElement);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/front/frontend.js"></script>
+  <script src="../components/footer.js"></script>
+  <script src="../components/termos-de-uso.js"></script>
 </body>
 
 </html>

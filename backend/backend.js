@@ -17,6 +17,8 @@ app.use(express.json())
 app.use(express.static(path.join(process.cwd(), 'front', 'pages')));
 app.use(cors())
 
+
+// -------------------- MongoDB --------------------\\
 // Funções MongoDB
 // cria uma função para fazer a conexão com o MongoDB
 async function conectarAoMongoDB(){
@@ -40,7 +42,7 @@ app.listen(3000, () => {  //fala que o banco vai estar na porta 3000 e ficar mon
 
 
 
-// -------------------- Usuario --------------------\\
+// -------------------- Usuarios --------------------\\
 //validador Usuario
 const usuarioSchema = mongoose.Schema({
     login:{type: String, required: true},

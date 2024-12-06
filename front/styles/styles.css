@@ -5,6 +5,11 @@ body{
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -12,11 +17,36 @@ body{
 
 /* --------------------------- BOTOES! ------------------------- */
 
+.custom-shadow {
+    background-color: #F0F0F0;
+  }
+
+
 
 @media (max-width: 576px) {
   .btn-vermelho {
     line-height: 10px;
   }
+}
+
+.aviso-inscricoes{
+  background-color: green;
+  color: white;
+  border-radius: 20px;
+  width: 350px;
+  height: 50px;
+  border: none;
+  text-wrap: nowrap;
+}
+
+.inscricoes-fechadas{
+  background-color: red;
+  color: white;
+  border-radius: 20px;
+  width: 250px;
+  height: 50px;
+  border: none;
+  text-wrap: nowrap;
 }
 
 .btn-preto {
@@ -64,6 +94,19 @@ body{
   border-radius: 10px;
   line-height: 45px;
   width: 130%;
+}
+
+.estilizacao-btn-acessibilidade{
+  width: 80%;
+  height: 35px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: #43b341;
+  text-align: center;
+  border: none;
+  color: white;
+  min-width: 200px;
 }
 
 /* --------------------------- NAVBAR! ------------------------- */
@@ -146,12 +189,6 @@ body{
     height: 50px;
     cursor: pointer;
 }
-
-
-
-
-
-
 
 /* --------------------------- LOGIN BUTTON ------------------------- */
 .login-link {
@@ -273,19 +310,6 @@ body{
     margin: 45px;
   } */
 
-  footer {
-    position: fixed;
-    height: 40px;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    background-color: #f8f9fa; /* Cor do fundo */
-    color: #212529; /* Cor do texto */
-    text-align: center; /* Centralizar texto */
-    line-height: 40px; /* Alinhamento vertical do texto */
-    z-index: 1000; /* Garantir que fique acima de outros elementos */
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
-  }
 /* ----------- Carousel infinito dos pareceiros ----------- */
 
 @keyframes slide{
@@ -355,3 +379,360 @@ body{
 }
 
 /* ------------------------------------------------------------------- */
+
+/* Cards de noticias */
+#conteudo-noticia {
+  display: grid;
+  gap: 1rem; /* Espaçamento entre os itens */
+  padding: 1rem;
+  grid-template-columns: repeat(1, 1fr); /* 1 coluna por padrão */
+}
+
+@media (min-width: 768px) {
+  #conteudo-noticia {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+  }
+}
+
+@media (min-width: 1200px) {
+  #conteudo-noticia {
+      grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas grandes */
+  }
+}
+
+.card-container {
+  width: 100%;
+}
+
+/* Footer */
+
+.footer {
+  position: static; /* Garantir que o footer esteja no fluxo normal da página */
+  background-color: #f3f3f3; /* Cor de fundo similar à imagem */
+  padding: 2rem 1rem;
+  margin-top: 3rem; /* Espaçamento superior para afastar do conteúdo acima */
+  border-radius: 20px 20px 0px 0px;
+  width: 100%;
+  color: #212529; /* Cor do texto */
+  line-height: 40px; /* Alinhamento vertical do texto */
+  z-index: 1000; /* Garantir que fique acima de outros elementos */
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 20px 20px 20px 20px;
+}
+
+.only-border-content {
+  background-color: #CACACA;
+  width: 100%;
+  height: 1px;
+  margin-top: 20px;
+}
+
+.footer-upper-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-logo img {
+  max-width: 120px; /* Tamanho do logo */
+}
+
+.footer-links {
+  display: flex;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.footer-column h5 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Remover margens desnecessárias */
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #000; /* Cor preta para o texto */
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #007bff; /* Cor ao passar o mouse */
+}
+
+.footer-contact {
+  max-width: 500px;
+  width: 270px;
+}
+
+.footer-contact h5 {
+  font-weight: bold;
+}
+
+.footer-contact p {
+  margin-bottom: 0rem;
+}
+
+.social-icons {
+  display: flex;
+  image-rendering: auto;
+  gap: 0.5rem;
+}
+
+.social-icons a img {
+  width: 30px; /* Tamanho dos ícones das redes sociais */
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.1); /* Efeito ao passar o mouse nos ícones */
+}
+
+.contact-button {
+  background-color: #28a745; /* Verde similar ao botão da imagem */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Arredondar o botão */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  width: 300px;
+  height: 50px;
+  align-items: center;
+}
+
+.contact-button:hover {
+  background-color: #218838; /* Cor ao passar o mouse no botão */
+}
+
+/* Media Queries para Responsividade */
+
+@media (max-width: 992px) {
+  .footer-upper-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer-contact {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-column {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-logo img {
+    max-width: 100px;
+  }
+
+  .contact-button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-upper-content {
+    gap: 1rem;
+  }
+
+  .footer-links {
+    gap: 1rem;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .social-icons {
+    gap: 0.3rem;
+  }
+
+  .contact-button {
+    height: 45px;
+  }
+}
+
+/* Pop-up de Natal */
+
+   /* Fundo escurecido para o pop-up */
+   #popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Fica no topo da interface */
+  }
+
+  /* Container do pop-up */
+  #popup-content {
+    background: url('/front/img/Fundo-Pop-up-Natal.png') no-repeat center center; 
+    background-size: cover;
+    display: flex; /* Ativando o flexbox */
+    flex-direction: column; /* Itens alinhados em linha */
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: white; /* Texto em branco para contraste */
+    align-items: end; /* Alinhamento vertical centralizado */
+  }
+  
+  .popup-textos {
+    width: 45%;
+    flex: 1; /* Ocupa espaço proporcional */
+    text-align: center; /* Alinha o texto à esquerda */
+  }
+
+/* Título */
+#popup-content h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Parágrafos */
+#popup-content p {
+  font-size: 16px;
+  margin: 10px 0;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+/* Botões */
+.popup-buttons {
+  display: flex;
+  flex-direction: column; /* Organiza os botões verticalmente */
+  gap: 10px; /* Espaço entre os botões */
+  width: 100%; /* Ocupa a largura total */
+}
+
+.popup-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.donate-button {
+  background-color: #28a745;
+  color: white;
+  width: 100%;
+  border-radius: 100px; /* Botão arredondado */
+}
+
+.later-button {
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 100px;
+}
+
+.popup-button:hover {
+  opacity: 0.9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #popup-content {
+    max-width: 90%; /* Ajusta a largura para telas menores */
+    padding: 15px;
+  }
+
+  .popup-textos {
+    width: 45%;
+    flex: 1; /* Ocupa espaço proporcional */
+    text-align: center; /* Alinha o texto à esquerda */
+  }
+
+  #popup-content h2 {
+    font-size: 18px; /* Reduz tamanho do título */
+  }
+
+  #popup-content p {
+    font-size: 14px; /* Reduz tamanho do texto */
+  }
+
+  .popup-buttons {
+    gap: 8px; /* Menor espaço entre botões */
+  }
+
+  .popup-button {
+    font-size: 14px; /* Reduz tamanho dos botões */
+    padding: 8px 15px; /* Ajusta o padding */
+  }
+}
+
+@media (max-width: 480px) {
+  #popup-content {
+    padding: 10px;
+  }
+
+  .popup-textos {
+    width: 100%;
+    flex: 1; /* Ocupa espaço proporcional */
+    text-align: center; /* Alinha o texto à esquerda */
+  }
+
+  .popup-button {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+
+  #popup-content h2 {
+    font-size: 16px;
+  }
+
+  #popup-content p {
+    font-size: 12px;
+  }
+}
