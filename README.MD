@@ -1,123 +1,105 @@
 # **Usina Eco-Cultural Front-End**
-Esse projeto foi desenvolvido pelos alunos do IMT, para o parceiro Usina Eco-Cultural:
+Esse projeto foi desenvolvido pelos alunos do IMT para o parceiro Usina Eco-Cultural:
 
 1. **Enzo R. Zequim (RA: 24.00085-0)**
-   **Conção Principal:** Documentação e BackEnd
+   **Função Principal:** Documentação e Back-End
     - **Documentação:**
-    - Itens 1 a 4 e 8 a 10. Com a Thamires
+      - Itens 1 a 4 e 8 a 10, com a Thamires.
     
-   **Contribuições no Codigo:**  
-    - **Pasta <ins>Backend</ins>:**
-    
-      - **<ins>BackEnd.js</ins> (Tudo):**
-    
-      - **<ins>Cadastro.js (Tudo)</ins>:**
-    
-      - **<ins>Eventos.js</ins>:**
-          - Tudo exceto parte visual (HTML)
-    
-      - **<ins>Login.js (Tudo)</ins>**
-    
-      - **<ins>Loja.js</ins>**
-        - Tudo exceto parte visual (HTML)
-    
-      - **<ins>Noticias.js</ins>:**
-        - Tudo exceto parte visual (HTML)
-    
-    - **Pasta <ins>front</ins>:**
-      - **Pasta <ins>Componetes</ins>:**
-    
-        - **<ins>navbar.js:</ins>**
-          - Funções: (verificarLogin, logout, criarBotaoDropdown)
-    
-        - **<ins>painel-adm.js</ins>:**
-          - Funções Cadastro: (CadastrarEvento, CadastrarNoticia, CadastrarProduto)  
+   **Contribuições no Código:**  
+    - **Pasta `Backend`:**
+      - **`BackEnd.js` (Tudo):**
+      - **`Cadastro.js` (Tudo):**
+      - **`Eventos.js`:**
+        - Tudo, exceto parte visual (HTML).
+      - **`Login.js` (Tudo):**
+      - **`Loja.js`:**
+        - Tudo, exceto parte visual (HTML).
+      - **`Noticias.js`:**
+        - Tudo, exceto parte visual (HTML).
+
+    - **Pasta `front`:**
+      - **Pasta `Componentes`:**
+        - **`navbar.js`:**
+          - Funções: (verificarLogin, logout, criarBotaoDropdown).
+        - **`painel-adm.js`:**
+          - Funções de Cadastro: (CadastrarEvento, CadastrarNoticia, CadastrarProduto).  
       
-    - **Pasta <ins>pages</ins>:**
-      - Implementou Backend no Frontend
-      - Encontrou e corrigiu erros (Icon, responsividade e outros)
+      - **Pasta `pages`:**
+        - Implementou Back-End no Front-End.
+        - Encontrou e corrigiu erros (ícones, responsividade e outros).
       
-  - **FrontEnd.js**
-    - Validar ADM
-    - Token
-    - Readme.md 
+    - **`FrontEnd.js`:**
+      - Validar ADM.
+      - Token.
+      - README.md.
 
 2. **Eric Calil Souto (RA: 24.00941-5)**
-   **Conção Principal:** Prototipação
+   **Função Principal:** Prototipação
     - **Design:**
-      - Fez o Figma
+      - Criou o Figma.
     - **Documentação:**
-      - Itens 5, 6 e 7
+      - Itens 5, 6 e 7.
     
-   **Contribuições no Codigo:**      
-    - **Pasta <ins>Backend</ins>:**
-      - **<ins>Noticias.js:</ins>:**
-        - parte visual
+   **Contribuições no Código:**      
+    - **Pasta `Backend`:**
+      - **`Noticias.js`:**
+        - Parte visual.
          
-    - **Pasta <ins>front</ins>:**
-      - **Pasta <ins>Componetes</ins>:**    
-        - **<ins>footer.js:</ins>**
-          - Parte Visual
+    - **Pasta `front`:**
+      - **Pasta `Componentes`:**    
+        - **`footer.js`:**
+          - Parte visual.
          
-    - **Pasta <ins>pages</ins>:**
-      - **<ins>home.html:</ins>**
-        - Fez Pop-Up de natal
-        - Refez parte visual
+    - **Pasta `pages`:**
+      - **`home.html`:**
+        - Criou Pop-Up de Natal.
+        - Refez parte visual.
       
-  - **FrontEnd.js**
-    - Acessibilidade
-    - Visual PopUp
-
+    - **`FrontEnd.js`:**
+      - Acessibilidade.
+      - Visual do Pop-Up.
 
 3. **Thamires Pietra Menezes dos Santos (RA: 24.00872-9)**
-   **Conção Principal:** Documentação e FrontEnd
+   **Função Principal:** Documentação e Front-End
     - **Documentação:**
-    - Ajudou com os itens 1 a 4 e 8 a 10.
+      - Ajudou com os itens 1 a 4 e 8 a 10.
     
-   **Contribuições no Codigo:**  
-    - **Pasta <ins>Backend</ins>:**
-    
-      - **<ins>add-colaborador.js (Tudo):**
-    
-      - **<ins>CArrinho.js (Tudo)</ins>:**
-    
-      - **<ins>Eventos.js</ins>:**
-          - Parte visual (HTML)    
-      - **<ins>Loja.js</ins>**
-        - Parte visual (HTML)
-    
-      - **<ins>Noticias.js</ins>:**
-        - Parte visual (HTML)
-    
-    - **Pasta <ins>front</ins>:**
-      - **Pasta <ins>Componetes</ins>:**
-        
-        - **<ins>footer.js:</ins>**
-        - Fes parte funcional (botões e redirecionamento)
-          
-        - **<ins>navbar.js:</ins>**
-          -Tudo eceto funções: (verificarLogin, logout, criarBotaoDropdown)
-    
-        - **<ins>painel-adm.js</ins>:**
-          -Tudo eceto funções Cadastro: (CadastrarEvento, CadastrarNoticia, CadastrarProduto)  
+   **Contribuições no Código:**  
+    - **Pasta `Backend`:**
+      - **`add-colaborador.js` (Tudo):**
+      - **`Carrinho.js` (Tudo):**
+      - **`Eventos.js`:**
+        - Parte visual (HTML).    
+      - **`Loja.js`:**
+        - Parte visual (HTML).
+      - **`Noticias.js`:**
+        - Parte visual (HTML).
 
-        - **<ins>termos-de-uso.js (Tudo)</ins>**
+    - **Pasta `front`:**
+      - **Pasta `Componentes`:**
+        - **`footer.js`:**
+          - Parte funcional (botões e redirecionamento).
+        - **`navbar.js`:**
+          - Tudo, exceto as funções: (verificarLogin, logout, criarBotaoDropdown).
+        - **`painel-adm.js`:**
+          - Tudo, exceto as funções de Cadastro: (CadastrarEvento, CadastrarNoticia, CadastrarProduto).  
+        - **`termos-de-uso.js` (Tudo):**
       
-    - **Pasta <ins>pages</ins>:**
-      - **<ins>cadastro.html (Tudo)</ins>**
-      - **<ins>carrinho.html (Tudo)</ins>**
-      - **<ins>Contato.html (Tudo)</ins>**
-      - **<ins>eventos.html (Tudo)</ins>**
-       
-      - **<ins>home.html:</ins>** 
-        - Parte Funcional (botões e redirecionamento funcionar)
+      - **Pasta `pages`:**
+        - **`cadastro.html` (Tudo):**
+        - **`carrinho.html` (Tudo):**
+        - **`contato.html` (Tudo):**
+        - **`eventos.html` (Tudo):**
+        - **`home.html`:**
+          - Parte funcional (botões e redirecionamento funcional).
+        - **`login.html` (Tudo):**
+        - **`loja.html` (Tudo):**
+        - **`painel-adm.html` (Tudo):**
       
-      - **<ins>login.html (Tudo)</ins>**
-      - **<ins>loja.html (Tudo)</ins>**
-      - **<ins>painel-adm.html (Tudo)</ins>**
-       
-  - **FrontEnd.js**
-    - Funcional PopUb
+    - **`FrontEnd.js`:**
+      - Funcionalidade do Pop-Up.
+
 
 
 ### Porcentegem de commits de cada membro:
