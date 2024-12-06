@@ -31,7 +31,7 @@ Esse projeto foi desenvolvido pelos alunos do IMT, para o parceiro Usina Eco-Cul
           - Funções: (verificarLogin, logout, criarBotaoDropdown)
     
         - **<ins>painel-adm.js</ins>:**
-          -Funções Cadastro: (CadastrarEvento, CadastrarNoticia, CadastrarProduto)  
+          - Funções Cadastro: (CadastrarEvento, CadastrarNoticia, CadastrarProduto)  
       
     - **Pasta <ins>pages</ins>:**
       - Implementou Backend no Frontend
