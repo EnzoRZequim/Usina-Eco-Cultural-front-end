@@ -1,47 +1,127 @@
 # **Usina Eco-Cultural Front-End**
 Esse projeto foi desenvolvido pelos alunos do IMT, para o parceiro Usina Eco-Cultural:
 
-* **Enzo R. Zequim (RA: 24.00085-0)**
-- **Documentação:**
-  - Itens 1 a 5 e 8 a 10. Com a Thamires
-  
-- **Contribuições no Codigo:**  
-  - **Pasta <ins>Backend</ins>:**
-  
-    - **BackEnd.js (Tudo):**
-  
-    - **<ins>Cadastro.js (Tudo)</ins>:**
-  
-    - **<ins>Eventos.js</ins>:**
+1. **Enzo R. Zequim (RA: 24.00085-0)**
+   **Conção Principal:** Documentação e BackEnd
+    - **Documentação:**
+    - Itens 1 a 4 e 8 a 10. Com a Thamires
+    
+   **Contribuições no Codigo:**  
+    - **Pasta <ins>Backend</ins>:**
+    
+      - **<ins>BackEnd.js</ins> (Tudo):**
+    
+      - **<ins>Cadastro.js (Tudo)</ins>:**
+    
+      - **<ins>Eventos.js</ins>:**
+          - Tudo exceto parte visual (HTML)
+    
+      - **<ins>Login.js (Tudo)</ins>**
+    
+      - **<ins>Loja.js</ins>**
         - Tudo exceto parte visual (HTML)
-  
-    - **<ins>Login.js (Tudo)</ins>**
-  
-    - **<ins>Loja.js</ins>**
-      - Tudo exceto parte visual (HTML)
-  
-    - **<ins>Noticias.js</ins>:**
-      - Tudo exceto parte visual (HTML)
-  
-  - **Pasta <ins>front</ins>:**
-    - **Pasta <ins>Componetes</ins>:**
-  
-      - **<ins>navbar.js:</ins>**
-        - Funções: (verificarLogin, logout, criarBotaoDropdown)
-  
-      - **<ins>painel-adm.js</ins>:**
-        -Funções Cadastro: (CadastrarEvento, CadastrarNoticia, CadastrarProduto)  
     
-  - **Pasta <ins>pages</ins>:**
-    - <ins>cadastro.html</ins>
-      - Implementou função "cadastrar()". 
+      - **<ins>Noticias.js</ins>:**
+        - Tudo exceto parte visual (HTML)
     
-- **FrontEnd.js**
-  - Validar ADM
-  - Token
+    - **Pasta <ins>front</ins>:**
+      - **Pasta <ins>Componetes</ins>:**
+    
+        - **<ins>navbar.js:</ins>**
+          - Funções: (verificarLogin, logout, criarBotaoDropdown)
+    
+        - **<ins>painel-adm.js</ins>:**
+          -Funções Cadastro: (CadastrarEvento, CadastrarNoticia, CadastrarProduto)  
+      
+    - **Pasta <ins>pages</ins>:**
+      - Implementou Backend no Frontend
+      - Encontrou e corrigiu erros (Icon, responsividade e outros)
+      
+  - **FrontEnd.js**
+    - Validar ADM
+    - Token
+    - Readme.md 
 
 * **Eric Calil Souto (RA: 24.00941-5)**
+   **Conção Principal:** Desing
+    - **Desing:**
+      - Fez o Figma
+    - **Documentação:**
+      - Itens 5, 6 e 7
+    
+   **Contribuições no Codigo:**      
+    - **Pasta <ins>Backend</ins>:**
+      - **<ins>Noticias.js:</ins>:**
+        - parte visual
+         
+    - **Pasta <ins>front</ins>:**
+      - **Pasta <ins>Componetes</ins>:**    
+        - **<ins>footer.js:</ins>**
+          - Parte Visual
+         
+    - **Pasta <ins>pages</ins>:**
+      - **<ins>home.html:</ins>**
+        - Fez Pop-Up de natal
+        - Refez parte visual
+      
+  - **FrontEnd.js**
+    - Acessibilidade
+    - Visual PopUp
+
+
 * **Thamires Pietra Menezes dos Santos (RA: 24.00872-9)**
+   **Conção Principal:** Documentação e FrontEnd
+    - **Documentação:**
+    - Ajudou com os itens 1 a 4 e 8 a 10.
+    
+   **Contribuições no Codigo:**  
+    - **Pasta <ins>Backend</ins>:**
+    
+      - **<ins>add-colaborador.js (Tudo):**
+    
+      - **<ins>CArrinho.js (Tudo)</ins>:**
+    
+      - **<ins>Eventos.js</ins>:**
+          - Parte visual (HTML)    
+      - **<ins>Loja.js</ins>**
+        - Parte visual (HTML)
+    
+      - **<ins>Noticias.js</ins>:**
+        - Parte visual (HTML)
+    
+    - **Pasta <ins>front</ins>:**
+      - **Pasta <ins>Componetes</ins>:**
+        
+        - **<ins>footer.js:</ins>**
+        - Fes parte funcional (botões e redirecionamento)
+          
+        - **<ins>navbar.js:</ins>**
+          -Tudo eceto funções: (verificarLogin, logout, criarBotaoDropdown)
+    
+        - **<ins>painel-adm.js</ins>:**
+          -Tudo eceto funções Cadastro: (CadastrarEvento, CadastrarNoticia, CadastrarProduto)  
+
+        - **<ins>termos-de-uso.js (Tudo)</ins>**
+      
+    - **Pasta <ins>pages</ins>:**
+      - **<ins>cadastro.html (Tudo)</ins>**
+      - **<ins>carrinho.html (Tudo)</ins>**
+      - **<ins>Contato.html (Tudo)</ins>**
+      - **<ins>eventos.html (Tudo)</ins>**
+       
+      - **<ins>home.html:</ins>** 
+        - Parte Funcional (botões e redirecionamento funcionar)
+      
+      - **<ins>login.html (Tudo)</ins>**
+      - **<ins>loja.html (Tudo)</ins>**
+      - **<ins>painel-adm.html (Tudo)</ins>**
+       
+  - **FrontEnd.js**
+    - Funcional PopUb
+
+
+
+<img src="Contribuição(06.12).png" alt="Porcentagem Contribuidores" width="500">
 
 ## **Requisitos**
 Antes de rodar o código, verifique se você tem os seguintes itens instalados no seu computador, e atualizados:

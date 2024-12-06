@@ -111,6 +111,8 @@ function convertToken() {
     return parseJwt(cripted)
 }
 
+// -------------------- Pop-Up  -------------------- \\
+
 // Função para exibir o pop-up
 function showPopup() {
   const popupOverlay = document.getElementById('popup-overlay');
