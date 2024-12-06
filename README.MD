@@ -42,9 +42,9 @@ Esse projeto foi desenvolvido pelos alunos do IMT, para o parceiro Usina Eco-Cul
     - Token
     - Readme.md 
 
-* **Eric Calil Souto (RA: 24.00941-5)**
-   **Conção Principal:** Desing
-    - **Desing:**
+2. **Eric Calil Souto (RA: 24.00941-5)**
+   **Conção Principal:** Prototipação
+    - **Design:**
       - Fez o Figma
     - **Documentação:**
       - Itens 5, 6 e 7
@@ -69,7 +69,7 @@ Esse projeto foi desenvolvido pelos alunos do IMT, para o parceiro Usina Eco-Cul
     - Visual PopUp
 
 
-* **Thamires Pietra Menezes dos Santos (RA: 24.00872-9)**
+3. **Thamires Pietra Menezes dos Santos (RA: 24.00872-9)**
    **Conção Principal:** Documentação e FrontEnd
     - **Documentação:**
     - Ajudou com os itens 1 a 4 e 8 a 10.
@@ -120,7 +120,7 @@ Esse projeto foi desenvolvido pelos alunos do IMT, para o parceiro Usina Eco-Cul
     - Funcional PopUb
 
 
-
+### Porcentegem de commits de cada membro:
 <img src="Contribuição(06.12).png" alt="Porcentagem Contribuidores" width="500">
 
 ## **Requisitos**
